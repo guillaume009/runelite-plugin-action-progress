@@ -90,7 +90,11 @@ public class SmithingDetector extends ActionDetector implements KeyListener
 	{
 		if (evt.getVarbitId() == VAR_SELECTED_SMITHING_INDEX) {			
 			int index = evt.getValue();
-			smithingItemid = indexToItemId.get(index);
+			Integer itemID = indexToItemId.get(index);
+			if (itemID == null){
+				return;
+			}
+			smithingItemid = itemID;
 			numberOfBarsForSelectedItem = client.getEnum(ENUM_SMITHING_ITEM_BAR).getIntValue(smithingItemid);
 		}
 	}
