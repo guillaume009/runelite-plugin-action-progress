@@ -40,7 +40,7 @@ public class ActionProgressPlugin extends Plugin
 			ChatboxDetector.class, UseItemOnItemDetector.class, EnchantSpellDetector.class, LunarSpellDetector.class,
 			FurnaceCastingDetector.class, LecternDetector.class, SandpitDetector.class, SmithingDetector.class,
 			TemporossDetector.class, TemporossRewardPoolDetector.class, ItemClickDetector.class,
-			// WintertodtDetector.class
+			WintertodtDetector.class
 	};
 
 	private final Collection<Object> eventHandlers = new LinkedList<>();

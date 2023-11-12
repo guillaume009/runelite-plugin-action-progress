@@ -14,7 +14,6 @@ import net.runelite.api.widgets.Widget;
 import net.runelite.client.eventbus.Subscribe;
 
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.stream.Stream;
 
 /**
@@ -36,16 +35,12 @@ public class WintertodtDetector extends ActionDetector
 
 	private static final String[] INTERRUPT_MESSAGES = {
 			"The cold of the Wintertodt seeps into your bones.", "The freezing cold attack",
-			"The brazier is broken and shrapnel damages you.", "The brazier has gone out."
+			"The brazier is broken and shrapnel damages you.", "The brazier has gone out.",
+			"You did not earn enough points to be worthy of a gift from the citizens of Kourend at this time.",
+			"Your subdued Wintertodt count is:"
 	};
 
-	private static final int[] BRUMA_KINDLING_MATERIALS = {
-			ItemID.KNIFE, ItemID.BRUMA_ROOT
-	};
-
-	static {
-		Arrays.sort(BRUMA_KINDLING_MATERIALS);
-	}
+	private static final int FLETCHING_WIDGET_ID = 9764864;
 
 	@Inject private Client client;
 
@@ -61,6 +56,7 @@ public class WintertodtDetector extends ActionDetector
 		}
 		WorldPoint worldPoint = me.getWorldLocation();
 		int region = worldPoint.getRegionID();
+
 		return region == WINTERTODT_PRISON_REGION_ID;
 	}
 
@@ -72,10 +68,11 @@ public class WintertodtDetector extends ActionDetector
 			return;
 		}
 		Action action = this.actionManager.getCurrentAction();
-		if (action != Action.WINTERTODT_FIREMAKING && action != Action.WINTERTODT_FLETCHING) {
+		if (action == null || (action != Action.WINTERTODT_FIREMAKING && action != Action.WINTERTODT_FLETCHING)) {
 			return;
 		}
 		String message = evt.getMessage();
+
 		Stream.of(INTERRUPT_MESSAGES)
 			  .filter(message::startsWith)
 			  .findFirst()
@@ -93,17 +90,21 @@ public class WintertodtDetector extends ActionDetector
 		if (inventory == null || widget == null) {
 			return;
 		}
-		int[] items = {
-				Objects.requireNonNull(inventory.getItem(widget.getId())).getId(),
-				Objects.requireNonNull(inventory.getItem(evt.getParam0())).getId()
-		};
-		Arrays.sort(items);
-		if (Arrays.equals(items, BRUMA_KINDLING_MATERIALS)) {
+
+		// Do nothing if it's not fletching
+		if (widget.getId() != FLETCHING_WIDGET_ID) {
+			return;
+		}
+
+		// If the inventory has a knife and roots
+		if (inventory.contains(ItemID.KNIFE) && inventory.contains(ItemID.BRUMA_ROOT)){
+
 			this.actionManager.setAction(Action.WINTERTODT_FLETCHING,
 					this.inventoryManager.getItemCountById(ItemID.BRUMA_ROOT),
-					ItemID.BRUMA_KINDLING
-			);
+					ItemID.BRUMA_KINDLING);
+
 		}
+
 	}
 
 	@Subscribe
