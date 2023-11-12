@@ -7,7 +7,6 @@ import com.google.inject.Singleton;
 import net.runelite.api.Client;
 import net.runelite.client.config.RuneLiteConfig;
 import net.runelite.client.ui.overlay.Overlay;
-import net.runelite.client.ui.overlay.OverlayPosition;
 
 import java.awt.*;
 
