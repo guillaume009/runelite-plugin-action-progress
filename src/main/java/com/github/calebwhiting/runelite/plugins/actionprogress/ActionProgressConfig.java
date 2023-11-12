@@ -52,7 +52,7 @@ public interface ActionProgressConfig extends Config
 			description = "Enable/Disable wintertodt specific actions.",
 			position = 14,
 			closedByDefault = true
-	) String WINTERTODT = "Wintertodt actions s";
+	) String WINTERTODT = "Wintertodt actions";
 	@ConfigSection(
 			name = "Miscellaneous actions",
 			description = "Enable/Disable miscellaneous actions.",
