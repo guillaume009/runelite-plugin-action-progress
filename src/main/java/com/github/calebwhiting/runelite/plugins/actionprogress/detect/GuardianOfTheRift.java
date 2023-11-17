@@ -95,14 +95,8 @@ public class GuardianOfTheRift extends ActionDetector
 
 		if(evt.getId() == WORKBENCH_ID && evt.getMenuOption().toLowerCase().equals("work-at")){			
 			triggeringEssenceCrafting = true;
-
-			ItemContainer inventory = client.getItemContainer(InventoryID.INVENTORY);
-			
-			numberOfGuardianEssencesToMake = inventory == null ? 0 : Math.min(inventory.count(GUARDIAN_FRAGMENTS_ITEM_ID), this.inventoryManager.getFreeSpaces());
 		}
 	}
-
-	private int numberOfGuardianEssencesToMake = 0;
 
 	@Subscribe
 	public void onGameTick(GameTick evt)
@@ -128,7 +122,13 @@ public class GuardianOfTheRift extends ActionDetector
 		if (triggeringEssenceCrafting && local.getAnimation() == CRAFTING_ANIMATION_ID){
 			triggeringEssenceCrafting = false;
 
+			ItemContainer inventory = client.getItemContainer(InventoryID.INVENTORY);
+			
+			int numberOfGuardianEssencesToMake = inventory == null ? 0 : Math.min(inventory.count(GUARDIAN_FRAGMENTS_ITEM_ID), this.inventoryManager.getFreeSpaces());
+
 			if (numberOfGuardianEssencesToMake == 0) return;
+
+			numberOfGuardianEssencesToMake++;
 			
 			this.actionManager.setAction(Action.GUARDIAN_OF_THE_RIFT_CRAFTING, numberOfGuardianEssencesToMake, ItemID.GUARDIAN_ESSENCE);	
 		}
