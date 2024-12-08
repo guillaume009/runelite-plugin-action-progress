@@ -44,7 +44,6 @@ public class TemporossDetector extends ActionDetector
 		Player me = evt.getLocalPlayer();
 		int region = WorldPoint.fromLocalInstance(this.client, me.getLocalLocation()).getRegionID();
 		if (region != TEMPOROSS_REGION) {
-			log.debug("not in tempoross region");
 			return;
 		}
 		if (action == Action.TEMPOROSS_FILL_CRATE || action == Action.TEMPOROSS_COOKING) {
