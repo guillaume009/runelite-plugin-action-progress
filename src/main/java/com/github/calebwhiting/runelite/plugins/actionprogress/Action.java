@@ -30,6 +30,7 @@ public enum Action
 	FLETCH_ATTACH_3T("Attaching", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 3),
 	FLETCH_CUT_ARROW_SHAFT("Cutting", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 3),
 	FLETCH_CUT_JAVELIN_SHAFT("Cutting", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 3),
+	FLETCH_CUT_HIKING_STAFF("Cutting", ActionProgressConfig::fletchHikingStaves, ActionIcon.SPRITE_FLETCHING, 3),
 	FLETCH_CUT_BOW("Cutting", ActionProgressConfig::fletchBows, ActionIcon.SPRITE_FLETCHING, 3),
 	FLETCH_CUT_TIPS("Cutting", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 5),
 	FLETCH_ATTACH_TIPS("Attaching", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 2), 

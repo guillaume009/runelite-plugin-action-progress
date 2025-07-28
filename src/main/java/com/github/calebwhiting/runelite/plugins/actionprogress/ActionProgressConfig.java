@@ -417,6 +417,18 @@ public interface ActionProgressConfig extends Config
 	}
 
 	@ConfigItem(
+			name = "Making hiking staves",
+			keyName = "fletching.hikingStaves",
+			description = "Enable/Disable monitoring cutting logs into hiking staves.",
+			section = FLETCHING
+	)
+	default boolean fletchHikingStaves()
+	{
+		return true;
+	}
+
+
+	@ConfigItem(
 			name = "Making javelins",
 			keyName = "fletching.javelins",
 			description = "Enable/Disable monitoring attaching heads on javelin shafts.",
