@@ -1,6 +1,8 @@
 package com.github.calebwhiting.runelite.data;
 
+import com.github.calebwhiting.runelite.plugins.actionprogress.Action;
 import net.runelite.api.ItemID;
+import java.util.EnumSet;
 
 public interface Fletching
 {
@@ -21,7 +23,16 @@ public interface Fletching
 	};
 
 	int[] JAVELINS = {
-			ItemID.BRONZE_JAVELIN, ItemID.IRON_JAVELIN, ItemID.STEEL_JAVELIN, ItemID.MITHRIL_JAVELIN, 
+			ItemID.BRONZE_JAVELIN, ItemID.IRON_JAVELIN, ItemID.STEEL_JAVELIN, ItemID.MITHRIL_JAVELIN,
 			ItemID.ADAMANT_JAVELIN, ItemID.RUNE_JAVELIN, ItemID.AMETHYST_JAVELIN, ItemID.DRAGON_JAVELIN,
 	};
+
+	EnumSet<Action> FLETCHING_KNIFE_BOOSTED_ACTIONS = EnumSet.of(
+			Action.FLETCH_CUT_BOW,
+			Action.FLETCH_SHIELD,
+			Action.FLETCH_CUT_CROSSBOW,
+			Action.FLETCH_CUT_ARROW_SHAFT,
+			Action.FLETCH_CUT_JAVELIN_SHAFT,
+			Action.FLETCH_CUT_HIKING_STAFF
+	);
 }
