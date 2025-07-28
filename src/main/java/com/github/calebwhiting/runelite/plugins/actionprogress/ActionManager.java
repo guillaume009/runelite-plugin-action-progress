@@ -172,17 +172,19 @@ public class ActionManager
 	}
 
 	public int[] getActionTickTimes(Action action) {
-		if (!Fletching.FLETCHING_KNIFE_BOOSTED_ACTIONS.contains(action)) {
+		if (!action.name().contains("FLETCH") || action.name().contains("TIPS") || !action.getDescription().equals("Cutting")) {
+			return action.getTickTimes();
+		}
+
+		boolean hasFletchingKnife = hasFletchingKnifeInInventory() || isWearingFletchingKnife();
+		if (!hasFletchingKnife) {
 			return action.getTickTimes();
 		}
 
 		// Should maybe be more generic in the future to handle different "modifiers" to actions
-		boolean hasFletchingKnife = hasFletchingKnifeInInventory() || isWearingFletchingKnife();
 		int[] timings = action.getTickTimes().clone();
-		if (hasFletchingKnife) {
-			for (int i = 0; i < timings.length; i++) {
-				timings[i] = Math.max(1, timings[i] - 1);
-			}
+		for (int i = 0; i < timings.length; i++) {
+			timings[i] = Math.max(1, timings[i] - 1);
 		}
 
 		return timings;
