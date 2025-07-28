@@ -172,7 +172,8 @@ public class ActionManager
 	}
 
 	public int[] getActionTickTimes(Action action) {
-		if (!action.name().contains("FLETCH") || action.name().contains("TIPS") || !action.getDescription().equals("Cutting")) {
+		// Should maybe be more generic in the future to handle different "modifiers" to actions
+		if (!isBoostableFletchingAction(action)) {
 			return action.getTickTimes();
 		}
 
@@ -181,13 +182,20 @@ public class ActionManager
 			return action.getTickTimes();
 		}
 
-		// Should maybe be more generic in the future to handle different "modifiers" to actions
-		int[] timings = action.getTickTimes().clone();
-		for (int i = 0; i < timings.length; i++) {
-			timings[i] = Math.max(1, timings[i] - 1);
+		int[] original = action.getTickTimes();
+		int length = original.length == 1 ? 2 : original.length;
+		int[] adjusted = new int[length];
+
+		// The first tick remains unchanged
+		adjusted[0] = original[0];
+
+		// The following ticks are 1 tick faster
+		for (int i = 1; i < length; i++) {
+			int baseTick = (i < original.length) ? original[i] : original[0];
+			adjusted[i] = Math.max(1, baseTick - 1);
 		}
 
-		return timings;
+		return adjusted;
 	}
 
 	public long getApproximateCompletionTime()
@@ -195,6 +203,13 @@ public class ActionManager
 		float ticksLeft = getTicksLeft();
 		long timeSinceTick = System.currentTimeMillis() - this.tickManager.getLastTickTime();
 		return Math.round((ticksLeft * TickManager.PERFECT_TICK_TIME) - timeSinceTick);
+	}
+
+	private boolean isBoostableFletchingAction(Action action) {
+		String name = action.name();
+		return name.contains("FLETCH")
+			   && !name.contains("TIPS")
+			   && action.getDescription().equals("Cutting");
 	}
 
 	private boolean hasFletchingKnifeInInventory() {
