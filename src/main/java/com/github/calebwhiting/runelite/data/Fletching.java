@@ -1,8 +1,6 @@
 package com.github.calebwhiting.runelite.data;
 
-import com.github.calebwhiting.runelite.plugins.actionprogress.Action;
 import net.runelite.api.ItemID;
-import java.util.EnumSet;
 
 public interface Fletching
 {
