@@ -139,7 +139,8 @@ public class ChatboxDetector extends ActionDetector
 			new Product(CRAFT_SHIELD, BLUE_DHIDE_SHIELD, new Ingredient(BLUE_DRAGON_LEATHER, 2), new Ingredient (YEW_SHIELD), new Ingredient(MITHRIL_NAILS, 15)),
 			new Product(CRAFT_SHIELD, RED_DHIDE_SHIELD, new Ingredient(RED_DRAGON_LEATHER, 2), new Ingredient (MAGIC_SHIELD), new Ingredient(ADAMANTITE_NAILS, 15)),
 			new Product(CRAFT_SHIELD, BLACK_DHIDE_SHIELD, new Ingredient(BLACK_DRAGON_LEATHER, 2), new Ingredient (REDWOOD_SHIELD), new Ingredient(RUNE_NAILS, 15)),
-            new Product(FLETCH_CUT_BOW, LONGBOW_U, new Ingredient(LOGS)),
+			new Product(FLETCH_CUT_HIKING_STAFF, REDWOOD_HIKING_STAFF, new Ingredient(REDWOOD_LOGS)),
+			new Product(FLETCH_CUT_BOW, LONGBOW_U, new Ingredient(LOGS)),
             new Product(FLETCH_CUT_BOW, OAK_LONGBOW_U, new Ingredient(OAK_LOGS)),
             new Product(FLETCH_CUT_BOW, WILLOW_LONGBOW_U, new Ingredient(WILLOW_LOGS)),
             new Product(FLETCH_CUT_BOW, MAPLE_LONGBOW_U, new Ingredient(MAPLE_LOGS)),
@@ -316,6 +317,7 @@ public class ChatboxDetector extends ActionDetector
 		this.registerAction(FLETCH_ATTACH, HEADLESS_ARROW, FLIGHTED_OGRE_ARROW, AMETHYST_BROAD_BOLTS, AMETHYST_ARROW);
 		this.registerAction(FLETCH_JAVELIN, Fletching.JAVELINS);
 		this.registerAction(FLETCH_CUT_ARROW_SHAFT, ARROW_SHAFT, BRUMA_KINDLING, OGRE_ARROW_SHAFT);
+		this.registerAction(FLETCH_CUT_JAVELIN_SHAFT, JAVELIN_SHAFT);
 		this.registerAction(FLETCH_CUT_TIPS, Fletching.BOLT_TIPS);
 		/*
 		 *  Crafting

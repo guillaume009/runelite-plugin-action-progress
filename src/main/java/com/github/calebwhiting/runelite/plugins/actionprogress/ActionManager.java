@@ -3,6 +3,7 @@ package com.github.calebwhiting.runelite.plugins.actionprogress;
 import com.github.calebwhiting.runelite.api.InterruptManager;
 import com.github.calebwhiting.runelite.api.TickManager;
 import com.github.calebwhiting.runelite.api.event.Interrupt;
+import com.github.calebwhiting.runelite.data.Fletching;
 import com.github.calebwhiting.runelite.plugins.actionprogress.event.ActionStartedEvent;
 import com.github.calebwhiting.runelite.plugins.actionprogress.event.ActionStoppedEvent;
 import com.google.inject.Inject;
@@ -11,6 +12,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
+import net.runelite.api.InventoryID;
+import net.runelite.api.ItemContainer;
+import net.runelite.api.ItemID;
 import net.runelite.api.events.GameTick;
 import net.runelite.client.eventbus.EventBus;
 import net.runelite.client.eventbus.Subscribe;
@@ -59,10 +63,11 @@ public class ActionManager
 
 	@Getter @Setter private int currentProductId = -1;
 
-	private static int calculateActionTicks(Action action, int actionCount)
+	private int calculateActionTicks(Action action, int actionCount)
 	{
 		int nTicksElapsed = 0;
-		int[] timings = action.getTickTimes();
+		int[] timings = getActionTickTimes(action);
+
 		//Could be done more cleanly elsewhere, but it would require changing everything from int to double
 		int realActionCount = action == Action.SMITHING_WITH_SMITH_OUTFIT ? (int) (actionCount * .8) : actionCount;
 		for (int i = 0; i < realActionCount; i++) {
@@ -143,7 +148,7 @@ public class ActionManager
 		}
 		int actions = 0;
 		int rem = this.client.getTickCount() - this.actionStartTick;
-		int[] timings = this.currentAction.getTickTimes();
+		int[] timings = getActionTickTimes(this.currentAction);
 		for (int tickTime : timings) {
 			rem -= tickTime;
 			if (rem >= 0) {
@@ -166,11 +171,63 @@ public class ActionManager
 		return ticksLeft;
 	}
 
+	public int[] getActionTickTimes(Action action) {
+		// Should maybe be more generic in the future to handle different "modifiers" to actions
+		if (!isBoostableFletchingAction(action)) {
+			return action.getTickTimes();
+		}
+
+		boolean hasFletchingKnife = hasFletchingKnifeInInventory() || isWearingFletchingKnife();
+		if (!hasFletchingKnife) {
+			return action.getTickTimes();
+		}
+
+		int[] original = action.getTickTimes();
+		int length = original.length == 1 ? 2 : original.length;
+		int[] adjusted = new int[length];
+
+		// The first tick remains unchanged
+		adjusted[0] = original[0];
+
+		// The following ticks are 1 tick faster
+		for (int i = 1; i < length; i++) {
+			int baseTick = (i < original.length) ? original[i] : original[0];
+			adjusted[i] = Math.max(1, baseTick - 1);
+		}
+
+		return adjusted;
+	}
+
 	public long getApproximateCompletionTime()
 	{
 		float ticksLeft = getTicksLeft();
 		long timeSinceTick = System.currentTimeMillis() - this.tickManager.getLastTickTime();
 		return Math.round((ticksLeft * TickManager.PERFECT_TICK_TIME) - timeSinceTick);
+	}
+
+	private boolean isBoostableFletchingAction(Action action) {
+		String name = action.name();
+		return name.contains("FLETCH")
+			   && !name.contains("TIPS")
+			   && action.getDescription().equals("Cutting");
+	}
+
+	private boolean hasFletchingKnifeInInventory() {
+		ItemContainer inventory = this.client.getItemContainer(InventoryID.INVENTORY);
+		if (inventory == null) {
+			return false;
+		}
+
+		return inventory.contains(ItemID.FLETCHING_KNIFE);
+	}
+
+	private boolean isWearingFletchingKnife() {
+		ItemContainer gear = this.client.getItemContainer(InventoryID.EQUIPMENT);
+		if (gear == null) {
+			return false;
+		}
+
+		return gear.contains(ItemID.FLETCHING_KNIFE);
 	}
 
 }
