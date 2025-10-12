@@ -66,7 +66,11 @@ Displays an indicator showing how much progress you've made on your current acti
     
 
 ## Changes
-- `1.18`
+- `1.19`
+	- Add support for wetting clay
+	- Add support for bow string spool
+    - Fix issue where action bar would show tending overlay when using sawmill
+- 1.18`
 	- Updating timing for fire tending
  	- Rework gold and silver casting
 - `1.17`
