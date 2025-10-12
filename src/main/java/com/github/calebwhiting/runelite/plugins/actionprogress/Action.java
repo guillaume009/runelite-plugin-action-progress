@@ -80,7 +80,9 @@ public enum Action
 	CHURNING_CHEESE_WITH_MILK("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,26),
 	CHURNING_CHEESE_WITH_CREAM("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,19),
 	CHURNING_CHEESE_WITH_BUTTER("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
-	CHURNING_CHEESE_WITH_GARLIC("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10);
+	CHURNING_CHEESE_WITH_GARLIC("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
+	WETTING_CLAY("Wetting", ActionProgressConfig::craftWettingClay, ActionIcon.SPRITE_CRAFTING,2);
+	//FILLING("Filling", ActionProgressConfig::filling, ActionIcon.SPRITE_TOTAL, 1);
 
 	private final String description;
 
