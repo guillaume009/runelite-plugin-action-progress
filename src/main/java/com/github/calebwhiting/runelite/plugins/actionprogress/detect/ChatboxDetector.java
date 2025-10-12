@@ -213,18 +213,6 @@ public class ChatboxDetector extends ActionDetector
 			new Product(FLETCH_DART, RUNE_DART, new Ingredient(RUNE_DART_TIP, 10), new Ingredient(FEATHER, 10)),
 			new Product(FLETCH_DART, AMETHYST_DART, new Ingredient(AMETHYST_DART_TIP, 10), new Ingredient(FEATHER, 10)),
 			new Product(FLETCH_DART, DRAGON_DART, new Ingredient(DRAGON_DART_TIP, 10), new Ingredient(FEATHER, 10)),
-			new Product(FIREMAKING_CAMPFIRE, ACHEY_TREE_LOGS, new Ingredient(ACHEY_TREE_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, LOGS, new Ingredient(LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, OAK_LOGS, new Ingredient(OAK_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, WILLOW_LOGS, new Ingredient(WILLOW_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, TEAK_LOGS, new Ingredient(TEAK_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, ARCTIC_PINE_LOGS, new Ingredient(ARCTIC_PINE_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, MAPLE_LOGS, new Ingredient(MAPLE_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, MAHOGANY_LOGS, new Ingredient(MAHOGANY_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, YEW_LOGS, new Ingredient(YEW_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, BLISTERWOOD_LOGS, new Ingredient(BLISTERWOOD_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, MAGIC_LOGS, new Ingredient(MAGIC_LOGS)),
-			new Product(FIREMAKING_CAMPFIRE, REDWOOD_LOGS, new Ingredient(REDWOOD_LOGS)),
 			new Product(FLETCH_ATTACH, OPAL_BOLTS, new Ingredient(BRONZE_BOLTS,10) , new Ingredient(OPAL_BOLT_TIPS,10)),
 			new Product(FLETCH_ATTACH, JADE_BOLTS, new Ingredient(BLURITE_BOLTS,10) , new Ingredient(JADE_BOLT_TIPS,10)),
 			new Product(FLETCH_ATTACH, PEARL_BOLTS, new Ingredient(IRON_BOLTS,10) , new Ingredient(PEARL_BOLT_TIPS,10)),
@@ -389,6 +377,9 @@ public class ChatboxDetector extends ActionDetector
 						);
 					}
 				}
+				break;
+			case "How many would you like to burn?": // Firemaking tending
+				this.actionManager.setAction(FIREMAKING_CAMPFIRE, amount, currentProductId);			
 				break;
 			case "How many would you like to string?": // Fletching/Stringing
 			case "What would you like to string?": // Fletching/Stringing
