@@ -244,6 +244,10 @@ public class ChatboxDetector extends ActionDetector
 			new Product(CHURNING_CHEESE_WITH_CREAM, CHEESE, new Ingredient(POT_OF_CREAM)),
 			new Product(CHURNING_CHEESE_WITH_BUTTER, CHEESE, new Ingredient(PAT_OF_BUTTER)),
 			new Product(CHURNING_CHEESE_WITH_GARLIC, CHEESE, new Ingredient(PAT_OF_NOT_GARLIC_BUTTER)),
+			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(BUCKET_OF_WATER)),
+			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(BOWL_OF_WATER)),
+			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(JUG_OF_WATER)),
+			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(VIAL_OF_WATER)),
             // @formatter:on
 	};
 

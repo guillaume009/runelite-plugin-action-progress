@@ -362,6 +362,17 @@ public interface ActionProgressConfig extends Config
 	}
 
 	@ConfigItem(
+			name = "Wetting clay",
+			keyName = "crafting.wettingClay",
+			description = "Enable/Disable monitoring for wetting clay.",
+			section = CRAFTING
+	)
+	default boolean craftWettingClay()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 			name = "Arrows & bolts",
 			keyName = "fletching.ammunition",
 			description = "Enable/Disable monitoring fletching arrows & bolts.",
