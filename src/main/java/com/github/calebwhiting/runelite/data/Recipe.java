@@ -87,7 +87,7 @@ public class Recipe
 	private int getMakeProductCountWithTool(int amount){
 		int toolAmount = Integer.MAX_VALUE;
 		switch (productId) {
-			case CANNONBALL:
+			case STEEL_CANNONBALL:
 				if (tool != null && tool.getItemId() == DOUBLE_AMMO_MOULD){
 					//Round up since the double ammo mould is able to smelt with only one silver bar
 					toolAmount = (int)Math.ceil((double)amount / 2);

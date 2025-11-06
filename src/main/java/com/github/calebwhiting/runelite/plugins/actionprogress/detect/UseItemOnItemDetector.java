@@ -30,7 +30,7 @@ public class UseItemOnItemDetector extends ActionDetector
 			new Product(GRIND, 				DRAGON_SCALE_DUST, 				new Ingredient[]{ new Ingredient(BLUE_DRAGON_SCALE)}, 											PESTLE_AND_MORTAR),
 			new Product(GRIND, 				GROUND_CHARCOAL, 				new Ingredient[]{ new Ingredient(CHARCOAL)}, 													PESTLE_AND_MORTAR),
 			new Product(GRIND, 				CHOCOLATE_DUST, 				new Ingredient[]{ new Ingredient(CHOCOLATE_BAR)}, 												PESTLE_AND_MORTAR),
-			new Product(GRIND, 				GROUND_CRAB_MEAT, 				new Ingredient[]{ new Ingredient(CRAB_MEAT)}, 													PESTLE_AND_MORTAR),
+			new Product(GRIND, 				GROUND_GIANT_CRAB_MEAT, 		new Ingredient[]{ new Ingredient(GIANT_CRAB_MEAT)}, 													PESTLE_AND_MORTAR),
 			new Product(GRIND, 				GOAT_HORN_DUST, 				new Ingredient[]{ new Ingredient(DESERT_GOAT_HORN)}, 											PESTLE_AND_MORTAR),
 			new Product(GRIND, 				GROUND_THISTLE, 				new Ingredient[]{ new Ingredient(DRIED_THISTLE)}, 												PESTLE_AND_MORTAR),
 			new Product(GRIND, 				GORAK_CLAW_POWDER, 				new Ingredient[]{ new Ingredient(GORAK_CLAWS)}, 												PESTLE_AND_MORTAR),
