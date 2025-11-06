@@ -395,6 +395,7 @@ public class ChatboxDetector extends ActionDetector
 				}
 				break;
 			case "How many would you like to burn?": // Firemaking tending
+			case "What would you like to burn?": // Firemaking tending
 				this.actionManager.setAction(FIREMAKING_CAMPFIRE, amount, currentProductId);			
 				break;
 			case "How many would you like to string?": // Fletching/Stringing

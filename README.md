@@ -66,6 +66,9 @@ Displays an indicator showing how much progress you've made on your current acti
     
 
 ## Changes
+- `1.20`
+  	- Update following sailing API changes
+  	- Fix left clicking fire tending that was broken as part of the previous update 
 - `1.19`
 	- Add support for wetting clay
 	- Add support for bow string spool
