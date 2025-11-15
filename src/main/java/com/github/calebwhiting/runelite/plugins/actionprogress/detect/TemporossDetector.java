@@ -8,6 +8,7 @@ import com.google.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.*;
 import net.runelite.api.coords.WorldPoint;
+import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.client.eventbus.Subscribe;
 
 import java.util.Arrays;
@@ -17,7 +18,9 @@ import java.util.Arrays;
 public class TemporossDetector extends ActionDetector
 {
 
-	private static final int TEMPOROSS_REGION = 12078;
+	private static final int TEMPOROSS_REGION = 12076;
+
+	private boolean lastClickOnShrine = false;
 
 	private static final int[] TEMPOROSS_AMMUNITION_CRATE = {
 			NpcID.AMMUNITION_CRATE, NpcID.AMMUNITION_CRATE_10577, NpcID.AMMUNITION_CRATE_10578,
@@ -43,6 +46,9 @@ public class TemporossDetector extends ActionDetector
 		Action action = this.actionManager.getCurrentAction();
 		Player me = evt.getLocalPlayer();
 		int region = WorldPoint.fromLocalInstance(this.client, me.getLocalLocation()).getRegionID();
+		if (region != TEMPOROSS_REGION){
+			return;
+		}
 		if (action == Action.TEMPOROSS_FILL_CRATE || action == Action.TEMPOROSS_COOKING) {
 			log.debug("action is already {}", action);
 			return;
@@ -53,11 +59,18 @@ public class TemporossDetector extends ActionDetector
 			log.debug("filling crate");
 			int amount = this.inventoryManager.getItemCountById(TEMPOROSS_AMMUNITION);
 			this.actionManager.setAction(Action.TEMPOROSS_FILL_CRATE, amount, -1);
-		} else if(this.inventoryManager.getItemCountById(ItemID.RAW_HARPOONFISH) > 0){
+		} else if(this.inventoryManager.getItemCountById(ItemID.RAW_HARPOONFISH) > 0 && lastClickOnShrine){
 			log.debug("cooking fish");
 			int amount = this.inventoryManager.getItemCountById(ItemID.RAW_HARPOONFISH);
 			this.actionManager.setAction(Action.TEMPOROSS_COOKING, amount, ItemID.HARPOONFISH);
 		}
+	}
+
+	@Subscribe
+	public void onMenuOptionClicked(MenuOptionClicked event)
+	{
+		int objectId = event.getId();
+        lastClickOnShrine = objectId == ObjectID.SHRINE_41236;
 	}
 
 }
