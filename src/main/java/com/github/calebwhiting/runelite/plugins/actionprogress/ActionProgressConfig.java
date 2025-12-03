@@ -185,6 +185,17 @@ public interface ActionProgressConfig extends Config
 	}
 
 	@ConfigItem(
+			name = "Combining pie",
+			keyName = "cooking.combine-pie",
+			description = "Enable/Disable monitoring making pies.",
+			section = COOKING
+	)
+	default boolean cookingCombinePies()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 			name = "Topping pizza",
 			keyName = "cooking.top-pizza",
 			description = "Enable/Disable monitoring topping pizza.",
@@ -534,6 +545,16 @@ public interface ActionProgressConfig extends Config
 			section = MAGIC
 	)
 	default boolean magicPlankMake()
+	{
+		return true;
+	}
+	@ConfigItem(
+			name = "Bake Pie spell",
+			keyName = "magic.bake-pie",
+			description = "Enable/Disable monitoring bake pie spell.",
+			section = MAGIC
+	)
+	default boolean magicBakePie()
 	{
 		return true;
 	}
