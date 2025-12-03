@@ -106,14 +106,21 @@ public class UseItemOnItemDetector extends ActionDetector
 		if (m.find() && Objects.equals(m.group(1), m.group(2))){
 			return;
 		}
-
+		//Gets the item that is being clicked
 		Item[] items = IntStream.of(widget.getId(), evt.getParam0())
 								.mapToObj(inventory::getItem)
 								.filter(n -> n!= null)
 								.toArray(Item[]::new);
-
+		//Gets the selected item to fix order of operation issues
+		Item selectedItem = new Item(widget.getItemId(),1);
 		for (Product product : PRODUCTS) {
-			if (product.isMadeWith(items)) {
+			if (product.isMadeWith(items) && product.isToolUsed(selectedItem)) {
+				int amount = product.getMakeProductCount(this.inventoryManager);
+				if (amount > 0) {
+					this.actionManager.setAction(product.getAction(), amount, product.getProductId());
+				}
+			}
+			if(product.isMadeWith(selectedItem) && product.isToolUsed(items)){
 				int amount = product.getMakeProductCount(this.inventoryManager);
 				if (amount > 0) {
 					this.actionManager.setAction(product.getAction(), amount, product.getProductId());
