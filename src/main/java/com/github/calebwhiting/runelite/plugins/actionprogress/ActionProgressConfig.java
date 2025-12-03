@@ -50,6 +50,11 @@ public interface ActionProgressConfig extends Config
 			position = 14
 	) String FARMING = "Farming actions";
 	@ConfigSection(
+			name = "Sailing actions",
+			description = "Enable/Disable sailing actions.",
+			position = 16
+	) String SAILING = "Sailing actions";
+	@ConfigSection(
 			name = "Tempoross actions",
 			description = "Enable/Disable tempoross specific actions.",
 			position = 15
@@ -57,18 +62,18 @@ public interface ActionProgressConfig extends Config
 	@ConfigSection(
 			name = "Wintertodt actions (not yet supported)",
 			description = "Enable/Disable wintertodt specific actions.",
-			position = 16,
+			position = 17,
 			closedByDefault = true
 	) String WINTERTODT = "Wintertodt actions";
 	@ConfigSection(
 			name = "Guardian of the Rift actions",
 			description = "Enable/Disable guardian of the rift specific actions.",
-			position = 17
+			position = 18
 	) String GUARDIAN_OF_THE_RIFT = "Guardian of the Rift actions";
 	@ConfigSection(
 			name = "Miscellaneous actions",
 			description = "Enable/Disable miscellaneous actions.",
-			position = 18
+			position = 19
 	) String MISCELLANEOUS = "Miscellaneous actions";
 
 	@ConfigItem(
@@ -696,6 +701,18 @@ public interface ActionProgressConfig extends Config
 			section = MISCELLANEOUS
 	)
 	default boolean campfire()
+	{
+		return true;
+	}
+
+
+	@ConfigItem(
+			name = "Sorting salvage",
+			keyName = "misc.salvaging",
+			description = "Enable/Disable monitoring sorting salvage.",
+			section = SAILING
+	)
+	default boolean sailSalvage()
 	{
 		return true;
 	}
