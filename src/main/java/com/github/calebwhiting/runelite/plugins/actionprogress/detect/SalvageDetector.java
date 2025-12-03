@@ -26,7 +26,6 @@ public class SalvageDetector extends ActionDetector
 	public void onLocalAnimationChanged(LocalAnimationChanged evt)
 	{
 		Player me = evt.getLocalPlayer();
-		log.debug("AnimationID " + me.getAnimation());
 		if (me.getAnimation() != AnimationID.SAILING_HUMAN_SALVAGE_HOOK_KANDARIN_1X3_INTERACT01) {
 			return;
 		}
