@@ -14,6 +14,8 @@ public enum Action
 	COOKING_MIX_DOUGH("Combining", ActionProgressConfig::cookingMixPastry, ActionIcon.SPRITE_COOKING, 1, 2),
 	COOKING_MIX_GRAPES("Combining", ActionProgressConfig::cookingMixWines, ActionIcon.SPRITE_COOKING, 3, 2),
 	COOKING_TOP_PIZZA("Combining", ActionProgressConfig::cookingTopPizza, ActionIcon.SPRITE_COOKING, 2),
+	COOKING_GUTTING("Gutting",ActionProgressConfig::cookingGutting,ActionIcon.SPRITE_COOKING,3),
+	COOKING_GUTTING_AERIAL("Gutting",ActionProgressConfig::cookingGutting,ActionIcon.SPRITE_COOKING,2),
 	CRAFT_BATTLESTAVES("Combining", ActionProgressConfig::craftBattlestaves, ActionIcon.SPRITE_CRAFTING, 3, 2),
 	CRAFT_BLOW_GLASS("Glassblowing", ActionProgressConfig::craftGlassblowing, ActionIcon.SPRITE_CRAFTING, 3),
 	CRAFT_CAST_GOLD_AND_SILVER("Casting", ActionProgressConfig::craftCastGoldAndSilver, ActionIcon.SPRITE_CRAFTING, 3),

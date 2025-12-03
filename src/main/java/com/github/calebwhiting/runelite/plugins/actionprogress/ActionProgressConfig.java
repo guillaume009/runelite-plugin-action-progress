@@ -212,6 +212,17 @@ public interface ActionProgressConfig extends Config
 	}
 
 	@ConfigItem(
+			name = "Gutting fish",
+			keyName = "cooking.gutting",
+			description = "Enable/Disable monitoring gutting fish.",
+			section = COOKING
+	)
+	default boolean cookingGutting()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 			name = "Dairy churning",
 			keyName = "cooking.churning",
 			description = "Enable/Disable monitoring churning dairy products.",

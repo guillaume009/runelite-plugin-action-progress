@@ -22,6 +22,7 @@ public class UseItemOnItemDetector extends ActionDetector
 
 	private static final Ingredient PESTLE_AND_MORTAR = new Ingredient(ItemID.PESTLE_AND_MORTAR, 1, false);
 	private static final Ingredient CHISEL = new Ingredient(ItemID.CHISEL, 1, false);
+	private static final Ingredient KNIFE = new Ingredient(ItemID.KNIFE, 1, false);
 	private static final String BREAK_DOWN = "Break-down";
 
 	private static final Product[] PRODUCTS = {
@@ -48,6 +49,8 @@ public class UseItemOnItemDetector extends ActionDetector
 			new Product(GRIND, 				GROUND_TOOTH, 					new Ingredient[]{ new Ingredient(SUQAH_TOOTH)}, 												PESTLE_AND_MORTAR),
 			new Product(GRIND, 				UNICORN_HORN_DUST, 				new Ingredient[]{ new Ingredient(UNICORN_HORN)}, 												PESTLE_AND_MORTAR),
 			new Product(GRIND, 				CRUSHED_SUPERIOR_DRAGON_BONES, 	new Ingredient[]{ new Ingredient(SUPERIOR_DRAGON_BONES)}, 										PESTLE_AND_MORTAR),
+			new Product(GRIND, 				SQUID_PASTE, 					new Ingredient[]{ new Ingredient(RAW_JUMBO_SQUID)}, 											PESTLE_AND_MORTAR),
+			new Product(GRIND, 				SQUID_PASTE, 					new Ingredient[]{ new Ingredient(RAW_SWORDTIP_SQUID)},	 										PESTLE_AND_MORTAR),
 			new Product(GRIND_BONE_SHARDS, 	BLESSED_BONE_SHARDS, 			new Ingredient[]{ new Ingredient(BLESSED_BONES)}, 												CHISEL),
 			new Product(GRIND_BONE_SHARDS, 	BLESSED_BONE_SHARDS, 			new Ingredient[]{ new Ingredient(BLESSED_BAT_BONES)}, 											CHISEL),
 			new Product(GRIND_BONE_SHARDS, 	BLESSED_BONE_SHARDS, 			new Ingredient[]{ new Ingredient(BLESSED_BIG_BONES)}, 											CHISEL),
@@ -69,6 +72,37 @@ public class UseItemOnItemDetector extends ActionDetector
 			new Product(GRIND_BONE_SHARDS, 	BLESSED_BONE_SHARDS, 			new Ingredient[]{ new Ingredient(BLESSED_BONE_STATUETTE)}, 										CHISEL),
 			new Product(GRIND_BONE_SHARDS, 	BLESSED_BONE_SHARDS, 			new Ingredient[]{ new Ingredient(BLESSED_BONE_STATUETTE_29340)}, 								CHISEL), //Might not be required. Not sure what the difference is
 			new Product(GRIND_BONE_SHARDS, 	BLESSED_BONE_SHARDS, 			new Ingredient[]{ new Ingredient(BLESSED_BONE_STATUETTE_29342)}, 								CHISEL), //Might not be required. Not sure what the difference is
+			new Product(COOKING_GUTTING_AERIAL, 	FISH_OFFCUTS,		 	new Ingredient[]{ new Ingredient(BLUEGILL)}, 			 										KNIFE),
+			new Product(COOKING_GUTTING_AERIAL, 	FISH_OFFCUTS,		 	new Ingredient[]{ new Ingredient(COMMON_TENCH)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING_AERIAL, 	FISH_OFFCUTS,		 	new Ingredient[]{ new Ingredient(MOTTLED_EEL)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING_AERIAL, 	FISH_OFFCUTS,		 	new Ingredient[]{ new Ingredient(GREATER_SIREN)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_SHRIMPS)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_ANCHOVIES)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_TROUT)}, 			 										KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_SALMON)}, 			 										KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_LOBSTER)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_COD)}, 			 										KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_PIKE)}, 			 										KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_MACKEREL)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_BASS)}, 			 										KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_HERRING)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_MONKFISH)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_SARDINE)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_SWORDFISH)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_TUNA)}, 			 										KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_GIANT_KRILL)}, 			 								KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_HADDOCK)}, 			 									KNIFE),
+			new Product(COOKING_GUTTING, 	FISH_OFFCUTS,		 			new Ingredient[]{ new Ingredient(RAW_SWORDTIP_SQUID)}, 											KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_SHARK)}, 													KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_SEA_TURTLE)}, 												KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_ANGLERFISH)}, 												KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_DARK_CRAB)}, 												KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_MANTA_RAY)}, 												KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_YELLOWFIN)}, 												KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_HALIBUT)}, 												KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_BLUEFIN)}, 												KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_JUMBO_SQUID)}, 											KNIFE),
+			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_MARLIN)}, 													KNIFE),
 			new Product(GRIND_DARK_ESSENCE, DARK_ESSENCE_FRAGMENTS, 		new Ingredient[]{ new Ingredient(DARK_ESSENCE_BLOCK)},				 							CHISEL),
 			new Product(SUNFIRE_WINE, 		JUG_OF_SUNFIRE_WINE,			new Ingredient[]{ new Ingredient(JUG_OF_WINE), new Ingredient(SUNFIRE_SPLINTERS, 2)}, 	PESTLE_AND_MORTAR)
 	};
