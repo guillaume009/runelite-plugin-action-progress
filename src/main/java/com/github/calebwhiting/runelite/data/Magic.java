@@ -604,6 +604,15 @@ public interface Magic
 				new RuneRequirement(Rune.EARTH, 15),
 				new RuneRequirement(Rune.ASTRAL, 2),
 				new RuneRequirement(Rune.NATURE, 1)
+		),
+		BAKE_PIE(
+				"Bake Pie",
+				1,
+				65,
+				new RuneRequirement(Rune.FIRE, 4),
+				new RuneRequirement(Rune.ASTRAL, 1),
+				new RuneRequirement(Rune.WATER, 4)
+
 		);
 
 		private static final int LUNAR_SPELLBOOK_GROUP_ID = 218;
@@ -635,6 +644,37 @@ public interface Magic
 		public int getChildId()
 		{
 			return LUNAR_SPELLBOOK_FIRST_SPELL_INDEX + this.getIndex();
+		}
+	}
+
+	@Getter
+	enum BakePieSpell
+	{
+		BAKE_PIE_REDBERRY(LunarSpell.BAKE_PIE,ItemID.UNCOOKED_BERRY_PIE, 10),
+		BAKE_PIE_MEAT(LunarSpell.BAKE_PIE, ItemID.UNCOOKED_MEAT_PIE, 20),
+		BAKE_PIE_MUD(LunarSpell.BAKE_PIE, ItemID.RAW_MUD_PIE, 29),
+		BAKE_PIE_APPLE(LunarSpell.BAKE_PIE, ItemID.UNCOOKED_APPLE_PIE, 30),
+		BAKE_PIE_GARDEN(LunarSpell.BAKE_PIE, ItemID.RAW_GARDEN_PIE, 34),
+		BAKE_PIE_FISH(LunarSpell.BAKE_PIE, ItemID.RAW_FISH_PIE, 47),
+		BAKE_PIE_BOTANICAL(LunarSpell.BAKE_PIE, ItemID.UNCOOKED_BOTANICAL_PIE, 52),
+		BAKE_PIE_MUSHROOM(LunarSpell.BAKE_PIE, ItemID.UNCOOKED_MUSHROOM_PIE, 60),
+		BAKE_PIE_ADMIRAL(LunarSpell.BAKE_PIE, ItemID.RAW_ADMIRAL_PIE, 70),
+		BAKE_PIE_DRAGONFRUIT(LunarSpell.BAKE_PIE, ItemID.UNCOOKED_DRAGONFRUIT_PIE, 73),
+		BAKE_PIE_WILD(LunarSpell.BAKE_PIE, ItemID.RAW_WILD_PIE, 85),
+		BAKE_PIE_SUMMER(LunarSpell.BAKE_PIE, ItemID.RAW_SUMMER_PIE, 95);
+
+		private final Spell spell;
+
+		private final int pieId;
+
+		private final int level;
+
+
+		BakePieSpell(Spell spell, int pieId, int level)
+		{
+			this.spell = spell;
+			this.pieId = pieId;
+			this.level = level;
 		}
 	}
 
