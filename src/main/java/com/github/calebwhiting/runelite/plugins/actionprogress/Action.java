@@ -14,6 +14,8 @@ public enum Action
 	COOKING_MIX_DOUGH("Combining", ActionProgressConfig::cookingMixPastry, ActionIcon.SPRITE_COOKING, 1, 2),
 	COOKING_MIX_GRAPES("Combining", ActionProgressConfig::cookingMixWines, ActionIcon.SPRITE_COOKING, 3, 2),
 	COOKING_TOP_PIZZA("Combining", ActionProgressConfig::cookingTopPizza, ActionIcon.SPRITE_COOKING, 2),
+	COOKING_GUTTING("Gutting",ActionProgressConfig::cookingGutting,ActionIcon.SPRITE_COOKING,3),
+	COOKING_GUTTING_AERIAL("Gutting",ActionProgressConfig::cookingGutting,ActionIcon.SPRITE_COOKING,2),
 	COOKING_MIXING_PIE("Combining", ActionProgressConfig::cookingCombinePies, ActionIcon.SPRITE_COOKING, 2),
 	CRAFT_BATTLESTAVES("Combining", ActionProgressConfig::craftBattlestaves, ActionIcon.SPRITE_CRAFTING, 3, 2),
 	CRAFT_BLOW_GLASS("Glassblowing", ActionProgressConfig::craftGlassblowing, ActionIcon.SPRITE_CRAFTING, 3),
@@ -83,7 +85,8 @@ public enum Action
 	CHURNING_CHEESE_WITH_CREAM("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,19),
 	CHURNING_CHEESE_WITH_BUTTER("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
 	CHURNING_CHEESE_WITH_GARLIC("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
-	WETTING_CLAY("Wetting", ActionProgressConfig::craftWettingClay, ActionIcon.SPRITE_CRAFTING,2);
+	WETTING_CLAY("Wetting", ActionProgressConfig::craftWettingClay, ActionIcon.SPRITE_CRAFTING,2),
+	SAILING_SALVAGE("Salvaging", ActionProgressConfig::sailSalvage,ActionIcon.SPRITE_SALVAGE, 3);
 	//FILLING("Filling", ActionProgressConfig::filling, ActionIcon.SPRITE_TOTAL, 1);
 
 	private final String description;

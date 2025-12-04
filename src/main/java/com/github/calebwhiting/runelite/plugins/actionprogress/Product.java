@@ -41,6 +41,12 @@ public class Product extends Recipe
 										   .mapToInt(Ingredient::getItemId)
 										   .anyMatch(i -> i == id));
 	}
+	public boolean isToolUsed(Item... items)
+	{
+		return Stream.of(items)
+					 .mapToInt(Item::getId)
+					 .allMatch(id -> id == this.getTool().getItemId());
+	}
 	public boolean IngredientsIsIncludedIn(String ingredientString, Client client){
 		return Stream.of(getRequirements())
 					 .anyMatch(ing -> ingredientString.toLowerCase().contains(
