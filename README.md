@@ -66,6 +66,8 @@ Displays an indicator showing how much progress you've made on your current acti
     
 
 ## Changes
+- `1.22`
+  - Add support for new sailing items/actions - Thanks @aclogar
 - `1.21`
   - Fix bow stringing detection that was broken in 1.19
   - Fix Plank Make detection
