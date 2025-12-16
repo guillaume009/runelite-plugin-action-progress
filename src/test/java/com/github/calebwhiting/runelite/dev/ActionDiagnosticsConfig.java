@@ -78,7 +78,7 @@ public interface ActionDiagnosticsConfig extends Config
 	)
 	default Skill experienceTriggerSkill()
 	{
-		return Skill.OVERALL;
+		return Skill.AGILITY;
 	}
 
 	@ConfigItem(

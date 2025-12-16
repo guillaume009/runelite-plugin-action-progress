@@ -60,17 +60,6 @@ public class ActionDiagnosticsPlugin extends Plugin
 		this.clientScriptsQuery = new IDQuery(ClientScriptID.class);
 		this.pClientVars = this.client.getVarps().clone();
 		this.inventoryMap = new HashMap<>();
-		for (InventoryID iid : InventoryID.values()) {
-			ItemContainer container = this.client.getItemContainer(iid);
-			if (container == null) {
-				continue;
-			}
-			Item[] curr = new Item[container.size()];
-			for (int i = 0; i < container.size(); i++) {
-				curr[i] = container.getItem(i);
-			}
-			this.inventoryMap.put(iid.getId(), curr);
-		}
 	}
 
 	@Override
