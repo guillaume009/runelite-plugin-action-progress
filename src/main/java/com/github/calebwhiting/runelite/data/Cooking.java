@@ -99,5 +99,16 @@ public interface Cooking
 			this(new IDs(raw), new IDs(cooked));
 		}
 	}
-
+	@Getter
+	@RequiredArgsConstructor
+	enum CamdozaalFish
+	{
+		GUPPY(ItemID.GUPPY),
+		TETRA(ItemID.TETRA),
+		CAVEFISH(ItemID.CAVEFISH),
+		RAW_GUPPY(ItemID.RAW_GUPPY),
+		RAW_TETRA(ItemID.RAW_TETRA),
+		RAW_CAVEFISH(ItemID.RAW_CAVEFISH);
+		private final int itemId;
+	}
 }

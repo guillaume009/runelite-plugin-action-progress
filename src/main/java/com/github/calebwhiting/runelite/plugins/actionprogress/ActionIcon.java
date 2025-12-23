@@ -14,6 +14,7 @@ public interface ActionIcon
 	IconSource SPRITE_FISHING = new SpriteIconSource(SpriteID.SKILL_FISHING, 0);
 	IconSource SPRITE_WOODCUTTING = new SpriteIconSource(SpriteID.SKILL_WOODCUTTING, 0);
 	IconSource SPRITE_COOKING = new SpriteIconSource(SpriteID.SKILL_COOKING, 0);
+	IconSource SPRITE_PRAYER = new SpriteIconSource(SpriteID.SKILL_PRAYER, 0);
 	IconSource SPRITE_FLETCHING = new SpriteIconSource(SpriteID.SKILL_FLETCHING, 0);
 	IconSource SPRITE_FIREMAKING = new SpriteIconSource(SpriteID.SKILL_FIREMAKING, 0);
 	IconSource SPRITE_SMITHING = new SpriteIconSource(SpriteID.SKILL_SMITHING, 0);

@@ -737,6 +737,16 @@ public interface ActionProgressConfig extends Config
 		return true;
 	}
 
+	@ConfigItem(
+			name = "Preparing Camdozaal",
+			keyName = "misc.camdozaal",
+			description = "Enable/Disable monitoring preparing and offering Camdozaal fish.",
+			section = MISCELLANEOUS
+	)
+	default boolean miscCamdozaalPrepertion()
+	{
+		return true;
+	}
 
 	@ConfigItem(
 			name = "Sorting salvage",

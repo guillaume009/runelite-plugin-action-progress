@@ -17,6 +17,8 @@ public enum Action
 	COOKING_GUTTING("Gutting",ActionProgressConfig::cookingGutting,ActionIcon.SPRITE_COOKING,3),
 	COOKING_GUTTING_AERIAL("Gutting",ActionProgressConfig::cookingGutting,ActionIcon.SPRITE_COOKING,2),
 	COOKING_MIXING_PIE("Combining", ActionProgressConfig::cookingCombinePies, ActionIcon.SPRITE_COOKING, 2),
+	COOKING_PREPARING_CAMDOZAAL("Preparing", ActionProgressConfig::miscCamdozaalPrepertion, ActionIcon.SPRITE_COOKING, 2, 4),
+	PRAYER_OFFERING_CAMDOZAAL("Offering", ActionProgressConfig::miscCamdozaalPrepertion, ActionIcon.SPRITE_PRAYER, 2,3),
 	CRAFT_BATTLESTAVES("Combining", ActionProgressConfig::craftBattlestaves, ActionIcon.SPRITE_CRAFTING, 3, 2),
 	CRAFT_BLOW_GLASS("Glassblowing", ActionProgressConfig::craftGlassblowing, ActionIcon.SPRITE_CRAFTING, 3),
 	CRAFT_CAST_GOLD_AND_SILVER("Casting", ActionProgressConfig::craftCastGoldAndSilver, ActionIcon.SPRITE_CRAFTING, 3),

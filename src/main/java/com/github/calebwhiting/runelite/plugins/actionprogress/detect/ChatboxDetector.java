@@ -374,6 +374,12 @@ public class ChatboxDetector extends ActionDetector
 		 * Magic
 		 */
 		//this.registerAction(MAGIC_ENCHANT_BOLTS, Fletching.ENCHANTED_BOLTS);
+		/*
+		 * Camdozzal fish
+		 */
+		this.registerAction(COOKING_PREPARING_CAMDOZAAL, RAW_GUPPY, RAW_TETRA, RAW_CAVEFISH);
+		this.registerAction(PRAYER_OFFERING_CAMDOZAAL, GUPPY, TETRA, CAVEFISH);
+
 	}
 
 	private void onQuestionAnswered()
@@ -481,6 +487,13 @@ public class ChatboxDetector extends ActionDetector
 		for (Cooking.Cookable entry : Cooking.Cookable.values()) {
 			IDs raw = entry.getRaw(), cooked = entry.getCooked();
 			if (cooked.contains(productId)) {
+				int rawFish = this.inventoryManager.getItemCount(raw::contains);
+				return Math.min(n, rawFish);
+			}
+		}
+		for (Cooking.CamdozaalFish fish : Cooking.CamdozaalFish.values()) {
+			IDs raw = new IDs(fish.getItemId());
+			if (productId == fish.getItemId()) {
 				int rawFish = this.inventoryManager.getItemCount(raw::contains);
 				return Math.min(n, rawFish);
 			}
