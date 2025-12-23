@@ -50,9 +50,15 @@ Displays an indicator showing how much progress you've made on your current acti
     - Forester's ration 
 - Farming
    - Creating ultracompost 
+- Fishing
+  - Camdozaal
+- Sailing
+  - Sorting
 - Tempoross
     - Cooking
     - Firing
+- Firemaking
+  - Campfire tending
 - GotR
     - Essence crafting
     - Reward searching
@@ -62,10 +68,10 @@ Displays an indicator showing how much progress you've made on your current acti
       - Blessed bone shards
       - Jug of sunfire Wine
       - Dark essence fragment
-    - Campfire tending
-    
 
 ## Changes
+- `1.23`
+	- Add support for Camdozaal fishing - Thanks @aclogar
 - `1.22`
   - Add support for new sailing items/actions - Thanks @aclogar
 - `1.21`

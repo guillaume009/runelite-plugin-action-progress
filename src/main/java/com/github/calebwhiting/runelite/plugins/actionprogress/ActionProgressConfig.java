@@ -11,70 +11,81 @@ public interface ActionProgressConfig extends Config
 	@ConfigSection(
 			name = "Cooking actions",
 			description = "Enable/Disable cooking specific actions.",
-			position = 7
+			position = 7,
+			closedByDefault = true
 	) String COOKING = "Cooking actions";
-	@ConfigSection(
-			name = "Smithing actions",
-			description = "Enable/Disable smithing specific actions.",
-			position = 8
-	) String SMITHING = "Smithing actions";
 	@ConfigSection(
 			name = "Crafting actions",
 			description = "Enable/Disable crafting specific actions.",
-			position = 9
+			position = 8,
+			closedByDefault = true
 	) String CRAFTING = "Crafting actions";
+	@ConfigSection(
+			name = "Farming actions",
+			description = "Enable/Disable Farming actions.",
+			position = 9,
+			closedByDefault = true
+	) String FARMING = "Farming actions";
 	@ConfigSection(
 			name = "Fletching actions",
 			description = "Enable/Disable fletching specific actions.",
-			position = 10
+			position = 10,
+			closedByDefault = true
 	) String FLETCHING = "Fletching actions";
+	@ConfigSection(
+			name = "Guardian of the Rift actions",
+			description = "Enable/Disable guardian of the rift specific actions.",
+			position = 11,
+			closedByDefault = true
+	) String GUARDIAN_OF_THE_RIFT = "Guardian of the Rift actions";
 	@ConfigSection(
 			name = "Herblore actions",
 			description = "Enable/Disable herblore specific actions.",
-			position = 11
+			position = 12,
+			closedByDefault = true
 	) String HERBLORE = "Herblore actions";
 	@ConfigSection(
 			name = "Magic actions",
 			description = "Enable/Disable magic specific actions.",
-			position = 12
+			position = 13,
+			closedByDefault = true
 	) String MAGIC = "Magic actions";
-
-	@ConfigSection(
-			name = "Woodcutting actions",
-			description = "Enable/Disable woodcutting specific actions.",
-			position = 13
-	) String WOODCUTTING = "Woodcutting actions";
-	@ConfigSection(
-			name = "Farming actions",
-			description = "Enable/Disable Farming actions.",
-			position = 14
-	) String FARMING = "Farming actions";
 	@ConfigSection(
 			name = "Sailing actions",
 			description = "Enable/Disable sailing actions.",
-			position = 16
+			position = 14,
+			closedByDefault = true
 	) String SAILING = "Sailing actions";
+	@ConfigSection(
+			name = "Smithing actions",
+			description = "Enable/Disable smithing specific actions.",
+			position = 15,
+			closedByDefault = true
+	) String SMITHING = "Smithing actions";
 	@ConfigSection(
 			name = "Tempoross actions",
 			description = "Enable/Disable tempoross specific actions.",
-			position = 15
+			position = 16,
+			closedByDefault = true
 	) String TEMPOROSS = "Tempoross actions";
 	@ConfigSection(
+			name = "Woodcutting actions",
+			description = "Enable/Disable woodcutting specific actions.",
+			position = 17,
+			closedByDefault = true
+	) String WOODCUTTING = "Woodcutting actions";
+	@ConfigSection(
+			name = "Miscellaneous actions",
+			description = "Enable/Disable miscellaneous actions.",
+			position = 100,
+			closedByDefault = true
+	) String MISCELLANEOUS = "Miscellaneous actions";
+	/*@ConfigSection(
 			name = "Wintertodt actions (not yet supported)",
 			description = "Enable/Disable wintertodt specific actions.",
 			position = 17,
 			closedByDefault = true
-	) String WINTERTODT = "Wintertodt actions";
-	@ConfigSection(
-			name = "Guardian of the Rift actions",
-			description = "Enable/Disable guardian of the rift specific actions.",
-			position = 18
-	) String GUARDIAN_OF_THE_RIFT = "Guardian of the Rift actions";
-	@ConfigSection(
-			name = "Miscellaneous actions",
-			description = "Enable/Disable miscellaneous actions.",
-			position = 19
-	) String MISCELLANEOUS = "Miscellaneous actions";
+	) String WINTERTODT = "Wintertodt actions";*/
 
 	@ConfigItem(
 			name = "Show ticks instead of seconds",
@@ -649,7 +660,7 @@ public interface ActionProgressConfig extends Config
 		return true;
 	}
 
-	@ConfigItem(
+	/*@ConfigItem(
 			name = "Woodcutting",
 			keyName = "wintertodt.woodcutting",
 			description = "Enable/Disable monitoring wintertodt woodcutting.",
@@ -680,7 +691,7 @@ public interface ActionProgressConfig extends Config
 	default boolean wintertodtFletching()
 	{
 		return true;
-	}
+	}*/
 
 	@ConfigItem(
 			name = "Crafting guardian essences",

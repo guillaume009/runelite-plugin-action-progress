@@ -72,9 +72,9 @@ public enum Action
 	TEMPOROSS_COOKING("Cooking", ActionProgressConfig::temporossCooking, ActionIcon.SPRITE_COOKING, 4, 3),
 	TEMPOROSS_FILL_CRATE("Filling", ActionProgressConfig::temporossFiring, ActionIcon.SPRITE_FISHING, 2),
 	TEMPOROSS_REWARD_POOL("Fishing", ActionProgressConfig::temporossRewardPool, ActionIcon.SPRITE_FISHING, 1, 3),
-	WINTERTODT_WOODCUTTING("Chopping", ActionProgressConfig::wintertodtWoodcutting, ActionIcon.SPRITE_WOODCUTTING, 2, 3),
+	/*WINTERTODT_WOODCUTTING("Chopping", ActionProgressConfig::wintertodtWoodcutting, ActionIcon.SPRITE_WOODCUTTING, 2, 3),
 	WINTERTODT_FIREMAKING("Lighting", ActionProgressConfig::wintertodtLighting, ActionIcon.SPRITE_FIREMAKING, 4, 3),
-	WINTERTODT_FLETCHING("Cutting", ActionProgressConfig::wintertodtFletching, ActionIcon.SPRITE_FLETCHING, 4, 4),
+	WINTERTODT_FLETCHING("Cutting", ActionProgressConfig::wintertodtFletching, ActionIcon.SPRITE_FLETCHING, 4, 4),*/
 	FARM_ULTRA_COMPOST("Mixing",ActionProgressConfig::farmUltraCompost, ActionIcon.SPRITE_FARMING,2),
 	FIREMAKING_CAMPFIRE("Tending",ActionProgressConfig::campfire, ActionIcon.SPRITE_FIREMAKING,5,9),
 	GUARDIAN_OF_THE_RIFT_CRAFTING("Crafting", ActionProgressConfig::guardianOfTheRiftCrafting, ActionIcon.SPRITE_CRAFTING, 1),

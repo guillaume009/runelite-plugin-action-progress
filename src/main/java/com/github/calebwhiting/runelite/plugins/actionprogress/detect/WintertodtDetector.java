@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 /**
  * Not ready for release
  */
-@Singleton
+/*@Singleton
 public class WintertodtDetector extends ActionDetector
 {
 
@@ -127,4 +127,4 @@ public class WintertodtDetector extends ActionDetector
 		}
 	}
 
-}
+}*/

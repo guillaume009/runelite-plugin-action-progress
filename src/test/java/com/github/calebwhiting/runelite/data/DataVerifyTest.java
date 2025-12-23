@@ -1,6 +1,6 @@
 package com.github.calebwhiting.runelite.data;
 
-import com.github.calebwhiting.runelite.plugins.actionprogress.detect.WintertodtDetector;
+//import com.github.calebwhiting.runelite.plugins.actionprogress.detect.WintertodtDetector;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -89,8 +89,7 @@ public class DataVerifyTest
 					   // Misc
 					   .query("CONDUCTOR|DEMONIC_SIGIL|SILVTHRILL_ROD")
 		);
-		this.verify(WintertodtDetector.class, "WOODCUTTING_ANIMATIONS", IDQuery.ofAnimations().query("WOODCUTTING_" +
-																									 ".*"));
+		//this.verify(WintertodtDetector.class, "WOODCUTTING_ANIMATIONS", IDQuery.ofAnimations().query("WOODCUTTING_" + ".*"));
 	}
 
 	public void verify(Class<?> c, String constantName, IDQuery query)
