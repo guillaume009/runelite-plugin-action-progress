@@ -23,6 +23,7 @@ public class UseItemOnItemDetector extends ActionDetector
 	private static final Ingredient PESTLE_AND_MORTAR = new Ingredient(ItemID.PESTLE_AND_MORTAR, 1, false);
 	private static final Ingredient CHISEL = new Ingredient(ItemID.CHISEL, 1, false);
 	private static final Ingredient KNIFE = new Ingredient(ItemID.KNIFE, 1, false);
+	private static final Ingredient FILLED_PLANT_POT = new Ingredient(ItemID.FILLED_PLANT_POT);
 	private static final String BREAK_DOWN = "Break-down";
 
 	private static final Product[] PRODUCTS = {
@@ -104,7 +105,31 @@ public class UseItemOnItemDetector extends ActionDetector
 			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_JUMBO_SQUID)}, 											KNIFE),
 			new Product(COOKING_GUTTING, 	FINE_FISH_OFFCUTS,	 			new Ingredient[]{ new Ingredient(RAW_MARLIN)}, 													KNIFE),
 			new Product(GRIND_DARK_ESSENCE, DARK_ESSENCE_FRAGMENTS, 		new Ingredient[]{ new Ingredient(DARK_ESSENCE_BLOCK)},				 							CHISEL),
-			new Product(SUNFIRE_WINE, 		JUG_OF_SUNFIRE_WINE,			new Ingredient[]{ new Ingredient(JUG_OF_WINE), new Ingredient(SUNFIRE_SPLINTERS, 2)}, 	PESTLE_AND_MORTAR)
+			new Product(SUNFIRE_WINE, 		JUG_OF_SUNFIRE_WINE,			new Ingredient[]{ new Ingredient(JUG_OF_WINE), new Ingredient(SUNFIRE_SPLINTERS, 2)}, 	PESTLE_AND_MORTAR),
+
+			new Product(FARM_PLANT_TREE_SEEDS, OAK_SEEDLING,		        new Ingredient(ACORN), FILLED_PLANT_POT),
+			new Product(FARM_PLANT_TREE_SEEDS, WILLOW_SEEDLING,		        new Ingredient(WILLOW_SEED), FILLED_PLANT_POT),
+			new Product(FARM_PLANT_TREE_SEEDS, MAPLE_SEEDLING,		        new Ingredient(MAPLE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, YEW_SEEDLING,		        new Ingredient(YEW_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, MAGIC_SEEDLING,		        new Ingredient(MAGIC_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, APPLE_SEEDLING,		        new Ingredient(APPLE_TREE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, BANANA_SEEDLING,		        new Ingredient(BANANA_TREE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, ORANGE_SEEDLING,		        new Ingredient(ORANGE_TREE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, CURRY_SEEDLING,		        new Ingredient(CURRY_TREE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, PINEAPPLE_SEEDLING,	        new Ingredient(PINEAPPLE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, PAPAYA_SEEDLING,		        new Ingredient(PAPAYA_TREE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, PALM_SEEDLING,		        new Ingredient(PALM_TREE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, DRAGONFRUIT_SEEDLING,      	new Ingredient(DRAGONFRUIT_TREE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, TEAK_SEEDLING,		        new Ingredient(TEAK_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, MAHOGANY_SEEDLING,	        new Ingredient(MAHOGANY_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, CAMPHOR_SEEDLING,	        new Ingredient(CAMPHOR_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, CALQUAT_SEEDLING,	        new Ingredient(CALQUAT_TREE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, CRYSTAL_SEEDLING,	        new Ingredient(CRYSTAL_ACORN), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, IRONWOOD_SEEDLING,	        new Ingredient(IRONWOOD_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, SPIRIT_SEEDLING,		        new Ingredient(SPIRIT_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, CELASTRUS_SEEDLING,	        new Ingredient(CELASTRUS_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, REDWOOD_SEEDLING,	        new Ingredient(REDWOOD_TREE_SEED), FILLED_PLANT_POT ),
+			new Product(FARM_PLANT_TREE_SEEDS, ROSEWOOD_SEEDLING,	        new Ingredient(ROSEWOOD_SEED), FILLED_PLANT_POT )
 	};
 
 	@Inject private InventoryManager inventoryManager;
@@ -148,13 +173,15 @@ public class UseItemOnItemDetector extends ActionDetector
 		//Gets the selected item to fix order of operation issues
 		Item selectedItem = new Item(widget.getItemId(),1);
 		for (Product product : PRODUCTS) {
-			if (product.isMadeWith(items) && product.isToolUsed(selectedItem)) {
+			boolean selectedIsTool = product.getTool() == null || product.isToolUsed(selectedItem);
+			if (product.isMadeWith(items) && selectedIsTool) {
 				int amount = product.getMakeProductCount(this.inventoryManager);
 				if (amount > 0) {
 					this.actionManager.setAction(product.getAction(), amount, product.getProductId());
 				}
 			}
-			if(product.isMadeWith(selectedItem) && product.isToolUsed(items)){
+			boolean itemsIncludeTool = product.getTool() == null || product.isToolUsed(items);
+			if(product.isMadeWith(selectedItem) && itemsIncludeTool){
 				int amount = product.getMakeProductCount(this.inventoryManager);
 				if (amount > 0) {
 					this.actionManager.setAction(product.getAction(), amount, product.getProductId());

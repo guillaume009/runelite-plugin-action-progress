@@ -628,6 +628,17 @@ public interface ActionProgressConfig extends Config
 	}
 
 	@ConfigItem(
+			name = "Planting tree seeds",
+			keyName = "farming.tree_seeds",
+			description = "Enable/Disable monitoring for planting tree seeds.",
+			section = FARMING
+	)
+	default boolean plantTreeSeed()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 			name = "Cooking",
 			keyName = "tempoross.cooking",
 			description = "Enable/Disable monitoring tempoross cooking.",
