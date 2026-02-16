@@ -76,6 +76,7 @@ public enum Action
 	WINTERTODT_FIREMAKING("Lighting", ActionProgressConfig::wintertodtLighting, ActionIcon.SPRITE_FIREMAKING, 4, 3),
 	WINTERTODT_FLETCHING("Cutting", ActionProgressConfig::wintertodtFletching, ActionIcon.SPRITE_FLETCHING, 4, 4),*/
 	FARM_ULTRA_COMPOST("Mixing",ActionProgressConfig::farmUltraCompost, ActionIcon.SPRITE_FARMING,2),
+	FARM_PLANT_TREE_SEEDS("Planting", ActionProgressConfig::plantTreeSeed, ActionIcon.SPRITE_FARMING, 0, 3),
 	FIREMAKING_CAMPFIRE("Tending",ActionProgressConfig::campfire, ActionIcon.SPRITE_FIREMAKING,5,9),
 	GUARDIAN_OF_THE_RIFT_CRAFTING("Crafting", ActionProgressConfig::guardianOfTheRiftCrafting, ActionIcon.SPRITE_CRAFTING, 1),
 	//Timing might be off. Not on the wiki. Will need to confirm when having more rewards points
