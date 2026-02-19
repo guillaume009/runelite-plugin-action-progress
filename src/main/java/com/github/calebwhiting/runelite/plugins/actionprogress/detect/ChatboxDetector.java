@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.ItemID;
 import net.runelite.api.ScriptEvent;
+import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ScriptPostFired;
 import net.runelite.api.events.ScriptPreFired;
 import net.runelite.api.events.VarbitChanged;
@@ -36,6 +37,10 @@ public class ChatboxDetector extends ActionDetector
 	 */
 	private static final int VAR_MAKE_AMOUNT = 200;
 
+	private static final int VAR_GRIMSTONE_X_COORD = 2927;
+	private static final int VAR_GRIMSTONE_Y_COORD = 10462;
+	private static final int VAR_GRIMSTONE_Z_COORD = 0;
+
 	/**
 	 * Indicates the selected product in the crafting dialogue.
 	 */
@@ -54,6 +59,23 @@ public class ChatboxDetector extends ActionDetector
 	private static final int MAKE_X_BUTTON_CLICK = 2050;
 	private static final int MAKE_X_BUTTON_KEY = 2051;
 	private static final int MAKE_X_BUTTON_TRIGGERED = 2052;
+
+	private static final Product[] GRIMSTONE_CANNONBALL_PRODUCTS = {
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, BRONZE_CANNONBALL, new Ingredient[]{new Ingredient(BRONZE_BAR)}, new Ingredient(AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, BRONZE_CANNONBALL, new Ingredient[]{new Ingredient(BRONZE_BAR)}, new Ingredient(DOUBLE_AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, IRON_CANNONBALL, new Ingredient[]{new Ingredient(IRON_BAR)}, new Ingredient(AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, IRON_CANNONBALL, new Ingredient[]{new Ingredient(IRON_BAR)}, new Ingredient(DOUBLE_AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, STEEL_CANNONBALL, new Ingredient[]{new Ingredient(STEEL_BAR)}, new Ingredient(AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, STEEL_CANNONBALL, new Ingredient[]{new Ingredient(STEEL_BAR)}, new Ingredient(DOUBLE_AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, MITHRIL_CANNONBALL, new Ingredient[]{new Ingredient(MITHRIL_BAR)}, new Ingredient(AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, MITHRIL_CANNONBALL, new Ingredient[]{new Ingredient(MITHRIL_BAR)}, new Ingredient(DOUBLE_AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, ADAMANT_CANNONBALL, new Ingredient[]{new Ingredient(ADAMANTITE_BAR)}, new Ingredient(AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, ADAMANT_CANNONBALL, new Ingredient[]{new Ingredient(ADAMANTITE_BAR)}, new Ingredient(DOUBLE_AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, RUNE_CANNONBALL, new Ingredient[]{new Ingredient(RUNITE_BAR)}, new Ingredient(AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, RUNE_CANNONBALL, new Ingredient[]{new Ingredient(RUNITE_BAR)}, new Ingredient(DOUBLE_AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, DRAGON_CANNONBALL, new Ingredient[]{new Ingredient(DRAGON_METAL_SHEET)}, new Ingredient(AMMO_MOULD)),
+			new Product(SMELTING_CANNONBALLS_GRIMSTONE, DRAGON_CANNONBALL, new Ingredient[]{new Ingredient(DRAGON_METAL_SHEET)}, new Ingredient(DOUBLE_AMMO_MOULD)),
+	};
 
 	private static final Product[] MULTI_MATERIAL_PRODUCTS = {
 			// @formatter:off
@@ -440,22 +462,43 @@ public class ChatboxDetector extends ActionDetector
 			case "How many do you wish to make?": // Various
 			case "How many sets of 15 do you wish to complete?": // Arrows
 			case "How many sets of 15 do you wish to feather?": // Headless arrows
+			case "How many sets would you like to smith?": // Cannonballs as of 2026/02/19
+				// Grimstone furnace must be handled using GRIMSTONE_CANNONBALL_PRODUCTS as it is faster
+				WorldPoint grimstoneFurnaceLocation = new WorldPoint(VAR_GRIMSTONE_X_COORD, VAR_GRIMSTONE_Y_COORD, VAR_GRIMSTONE_Z_COORD);
+
+				// Player location to see how close we are to the Grimstone furnace
+				if(this.client.getLocalPlayer().getWorldLocation().distanceTo(grimstoneFurnaceLocation) < 20){
+					Product recipe = Recipe.forProduct((GRIMSTONE_CANNONBALL_PRODUCTS), currentProductId, this.inventoryManager);
+					ProcessRecipe(currentProductId, amount, recipe);
+				}
+				// if we're not close to the furnace, default to our recipes for regular furnaces
+				else{
+					Product recipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, currentProductId, this.inventoryManager);
+					ProcessRecipe(currentProductId, amount, recipe);
+				}
+				break;
 			case "?":
 			default:
 				Product recipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, currentProductId, this.inventoryManager);
-				if (recipe != null) {
-					amount = Math.min(amount, recipe.getMakeProductCount(this.inventoryManager));
-					if (amount > 0) {
-						this.actionManager.setAction(
-								recipe.getAction(),
-								amount,
-								recipe.getIsSelectingIngredientAsProduct() ? recipe.getProductId() : currentProductId
-						);
-					}
-				} else {
-					this.setActionByItemId(currentProductId, amount);
-				}
+				ProcessRecipe(currentProductId, amount, recipe);
 				break;
+		}
+	}
+
+	private void ProcessRecipe(int currentProductId, int amount, Product recipe)
+	{
+		if (recipe != null) {
+			amount = Math.min(amount, recipe.getMakeProductCount(this.inventoryManager));
+			if (amount > 0) {
+				this.actionManager.setAction(
+						recipe.getAction(),
+						amount,
+						recipe.getIsSelectingIngredientAsProduct() ? recipe.getProductId() : currentProductId
+				);
+			}
+		}
+		else {
+			this.setActionByItemId(currentProductId, amount);
 		}
 	}
 
