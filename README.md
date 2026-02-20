@@ -70,6 +70,8 @@ Displays an indicator showing how much progress you've made on your current acti
       - Dark essence fragment
 
 ## Changes
+- `1.24`
+	- Add support for Grimstone Furnace - Thanks @BreakfastFood
 - `1.23`
 	- Add support for Camdozaal fishing - Thanks @aclogar
 - `1.22`
