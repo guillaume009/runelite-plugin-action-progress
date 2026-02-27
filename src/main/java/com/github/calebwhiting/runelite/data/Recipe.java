@@ -49,12 +49,12 @@ public class Recipe
 		for (T v : all) {
 			if (v.getIsSelectingIngredientAsProduct()) {
 				for (Ingredient ingredient : v.getRequirements()){
-					if(ingredient.getItemId() == productId && (v.getTool() == null || inventoryManager.getItems().anyMatch(item -> item.getId() == v.getTool().getItemId()))){
+					if(ingredient.getItemId() == productId && v.getMakeProductCount(inventoryManager) > 0 && (v.getTool() == null  || inventoryManager.getItems().anyMatch(item -> item.getId() == v.getTool().getItemId()))){
 						return v;
 					}
 				}
 			}
-			else if (v.getProductId() == productId && (v.getTool() == null || inventoryManager.getItems().anyMatch(item -> item.getId() == v.getTool().getItemId()))) {
+			else if (v.getProductId() == productId && v.getMakeProductCount(inventoryManager) > 0 && (v.getTool() == null || inventoryManager.getItems().anyMatch(item -> item.getId() == v.getTool().getItemId()))) {
 				return v;
 			}
 		}
