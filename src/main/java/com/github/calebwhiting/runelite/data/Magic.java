@@ -768,7 +768,7 @@ public interface Magic
 		COSMIC("Cosmic", RuneIDs.COSMIC.build()),
 		CHAOS("Chaos", RuneIDs.CHAOS.build()),
 		ASTRAL("Astral", RuneIDs.ASTRAL.build()),
-		NATURE("Nature", RuneIDs.NATURE.build()),
+		NATURE("Nature", RuneIDs.NATURE.build(), new IDs(StaveIDs.NATURE).build()),
 		LAW("Law", RuneIDs.LAW.build()),
 		DEATH("Death", RuneIDs.DEATH.build()),
 		BLOOD("Blood", RuneIDs.BLOOD.build()),
@@ -931,7 +931,9 @@ public interface Magic
 
 	interface StaveIDs
 	{
-
+		IDs NATURE = new IDs(
+				net.runelite.api.gameval.ItemID.NATURE_STAFF_CHARGED
+		);
 		IDs SMOKE = new IDs(
 				ItemID.SMOKE_BATTLESTAFF,
 				ItemID.MYSTIC_SMOKE_STAFF
