@@ -82,10 +82,13 @@ public enum Action
 	GUARDIAN_OF_THE_RIFT_CRAFTING("Crafting", ActionProgressConfig::guardianOfTheRiftCrafting, ActionIcon.SPRITE_CRAFTING, 1),
 	//Timing might be off. Not on the wiki. Will need to confirm when having more rewards points
 	GUARDIAN_OF_THE_RIFT_REWARD_POOL("Searching", ActionProgressConfig::guardianOfTheRiftRewardPool, ActionIcon.SPRITE_GUARDIAN_OF_THE_RIFT_REWARD, 3),
+	CHURNING_CREAM_WITH_BOTTOMLESS_MILK("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
 	CHURNING_CREAM("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
 	CHURNING_BUTTER_WITH_MILK("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,19),
+	CHURNING_BUTTER_WITH_BOTTOMLESS_MILK("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,19),
 	CHURNING_BUTTER_WITH_CREAM("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
 	CHURNING_CHEESE_WITH_MILK("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,26),
+	CHURNING_CHEESE_WITH_BOTTOMLESS_MILK("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,26),
 	CHURNING_CHEESE_WITH_CREAM("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,19),
 	CHURNING_CHEESE_WITH_BUTTER("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
 	CHURNING_CHEESE_WITH_GARLIC("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
