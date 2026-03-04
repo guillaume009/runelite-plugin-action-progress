@@ -14,6 +14,7 @@ public enum Action
 	COOKING_MIX_DOUGH("Combining", ActionProgressConfig::cookingMixPastry, ActionIcon.SPRITE_COOKING, 1, 2),
 	COOKING_MIX_GRAPES("Combining", ActionProgressConfig::cookingMixWines, ActionIcon.SPRITE_COOKING, 3, 2),
 	COOKING_TOP_PIZZA("Combining", ActionProgressConfig::cookingTopPizza, ActionIcon.SPRITE_COOKING, 2),
+	COOKING_COMBINE_POTATO("Combining", ActionProgressConfig::cookingMixingPotato, ActionIcon.SPRITE_COOKING,  2),
 	COOKING_GUTTING("Gutting",ActionProgressConfig::cookingGutting,ActionIcon.SPRITE_COOKING,3),
 	COOKING_GUTTING_AERIAL("Gutting",ActionProgressConfig::cookingGutting,ActionIcon.SPRITE_COOKING,2),
 	COOKING_MIXING_PIE("Combining", ActionProgressConfig::cookingCombinePies, ActionIcon.SPRITE_COOKING, 2),

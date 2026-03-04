@@ -199,6 +199,17 @@ public interface ActionProgressConfig extends Config
 	{
 		return true;
 	}
+	@ConfigItem(
+			name = "Combining potatoes",
+			keyName = "cooking.mix-potato",
+			description = "Enable/Disable monitoring mixing potatoes and their ingredients.",
+			section = COOKING
+	)
+	default boolean cookingMixingPotato()
+	{
+		return true;
+	}
+
 
 	@ConfigItem(
 			name = "Combining pie",
