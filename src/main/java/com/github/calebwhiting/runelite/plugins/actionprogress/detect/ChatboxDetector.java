@@ -40,6 +40,9 @@ public class ChatboxDetector extends ActionDetector
 	private static final int VAR_GRIMSTONE_X_COORD = 2927;
 	private static final int VAR_GRIMSTONE_Y_COORD = 10462;
 	private static final int VAR_GRIMSTONE_Z_COORD = 0;
+	private static final int VAR_SEER_SPIN_X_COORD = 2927;
+	private static final int VAR_SEER_SPIN_Y_COORD = 10462;
+	private static final int VAR_SEER_SPIN_Z_COORD = 0;
 
 	/**
 	 * Indicates the selected product in the crafting dialogue.
@@ -468,11 +471,16 @@ public class ChatboxDetector extends ActionDetector
 			case "How many sets would you like to smith?": // Cannonballs as of 2026/02/19
 				// Grimstone furnace must be handled using GRIMSTONE_CANNONBALL_PRODUCTS as it is faster
 				WorldPoint grimstoneFurnaceLocation = new WorldPoint(VAR_GRIMSTONE_X_COORD, VAR_GRIMSTONE_Y_COORD, VAR_GRIMSTONE_Z_COORD);
+				WorldPoint seersSpiningWheelLocation = new WorldPoint(VAR_SEER_SPIN_X_COORD, VAR_SEER_SPIN_Y_COORD, VAR_SEER_SPIN_Z_COORD);
 
 				// Player location to see how close we are to the Grimstone furnace
 				if(this.client.getLocalPlayer().getWorldLocation().distanceTo(grimstoneFurnaceLocation) < 20){
 					Product recipe = Recipe.forProduct((GRIMSTONE_CANNONBALL_PRODUCTS), currentProductId, this.inventoryManager);
 					ProcessRecipe(currentProductId, amount, recipe);
+				}
+				else if(this.client.getLocalPlayer().getWorldLocation().distanceTo(grimstoneFurnaceLocation) < 20){
+
+
 				}
 				// if we're not close to the furnace, default to our recipes for regular furnaces
 				else{
