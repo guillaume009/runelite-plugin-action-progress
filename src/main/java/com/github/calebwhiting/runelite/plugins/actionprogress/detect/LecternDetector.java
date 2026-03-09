@@ -4,18 +4,21 @@ import com.github.calebwhiting.runelite.data.Magic;
 import com.github.calebwhiting.runelite.plugins.actionprogress.Action;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.MenuAction;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.widgets.Widget;
 import net.runelite.client.eventbus.Subscribe;
 @Singleton
+@Slf4j
 public class LecternDetector extends ActionDetector
 {
 
 	private static final int VAR_MAKE_AMOUNT = 2224;
 
 	private static final int WIDGET_LECTERN = 26411019;
+	private static final int WIDGET_LUNAR_LECTERN = 24772665;
 
 	@Inject private Client client;
 
@@ -26,7 +29,7 @@ public class LecternDetector extends ActionDetector
 			return;
 		}
 		Widget widget = this.client.getWidget(evt.getParam1());
-		if (widget == null || widget.getParentId() != WIDGET_LECTERN) {
+		if (widget == null || (widget.getParentId() != WIDGET_LECTERN && widget.getParentId() != WIDGET_LUNAR_LECTERN)) {
 			return;
 		}
 		int amount = this.client.getVarpValue(VAR_MAKE_AMOUNT);
