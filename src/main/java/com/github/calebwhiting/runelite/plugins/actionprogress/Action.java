@@ -46,6 +46,7 @@ public enum Action
 	FLETCH_ATTACH_CROSSBOW("Attaching", ActionProgressConfig::fletchCrossbows, ActionIcon.SPRITE_FLETCHING, 2),
 	FLETCH_STRING_CROSSBOW("Stringing", ActionProgressConfig::fletchCrossbows, ActionIcon.SPRITE_FLETCHING, 2),
 	FLETCH_SPINNING("Spinning", ActionProgressConfig::fletchSpinning, ActionIcon.SPRITE_FLETCHING, 3),
+	FLETCH_SEER_SPINNING("Spinning", ActionProgressConfig::fletchSpinning, ActionIcon.SPRITE_FLETCHING, 2),
 	FLETCH_JAVELIN("Attaching", ActionProgressConfig::fletchJavelin, ActionIcon.SPRITE_FLETCHING, 2),
 	FLETCH_DART("Attaching", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 2),
 	GRIND("Grinding", ActionProgressConfig::grinding, ActionIcon.SPRITE_TOTAL, 0, 2, 3),

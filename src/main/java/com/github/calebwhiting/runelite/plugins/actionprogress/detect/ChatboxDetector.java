@@ -15,6 +15,7 @@ import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ScriptPostFired;
 import net.runelite.api.events.ScriptPreFired;
 import net.runelite.api.events.VarbitChanged;
+import net.runelite.api.gameval.VarbitID;
 import net.runelite.api.widgets.Widget;
 import net.runelite.client.eventbus.Subscribe;
 
@@ -40,9 +41,9 @@ public class ChatboxDetector extends ActionDetector
 	private static final int VAR_GRIMSTONE_X_COORD = 2927;
 	private static final int VAR_GRIMSTONE_Y_COORD = 10462;
 	private static final int VAR_GRIMSTONE_Z_COORD = 0;
-	private static final int VAR_SEER_SPIN_X_COORD = 2927;
-	private static final int VAR_SEER_SPIN_Y_COORD = 10462;
-	private static final int VAR_SEER_SPIN_Z_COORD = 0;
+	private static final int VAR_SEER_SPIN_X_COORD = 2710;
+	private static final int VAR_SEER_SPIN_Y_COORD = 3471;
+	private static final int VAR_SEER_SPIN_Z_COORD = 1;
 
 	/**
 	 * Indicates the selected product in the crafting dialogue.
@@ -79,6 +80,13 @@ public class ChatboxDetector extends ActionDetector
 			new Product(SMELTING_CANNONBALLS_GRIMSTONE, DRAGON_CANNONBALL, new Ingredient[]{new Ingredient(DRAGON_METAL_SHEET)}, new Ingredient(AMMO_MOULD)),
 			new Product(SMELTING_CANNONBALLS_GRIMSTONE, DRAGON_CANNONBALL, new Ingredient[]{new Ingredient(DRAGON_METAL_SHEET)}, new Ingredient(DOUBLE_AMMO_MOULD)),
 	};
+
+	private static final Product[] SEERS_SPIN_DIARY_PRODUCTS = {
+			new Product(FLETCH_SEER_SPINNING, BOW_STRING, new Ingredient(FLAX)),
+			new Product(FLETCH_SEER_SPINNING, LINEN_YARN, new Ingredient(FLAX)),
+			new Product(FLETCH_SEER_SPINNING, HEMP_YARN, new Ingredient(HEMP)),
+			new Product(FLETCH_SEER_SPINNING, COTTON_YARN, new Ingredient(COTTON_BOLL)),
+			};
 
 	private static final Product[] MULTI_MATERIAL_PRODUCTS = {
 			// @formatter:off
@@ -471,16 +479,11 @@ public class ChatboxDetector extends ActionDetector
 			case "How many sets would you like to smith?": // Cannonballs as of 2026/02/19
 				// Grimstone furnace must be handled using GRIMSTONE_CANNONBALL_PRODUCTS as it is faster
 				WorldPoint grimstoneFurnaceLocation = new WorldPoint(VAR_GRIMSTONE_X_COORD, VAR_GRIMSTONE_Y_COORD, VAR_GRIMSTONE_Z_COORD);
-				WorldPoint seersSpiningWheelLocation = new WorldPoint(VAR_SEER_SPIN_X_COORD, VAR_SEER_SPIN_Y_COORD, VAR_SEER_SPIN_Z_COORD);
 
 				// Player location to see how close we are to the Grimstone furnace
 				if(this.client.getLocalPlayer().getWorldLocation().distanceTo(grimstoneFurnaceLocation) < 20){
 					Product recipe = Recipe.forProduct((GRIMSTONE_CANNONBALL_PRODUCTS), currentProductId, this.inventoryManager);
 					ProcessRecipe(currentProductId, amount, recipe);
-				}
-				else if(this.client.getLocalPlayer().getWorldLocation().distanceTo(grimstoneFurnaceLocation) < 20){
-
-
 				}
 				// if we're not close to the furnace, default to our recipes for regular furnaces
 				else{
@@ -490,8 +493,20 @@ public class ChatboxDetector extends ActionDetector
 				break;
 			case "?":
 			default:
-				Product recipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, currentProductId, this.inventoryManager);
-				ProcessRecipe(currentProductId, amount, recipe);
+				WorldPoint seersSpiningWheelLocation = new WorldPoint(VAR_SEER_SPIN_X_COORD, VAR_SEER_SPIN_Y_COORD, VAR_SEER_SPIN_Z_COORD);
+
+				if(this.client.getLocalPlayer().getWorldLocation().distanceTo(seersSpiningWheelLocation) < 5 && client.getVarbitValue(VarbitID.KANDARIN_MEDIUM_REWARD) == 1){
+					//still not checking the achievment
+					Product recipe = Recipe.forProduct(SEERS_SPIN_DIARY_PRODUCTS, currentProductId, this.inventoryManager);
+					if (recipe == null) {
+						recipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, currentProductId, this.inventoryManager);
+					}
+					ProcessRecipe(currentProductId, amount, recipe);
+
+				}else {
+					Product recipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, currentProductId, this.inventoryManager);
+					ProcessRecipe(currentProductId, amount, recipe);
+				}
 				break;
 		}
 	}
