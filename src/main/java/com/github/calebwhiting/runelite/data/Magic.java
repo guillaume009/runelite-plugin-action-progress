@@ -613,6 +613,70 @@ public interface Magic
 				new RuneRequirement(Rune.ASTRAL, 1),
 				new RuneRequirement(Rune.WATER, 4)
 
+		),
+		MOONCLAN_TELEPORT(
+				"Moonclan Teleport",
+				1,
+				69,
+				new RuneRequirement(Rune.EARTH, 2),
+				new RuneRequirement(Rune.ASTRAL, 2),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		OURANIA_TELEPORT(
+				"Ourania Teleport",
+				2,
+				71,
+				new RuneRequirement(Rune.EARTH, 6),
+				new RuneRequirement(Rune.ASTRAL, 2),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		WATERBIRTH_TELEPORT(
+				"Waterbirth Teleport",
+				3,
+				72,
+				new RuneRequirement(Rune.WATER, 1),
+				new RuneRequirement(Rune.ASTRAL, 2),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		BARBARIAN_TELEPORT(
+				"Barbarian Teleport",
+				4,
+				75,
+				new RuneRequirement(Rune.FIRE, 3),
+				new RuneRequirement(Rune.ASTRAL, 2),
+				new RuneRequirement(Rune.LAW, 2)
+		),
+		KHAZARD_TELEPORT(
+				"Khazard Teleport",
+				5,
+				78,
+				new RuneRequirement(Rune.WATER, 4),
+				new RuneRequirement(Rune.ASTRAL, 2),
+				new RuneRequirement(Rune.LAW, 2)
+		),
+		FISHING_GUILD_TELEPORT(
+				"Fishing Guild Teleport",
+				6,
+				85,
+				new RuneRequirement(Rune.WATER, 10),
+				new RuneRequirement(Rune.ASTRAL, 3),
+				new RuneRequirement(Rune.LAW, 3)
+		),
+		CATHERBY_TELEPORT(
+				"Catherby Teleport",
+				7,
+				87,
+				new RuneRequirement(Rune.WATER, 10),
+				new RuneRequirement(Rune.ASTRAL, 3),
+				new RuneRequirement(Rune.LAW, 3)
+		),
+		ICE_PLATEAU_TELEPORT(
+				"Ice Plateau Teleport",
+				8,
+				89,
+				new RuneRequirement(Rune.WATER, 8),
+				new RuneRequirement(Rune.ASTRAL, 3),
+				new RuneRequirement(Rune.LAW, 3)
 		);
 
 		private static final int LUNAR_SPELLBOOK_GROUP_ID = 218;
@@ -644,6 +708,219 @@ public interface Magic
 		public int getChildId()
 		{
 			return LUNAR_SPELLBOOK_FIRST_SPELL_INDEX + this.getIndex();
+		}
+	}
+
+	@Getter
+	enum AncientSpell implements Spell
+	{
+		PADDEWWA_TELEPORT(
+				"Paddewwa Teleport",
+				1,
+				54,
+				new RuneRequirement(Rune.AIR, 1),
+				new RuneRequirement(Rune.FIRE, 1),
+				new RuneRequirement(Rune.LAW, 2)
+		),
+		SENNTISTEN_TELEPORT(
+				"Senntisen Teleport",
+				1,
+				60,
+				new RuneRequirement(Rune.SOUL, 1),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		KHARYRLL_TELEPORT(
+				"Kharyrll Teleport",
+				1,
+				66,
+				new RuneRequirement(Rune.BLOOD, 1),
+				new RuneRequirement(Rune.LAW, 2)
+		),
+		LASSAR_TELEPORT(
+				"Lassar Teleport",
+				1,
+				72,
+				new RuneRequirement(Rune.WATER, 4),
+				new RuneRequirement(Rune.LAW, 2)
+		),
+		DAREEYAK_TELEPORT(
+				"Dareeyak Teleport",
+				1,
+				78,
+				new RuneRequirement(Rune.AIR, 2),
+				new RuneRequirement(Rune.FIRE, 3),
+				new RuneRequirement(Rune.LAW, 2)
+		),
+		CARRALLANGER_TELEPORT(
+				"Carrallanger Teleport",
+				1, 84,
+				new RuneRequirement(Rune.LAW, 2),
+				new RuneRequirement(Rune.SOUL, 2)
+		),
+		ANNAKARL_TELEPORT(
+				"Annakarl Teleport",
+				1,
+				90,
+				new RuneRequirement(Rune.BLOOD, 2),
+				new RuneRequirement(Rune.LAW, 2)
+		),
+		GHORROCK_TELEPORT(
+				"Ghorrock Teleport",
+				1,
+				96,
+				new RuneRequirement(Rune.WATER, 2),
+				new RuneRequirement(Rune.LAW, 2)
+		),;
+
+		private static final int ANCIENT_SPELLBOOK_GROUP_ID = 218;
+
+		private static final int ANCIENT_SPELLBOOK_FIRST_SPELL_INDEX = 140;
+
+		private final String name;
+
+		private final int index;
+
+		private final int levelRequirement;
+
+		private final RuneRequirement[] runeRequirements;
+
+		AncientSpell(String name, int index, int levelRequirement, RuneRequirement... runeRequirements)
+		{
+			this.name = name;
+			this.index = index;
+			this.levelRequirement = levelRequirement;
+			this.runeRequirements = runeRequirements;
+		}
+
+		@Override
+		public int getGroupId()
+		{
+			return ANCIENT_SPELLBOOK_GROUP_ID;
+		}
+
+		public int getChildId()
+		{
+			return ANCIENT_SPELLBOOK_FIRST_SPELL_INDEX + this.getIndex();
+		}
+	}
+
+	@Getter
+	enum ArceuusSpell implements Spell
+	{
+		ARCEUUS_LIBRARY_TELEPORT(
+				"Arceuus Library Teleport",
+				1,
+				6,
+				new RuneRequirement(Rune.EARTH, 1),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		DRAYNOR_MANOR_TELEPORT(
+				"Draynor Teleport",
+				2,
+				17,
+				new RuneRequirement(Rune.EARTH, 1),
+				new RuneRequirement(Rune.WATER, 1),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		BATTLEFRONT_TELEPORT(
+				"Battlefront Teleport",
+				1,
+				23,
+				new RuneRequirement(Rune.EARTH, 1),
+				new RuneRequirement(Rune.FIRE, 1),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		MIND_ALTAR_TELEPORT(
+				"Mind Alter Teleport",
+				1,
+				28,
+				new RuneRequirement(Rune.MIND, 2),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		SALVE_GRAVEYARD_TELEPORT(
+				"Salve Graveyard Teleport",
+				1,
+				40,
+				new RuneRequirement(Rune.SOUL, 2),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		FENKENSTRAINS_CASTLE_TELEPORT(
+				"Fenkenstrain's Castle Teleport",
+				1,
+				48,
+				new RuneRequirement(Rune.EARTH, 1),
+				new RuneRequirement(Rune.SOUL, 1),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		WEST_ARDOUGNE_TELEPORT(
+				"West Ardounge Teleport",
+				1,
+				61,
+				new RuneRequirement(Rune.SOUL, 2),
+				new RuneRequirement(Rune.LAW, 2)
+		),
+		HARMONY_ISLAND_TELEPORT(
+				"Harmony Island Teleport",
+				1,
+				65,
+				new RuneRequirement(Rune.NATURE, 1),
+				new RuneRequirement(Rune.SOUL, 1),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		CEMETERY_TELEPORT(
+				"Cemetery Teleport",
+				1,
+				71,
+				new RuneRequirement(Rune.BLOOD, 1),
+				new RuneRequirement(Rune.SOUL, 1),
+				new RuneRequirement(Rune.LAW, 1)
+		),
+		BARROWS_TELEPORT(
+				"Barrows Teleport",
+				1,
+				83,
+				new RuneRequirement(Rune.BLOOD, 1),
+				new RuneRequirement(Rune.SOUL, 2),
+				new RuneRequirement(Rune.LAW, 2)
+		),
+		APE_ATOLL_TELEPORT(
+				"Ape Atoll Teleport",
+				1,
+				90,
+				new RuneRequirement(Rune.BLOOD, 2),
+				new RuneRequirement(Rune.SOUL, 2),
+				new RuneRequirement(Rune.LAW, 2)
+		),;
+
+		private static final int ARCEUUS_SPELLBOOK_GROUP_ID = 218;
+
+		private static final int ARCEUUS_SPELLBOOK_FIRST_SPELL_INDEX = 140;
+
+		private final String name;
+
+		private final int index;
+
+		private final int levelRequirement;
+
+		private final RuneRequirement[] runeRequirements;
+
+		ArceuusSpell(String name, int index, int levelRequirement, RuneRequirement... runeRequirements)
+		{
+			this.name = name;
+			this.index = index;
+			this.levelRequirement = levelRequirement;
+			this.runeRequirements = runeRequirements;
+		}
+
+		@Override
+		public int getGroupId()
+		{
+			return ARCEUUS_SPELLBOOK_GROUP_ID;
+		}
+
+		public int getChildId()
+		{
+			return ARCEUUS_SPELLBOOK_FIRST_SPELL_INDEX + this.getIndex();
 		}
 	}
 
@@ -846,7 +1123,39 @@ public interface Magic
 		ENCHANT_RUBY(ItemID.ENCHANT_RUBY_OR_TOPAZ, "Enchant ruby", StandardSpell.LVL_3_ENCHANT),
 		VARROCK_TELEPORT(ItemID.VARROCK_TELEPORT, "Varrock teleport", StandardSpell.VARROCK_TELEPORT),
 		CAMELOT_TELEPORT(ItemID.CAMELOT_TELEPORT, "Camelot teleport", StandardSpell.CAMELOT_TELEPORT),
-		BONES_TO_PEACHES(ItemID.BONES_TO_PEACHES, "Bones to peaches", StandardSpell.BONES_TO_PEACHES);
+		BONES_TO_PEACHES(ItemID.BONES_TO_PEACHES, "Bones to peaches", StandardSpell.BONES_TO_PEACHES),
+		//Lunar Teleports
+		MOONCLAN_TELEPORT(ItemID.MOONCLAN_TELEPORT, "Moonclan", LunarSpell.MOONCLAN_TELEPORT),
+		OURANIA_TELEPORT(ItemID.OURANIA_TELEPORT, "Ourania", LunarSpell.OURANIA_TELEPORT),
+		WATERBIRTH_TELEPORT(ItemID.WATERBIRTH_TELEPORT, "Waterbirth", LunarSpell.WATERBIRTH_TELEPORT),
+		BARBARIAN_TELEPORT(ItemID.BARBARIAN_TELEPORT, "Barbarian", LunarSpell.BARBARIAN_TELEPORT),
+		KHAZARD_TELEPORT(ItemID.KHAZARD_TELEPORT, "Khazard", LunarSpell.KHAZARD_TELEPORT),
+		FISHING_GUILD_TELEPORT(ItemID.FISHING_GUILD_TELEPORT, "Fishing guild", LunarSpell.FISHING_GUILD_TELEPORT),
+		CATHERBY_TELEPORT(ItemID.CATHERBY_TELEPORT, "Catherby", LunarSpell.CATHERBY_TELEPORT),
+		ICE_PLATEAU_TELEPORT(ItemID.ICE_PLATEAU_TELEPORT, "Ice Plateau", LunarSpell.ICE_PLATEAU_TELEPORT),
+		//Ancient Teleports
+		PADDEWWA_TELEPORT(ItemID.PADDEWWA_TELEPORT, "Paddewa", AncientSpell.PADDEWWA_TELEPORT), //typo in game menu, if jagex item name needs update
+		SENNTISTEN_TELEPORT(ItemID.SENNTISTEN_TELEPORT, "Senntisten", AncientSpell.SENNTISTEN_TELEPORT),
+		KHARYRLL_TELEPORT(ItemID.KHARYRLL_TELEPORT, "Kharyrll", AncientSpell.KHARYRLL_TELEPORT),
+		LASSAR_TELEPORT(ItemID.LASSAR_TELEPORT, "Lassar", AncientSpell.LASSAR_TELEPORT),
+		DAREEYAK_TELEPORT(ItemID.DAREEYAK_TELEPORT, "Dareeyak", AncientSpell.DAREEYAK_TELEPORT),
+		CARRALLANGER_TELEPORT(ItemID.CARRALLANGER_TELEPORT, "Carrallanger", AncientSpell.CARRALLANGER_TELEPORT),
+		ANNAKARL_TELEPORT(ItemID.ANNAKARL_TELEPORT, "Annakarl", AncientSpell.ANNAKARL_TELEPORT),
+		GHORROCK_TELEPORT(ItemID.GHORROCK_TELEPORT, "Ghorrock", AncientSpell.GHORROCK_TELEPORT),
+		//Arceuus Teleports
+		ARCEUUS_LIBRARY_TELEPORT(ItemID.ARCEUUS_LIBRARY_TELEPORT, "Arceuus Library", ArceuusSpell.ARCEUUS_LIBRARY_TELEPORT),
+		DRAYNOR_MANOR_TELEPORT(ItemID.DRAYNOR_MANOR_TELEPORT, "Draynor Manor", ArceuusSpell.DRAYNOR_MANOR_TELEPORT),
+		BATTLEFRONT_TELEPORT(ItemID.BATTLEFRONT_TELEPORT, "Battlefront", ArceuusSpell.BATTLEFRONT_TELEPORT),
+		MIND_ALTAR_TELEPORT(ItemID.MIND_ALTAR_TELEPORT, "Mind Altar", ArceuusSpell.MIND_ALTAR_TELEPORT),
+		SALVE_GRAVEYARD_TELEPORT(ItemID.SALVE_GRAVEYARD_TELEPORT, "Salve Graveyard", ArceuusSpell.SALVE_GRAVEYARD_TELEPORT),
+		FENKENSTRAINS_CASTLE_TELEPORT(ItemID.FENKENSTRAINS_CASTLE_TELEPORT, "Fenkenstrain's Castle", ArceuusSpell.FENKENSTRAINS_CASTLE_TELEPORT),
+		WEST_ARDOUGNE_TELEPORT(ItemID.WEST_ARDOUGNE_TELEPORT, "West Ardougne", ArceuusSpell.WEST_ARDOUGNE_TELEPORT),
+		HARMONY_ISLAND_TELEPORT(ItemID.HARMONY_ISLAND_TELEPORT, "Harmony Island", ArceuusSpell.HARMONY_ISLAND_TELEPORT),
+		CEMETERY_TELEPORT(ItemID.CEMETERY_TELEPORT, "Cemetery", ArceuusSpell.CEMETERY_TELEPORT),
+		BARROWS_TELEPORT(ItemID.BARROWS_TELEPORT, "Barrows", ArceuusSpell.BARROWS_TELEPORT),
+		APE_ATOLL_TELEPORT(ItemID.APE_ATOLL_TELEPORT, "Ape Atoll", ArceuusSpell.APE_ATOLL_TELEPORT),
+		;
+
 
 		private final int product;
 
