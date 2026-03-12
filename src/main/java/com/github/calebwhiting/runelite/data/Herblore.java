@@ -13,113 +13,125 @@ public interface Herblore
 
 	Recipe[] UNFINISHED_POTIONS = {
 			// @formatter:off
-            new Recipe(ItemID.GUAM_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.GUAM_LEAF),
-            new Recipe(ItemID.UNFINISHED_POTION_4840, Ingredients.VIAL_OF_WATER, Ingredients.ROGUES_PURSE),
-            new Recipe(ItemID.MARRENTILL_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.MARRENTILL),
-            new Recipe(ItemID.TARROMIN_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.TARROMIN),
-            new Recipe(ItemID.UNFINISHED_POTION, Ingredients.VIAL_OF_WATER, Ingredients.ASHES),
-            new Recipe(ItemID.HARRALANDER_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.HARRALANDER),
-            new Recipe(ItemID.MAGIC_ESSENCE_UNF, Ingredients.VIAL_OF_WATER, Ingredients.STAR_FLOWER),
-            new Recipe(ItemID.RANARR_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.RANARR_WEED),
-            new Recipe(ItemID.TOADFLAX_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.TOADFLAX),
-            new Recipe(ItemID.IRIT_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.IRIT_LEAF),
-            new Recipe(ItemID.AVANTOE_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.AVANTOE),
-            new Recipe(ItemID.KWUARM_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.KWUARM),
-            new Recipe(ItemID.SNAPDRAGON_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.SNAPDRAGON),
-            new Recipe(ItemID.CADANTINE_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.CADANTINE),
-            new Recipe(ItemID.LANTADYME_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.LANTADYME),
-            new Recipe(ItemID.DWARF_WEED_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.DWARF_WEED),
-            new Recipe(ItemID.TORSTOL_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.TORSTOL),
-            new Recipe(ItemID.CADANTINE_BLOOD_POTION_UNF, Ingredients.VIAL_OF_BLOOD, Ingredients.CADANTINE),
-            new Recipe(ItemID.GUTHIX_BALANCE_UNF_7658, Ingredients.RESTORE_1, Ingredients.GARLIC),
-            new Recipe(ItemID.GUTHIX_BALANCE_UNF_7656, Ingredients.RESTORE_2, Ingredients.GARLIC),
-            new Recipe(ItemID.GUTHIX_BALANCE_UNF_7654, Ingredients.RESTORE_3, Ingredients.GARLIC),
-            new Recipe(ItemID.GUTHIX_BALANCE_UNF, Ingredients.RESTORE_4, Ingredients.GARLIC),
-            // Seriously, fuck this recipe with a barbed harpoon :(
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_G, Ingredients.CUP_OF_HOT_WATER, Ingredients.GUAM_LEAF),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_M, Ingredients.CUP_OF_HOT_WATER, Ingredients.MARRENTILL),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_H, Ingredients.CUP_OF_HOT_WATER, Ingredients.HARRALANDER),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_GG, Ingredients.HERB_TEA_MIX_G, Ingredients.GUAM_LEAF),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_GM, Ingredients.HERB_TEA_MIX_G, Ingredients.MARRENTILL),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_GM, Ingredients.HERB_TEA_MIX_M, Ingredients.GUAM_LEAF),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_HG, Ingredients.HERB_TEA_MIX_G, Ingredients.HARRALANDER),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_HG, Ingredients.HERB_TEA_MIX_H, Ingredients.GUAM_LEAF),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_HM, Ingredients.HERB_TEA_MIX_H, Ingredients.MARRENTILL),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_HM, Ingredients.HERB_TEA_MIX_M, Ingredients.HARRALANDER),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_GGH, Ingredients.HERB_TEA_MIX_GG, Ingredients.HARRALANDER),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_GGH, Ingredients.HERB_TEA_MIX_HG, Ingredients.GUAM_LEAF),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_GGM, Ingredients.HERB_TEA_MIX_GG, Ingredients.MARRENTILL),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_GGM, Ingredients.HERB_TEA_MIX_GM, Ingredients.GUAM_LEAF),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_HMG, Ingredients.HERB_TEA_MIX_GM, Ingredients.HARRALANDER),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_HMG, Ingredients.HERB_TEA_MIX_HM, Ingredients.GUAM_LEAF),
-            new Recipe(HerbTeaMix.HERB_TEA_MIX_HMG, Ingredients.HERB_TEA_MIX_HG, Ingredients.MARRENTILL),
-            // @formatter:on
+			new Recipe(ItemID.GUAM_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.GUAM_LEAF),
+			new Recipe(ItemID.UNFINISHED_POTION_4840, Ingredients.VIAL_OF_WATER, Ingredients.ROGUES_PURSE),
+			new Recipe(ItemID.MARRENTILL_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.MARRENTILL),
+			new Recipe(ItemID.TARROMIN_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.TARROMIN),
+			new Recipe(ItemID.UNFINISHED_POTION, Ingredients.VIAL_OF_WATER, Ingredients.ASHES),
+			new Recipe(ItemID.HARRALANDER_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.HARRALANDER),
+			new Recipe(ItemID.MAGIC_ESSENCE_UNF, Ingredients.VIAL_OF_WATER, Ingredients.STAR_FLOWER),
+			new Recipe(ItemID.RANARR_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.RANARR_WEED),
+			new Recipe(ItemID.TOADFLAX_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.TOADFLAX),
+			new Recipe(ItemID.IRIT_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.IRIT_LEAF),
+			new Recipe(ItemID.AVANTOE_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.AVANTOE),
+			new Recipe(ItemID.KWUARM_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.KWUARM),
+			new Recipe(ItemID.SNAPDRAGON_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.SNAPDRAGON),
+			new Recipe(ItemID.CADANTINE_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.CADANTINE),
+			new Recipe(ItemID.LANTADYME_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.LANTADYME),
+			new Recipe(ItemID.DWARF_WEED_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.DWARF_WEED),
+			new Recipe(ItemID.TORSTOL_POTION_UNF, Ingredients.VIAL_OF_WATER, Ingredients.TORSTOL),
+			new Recipe(ItemID.CADANTINE_BLOOD_POTION_UNF, Ingredients.VIAL_OF_BLOOD, Ingredients.CADANTINE),
+			new Recipe(ItemID.GUTHIX_BALANCE_UNF_7658, Ingredients.RESTORE_1, Ingredients.GARLIC),
+			new Recipe(ItemID.GUTHIX_BALANCE_UNF_7656, Ingredients.RESTORE_2, Ingredients.GARLIC),
+			new Recipe(ItemID.GUTHIX_BALANCE_UNF_7654, Ingredients.RESTORE_3, Ingredients.GARLIC),
+			new Recipe(ItemID.GUTHIX_BALANCE_UNF, Ingredients.RESTORE_4, Ingredients.GARLIC),
+			// Seriously, fuck this recipe with a barbed harpoon :(
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_G, Ingredients.CUP_OF_HOT_WATER, Ingredients.GUAM_LEAF),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_M, Ingredients.CUP_OF_HOT_WATER, Ingredients.MARRENTILL),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_H, Ingredients.CUP_OF_HOT_WATER, Ingredients.HARRALANDER),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_GG, Ingredients.HERB_TEA_MIX_G, Ingredients.GUAM_LEAF),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_GM, Ingredients.HERB_TEA_MIX_G, Ingredients.MARRENTILL),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_GM, Ingredients.HERB_TEA_MIX_M, Ingredients.GUAM_LEAF),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_HG, Ingredients.HERB_TEA_MIX_G, Ingredients.HARRALANDER),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_HG, Ingredients.HERB_TEA_MIX_H, Ingredients.GUAM_LEAF),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_HM, Ingredients.HERB_TEA_MIX_H, Ingredients.MARRENTILL),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_HM, Ingredients.HERB_TEA_MIX_M, Ingredients.HARRALANDER),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_GGH, Ingredients.HERB_TEA_MIX_GG, Ingredients.HARRALANDER),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_GGH, Ingredients.HERB_TEA_MIX_HG, Ingredients.GUAM_LEAF),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_GGM, Ingredients.HERB_TEA_MIX_GG, Ingredients.MARRENTILL),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_GGM, Ingredients.HERB_TEA_MIX_GM, Ingredients.GUAM_LEAF),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_HMG, Ingredients.HERB_TEA_MIX_GM, Ingredients.HARRALANDER),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_HMG, Ingredients.HERB_TEA_MIX_HM, Ingredients.GUAM_LEAF),
+			new Recipe(HerbTeaMix.HERB_TEA_MIX_HMG, Ingredients.HERB_TEA_MIX_HG, Ingredients.MARRENTILL),
+			// @formatter:on
 	};
 	Recipe[] POTIONS = {
 			// @formatter:off
-            new Recipe(ItemID.ATTACK_POTION3, Ingredients.GUAM_UNF, Ingredients.EYE_OF_NEWT),
-            new Recipe(ItemID.ANTIPOISON3, Ingredients.MARRENTILL_UNF, Ingredients.UNICORN_HORN_DUST),
-            new Recipe(ItemID.RELICYMS_BALM3, Ingredients.ROGUES_PURSE_UNF, Ingredients.SNAKE_WEED),
-            new Recipe(ItemID.STRENGTH_POTION3, Ingredients.TARROMIN_UNF, Ingredients.LIMPWURT_ROOT),
-            new Recipe(ItemID.SERUM_207_3, Ingredients.TARROMIN_UNF, Ingredients.ASHES),
-            new Recipe(ItemID.SERUM_207_3, Ingredients.ASH_POTION, Ingredients.TARROMIN),
-            new Recipe(ItemID.COMPOST_POTION3, Ingredients.HARRALANDER_UNF, Ingredients.VOLCANIC_ASH),
-            new Recipe(ItemID.RESTORE_POTION3, Ingredients.HARRALANDER_UNF, Ingredients.RED_SPIDERS_EGGS),
-            new Recipe(ItemID.GUTHIX_BALANCE1, Ingredients.GUTHIX_BALANCE_UNF_1, Ingredients.SILVER_DUST),
-            new Recipe(ItemID.GUTHIX_BALANCE2, Ingredients.GUTHIX_BALANCE_UNF_2, Ingredients.SILVER_DUST),
-            new Recipe(ItemID.GUTHIX_BALANCE3, Ingredients.GUTHIX_BALANCE_UNF_3, Ingredients.SILVER_DUST),
-            new Recipe(ItemID.GUTHIX_BALANCE4, Ingredients.GUTHIX_BALANCE_UNF_4, Ingredients.SILVER_DUST),
-            new Recipe(ItemID.BLAMISH_OIL, Ingredients.HARRALANDER_UNF, Ingredients.BLAMISH_SNAIL_SLIME),
-            new Recipe(ItemID.ENERGY_POTION3, Ingredients.HARRALANDER_UNF, Ingredients.CHOCOLATE_DUST),
-            new Recipe(ItemID.DEFENCE_POTION3, Ingredients.RANARR_UNF, Ingredients.WHITE_BERRIES),
-            new Recipe(ItemID.AGILITY_POTION3, Ingredients.TOADFLAX_UNF, Ingredients.TOADS_LEGS),
-            new Recipe(ItemID.COMBAT_POTION3, Ingredients.HARRALANDER_UNF, Ingredients.GOAT_HORN_DUST),
-            new Recipe(ItemID.PRAYER_POTION3, Ingredients.RANARR_UNF, Ingredients.SNAPE_GRASS),
-            new Recipe(ItemID.SUPER_ATTACK3, Ingredients.IRIT_UNF, Ingredients.EYE_OF_NEWT),
-            new Recipe(ItemID.GOBLIN_POTION3, Ingredients.TOADFLAX_UNF, Ingredients.PHARMAKOS_BERRIES),
-            new Recipe(ItemID.SUPERANTIPOISON3, Ingredients.IRIT_UNF, Ingredients.UNICORN_HORN_DUST),
-            new Recipe(ItemID.FISHING_POTION3, Ingredients.AVANTOE_UNF, Ingredients.SNAPE_GRASS),
-            new Recipe(ItemID.SUPER_ENERGY3, Ingredients.AVANTOE_UNF, Ingredients.MORT_MYRE_FUNGUS),
-            new Recipe(ItemID.SHRINKMEQUICK, Ingredients.TARROMIN_UNF, Ingredients.SHRUNK_OGLEROOT),
-            new Recipe(ItemID.HUNTER_POTION3, Ingredients.AVANTOE_UNF, Ingredients.KEBBIT_TEETH_DUST),
-            new Recipe(ItemID.SUPER_STRENGTH3, Ingredients.KWUARM_UNF, Ingredients.LIMPWURT_ROOT),
-            new Recipe(ItemID.MAGIC_ESSENCE3, Ingredients.MAGIC_ESSENCE_UNF, Ingredients.GORAK_CLAW_POWDER),
-            new Recipe(ItemID.WEAPON_POISON, Ingredients.KWUARM_UNF, Ingredients.DRAGON_SCALE_DUST),
-            new Recipe(ItemID.SUPER_RESTORE3, Ingredients.SNAPDRAGON_UNF, Ingredients.RED_SPIDERS_EGGS),
-            new Recipe(SanfewSerum.MIX_1_1, Ingredients.SUPER_RESTORE_1, Ingredients.UNICORN_HORN_DUST),
-            new Recipe(SanfewSerum.MIX_1_2, Ingredients.SUPER_RESTORE_2, Ingredients.UNICORN_HORN_DUST),
-            new Recipe(SanfewSerum.MIX_1_3, Ingredients.SUPER_RESTORE_3, Ingredients.UNICORN_HORN_DUST),
-            new Recipe(SanfewSerum.MIX_1_4, Ingredients.SUPER_RESTORE_4, Ingredients.UNICORN_HORN_DUST),
-            new Recipe(SanfewSerum.MIX_2_1, Ingredients.MIXTURE_STEP_1_1, Ingredients.SNAKE_WEED),
-            new Recipe(SanfewSerum.MIX_2_2, Ingredients.MIXTURE_STEP_1_2, Ingredients.SNAKE_WEED),
-            new Recipe(SanfewSerum.MIX_2_3, Ingredients.MIXTURE_STEP_1_3, Ingredients.SNAKE_WEED),
-            new Recipe(SanfewSerum.MIX_2_4, Ingredients.MIXTURE_STEP_1_4, Ingredients.SNAKE_WEED),
-            new Recipe(ItemID.SANFEW_SERUM1, Ingredients.MIXTURE_STEP_2_1, Ingredients.NAIL_BEAST_NAILS),
-            new Recipe(ItemID.SANFEW_SERUM2, Ingredients.MIXTURE_STEP_2_2, Ingredients.NAIL_BEAST_NAILS),
-            new Recipe(ItemID.SANFEW_SERUM3, Ingredients.MIXTURE_STEP_2_3, Ingredients.NAIL_BEAST_NAILS),
-            new Recipe(ItemID.SANFEW_SERUM4, Ingredients.MIXTURE_STEP_2_4, Ingredients.NAIL_BEAST_NAILS),
-            new Recipe(ItemID.SUPER_DEFENCE3, Ingredients.CADANTINE_UNF, Ingredients.WHITE_BERRIES),
-            new Recipe(ItemID.ANTIDOTE3, Ingredients.ANTIDOTE_P_UNF, Ingredients.YEW_ROOTS),
-            new Recipe(ItemID.ANTIFIRE_POTION3, Ingredients.LANTADYME_UNF, Ingredients.DRAGON_SCALE_DUST),
-            new Recipe(ItemID.RANGING_POTION3, Ingredients.DWARF_WEED_UNF, Ingredients.WINE_OF_ZAMORAK),
-            new Recipe(ItemID.WEAPON_POISON_5937, Ingredients.WEAPON_POISON_P_UNF, Ingredients.RED_SPIDERS_EGGS),
-            new Recipe(ItemID.MAGIC_POTION3, Ingredients.LANTADYME_UNF, Ingredients.POTATO_CACTUS),
-            new Recipe(ItemID.ZAMORAK_BREW3, Ingredients.TORSTOL_UNF, Ingredients.JANGERBERRIES),
-            new Recipe(ItemID.ANTIDOTE3_5954, Ingredients.ANTIDOTE_PP_UNF, Ingredients.MAGIC_ROOTS),
-            new Recipe(ItemID.BASTION_POTION3, Ingredients.CADANTINE_BLOOD_UNF, Ingredients.WINE_OF_ZAMORAK),
-            new Recipe(ItemID.BATTLEMAGE_POTION3, Ingredients.CADANTINE_BLOOD_UNF, Ingredients.POTATO_CACTUS),
-            new Recipe(ItemID.SARADOMIN_BREW3, Ingredients.TOADFLAX_UNF, Ingredients.CRUSHED_NEST),
-            new Recipe(ItemID.WEAPON_POISON_5940, Ingredients.WEAPON_POISON_PP_UNF, Ingredients.POISON_IVY_BERRIES),
-            new Recipe(ItemID.ANCIENT_BREW3, Ingredients.DWARF_WEED_UNF, Ingredients.NIHIL_DUST),
+			new Recipe(ItemID.ATTACK_POTION3, Ingredients.GUAM_UNF, Ingredients.EYE_OF_NEWT),
+			new Recipe(ItemID.ANTIPOISON3, Ingredients.MARRENTILL_UNF, Ingredients.UNICORN_HORN_DUST),
+			new Recipe(ItemID.RELICYMS_BALM3, Ingredients.ROGUES_PURSE_UNF, Ingredients.SNAKE_WEED),
+			new Recipe(ItemID.STRENGTH_POTION3, Ingredients.TARROMIN_UNF, Ingredients.LIMPWURT_ROOT),
+			new Recipe(ItemID.SERUM_207_3, Ingredients.TARROMIN_UNF, Ingredients.ASHES),
+			new Recipe(ItemID.SERUM_207_3, Ingredients.ASH_POTION, Ingredients.TARROMIN),
+			new Recipe(ItemID.COMPOST_POTION3, Ingredients.HARRALANDER_UNF, Ingredients.VOLCANIC_ASH),
+			new Recipe(ItemID.RESTORE_POTION3, Ingredients.HARRALANDER_UNF, Ingredients.RED_SPIDERS_EGGS),
+			new Recipe(ItemID.GUTHIX_BALANCE1, Ingredients.GUTHIX_BALANCE_UNF_1, Ingredients.SILVER_DUST),
+			new Recipe(ItemID.GUTHIX_BALANCE2, Ingredients.GUTHIX_BALANCE_UNF_2, Ingredients.SILVER_DUST),
+			new Recipe(ItemID.GUTHIX_BALANCE3, Ingredients.GUTHIX_BALANCE_UNF_3, Ingredients.SILVER_DUST),
+			new Recipe(ItemID.GUTHIX_BALANCE4, Ingredients.GUTHIX_BALANCE_UNF_4, Ingredients.SILVER_DUST),
+			new Recipe(ItemID.BLAMISH_OIL, Ingredients.HARRALANDER_UNF, Ingredients.BLAMISH_SNAIL_SLIME),
+			new Recipe(ItemID.ENERGY_POTION3, Ingredients.HARRALANDER_UNF, Ingredients.CHOCOLATE_DUST),
+			new Recipe(ItemID.DEFENCE_POTION3, Ingredients.RANARR_UNF, Ingredients.WHITE_BERRIES),
+			new Recipe(ItemID.AGILITY_POTION3, Ingredients.TOADFLAX_UNF, Ingredients.TOADS_LEGS),
+			new Recipe(ItemID.COMBAT_POTION3, Ingredients.HARRALANDER_UNF, Ingredients.GOAT_HORN_DUST),
+			new Recipe(ItemID.PRAYER_POTION3, Ingredients.RANARR_UNF, Ingredients.SNAPE_GRASS),
+			new Recipe(ItemID.SUPER_ATTACK3, Ingredients.IRIT_UNF, Ingredients.EYE_OF_NEWT),
+			new Recipe(ItemID.GOBLIN_POTION3, Ingredients.TOADFLAX_UNF, Ingredients.PHARMAKOS_BERRIES),
+			new Recipe(ItemID.SUPERANTIPOISON3, Ingredients.IRIT_UNF, Ingredients.UNICORN_HORN_DUST),
+			new Recipe(ItemID.FISHING_POTION3, Ingredients.AVANTOE_UNF, Ingredients.SNAPE_GRASS),
+			new Recipe(ItemID.SUPER_ENERGY3, Ingredients.AVANTOE_UNF, Ingredients.MORT_MYRE_FUNGUS),
+			new Recipe(ItemID.SHRINKMEQUICK, Ingredients.TARROMIN_UNF, Ingredients.SHRUNK_OGLEROOT),
+			new Recipe(ItemID.HUNTER_POTION3, Ingredients.AVANTOE_UNF, Ingredients.KEBBIT_TEETH_DUST),
+			new Recipe(ItemID.GOADING_POTION3, Ingredients.HARRALANDER_UNF, Ingredients.ALDARIUM),
+			new Recipe(ItemID.PRAYER_REGENERATION_POTION3, Ingredients.HUASCA_UNF, Ingredients.ALDARIUM),
+			new Recipe(ItemID.SUPER_STRENGTH3, Ingredients.KWUARM_UNF, Ingredients.LIMPWURT_ROOT),
+			new Recipe(ItemID.MAGIC_ESSENCE3, Ingredients.MAGIC_ESSENCE_UNF, Ingredients.GORAK_CLAW_POWDER),
+			new Recipe(ItemID.HAEMOSTATIC_POULTICE, Ingredients.ELKHORN_UNF, Ingredients.SQUID_PASTE),
+			new Recipe(ItemID.HAEMOSTATIC_DRESSING_3, Ingredients.HAEMOSTATIC_POULTICE, Ingredients.COTTON_YARN),
+			new Recipe(ItemID.WEAPON_POISON, Ingredients.KWUARM_UNF, Ingredients.DRAGON_SCALE_DUST),
+			new Recipe(ItemID.SUPER_FISHING_POTION3, Ingredients.PILLAR_UNF, Ingredients.HADDOCK_EYE),
+			new Recipe(ItemID.SUPER_RESTORE3, Ingredients.SNAPDRAGON_UNF, Ingredients.RED_SPIDERS_EGGS),
+			new Recipe(SanfewSerum.MIX_1_1, Ingredients.SUPER_RESTORE_1, Ingredients.UNICORN_HORN_DUST),
+			new Recipe(SanfewSerum.MIX_1_2, Ingredients.SUPER_RESTORE_2, Ingredients.UNICORN_HORN_DUST),
+			new Recipe(SanfewSerum.MIX_1_3, Ingredients.SUPER_RESTORE_3, Ingredients.UNICORN_HORN_DUST),
+			new Recipe(SanfewSerum.MIX_1_4, Ingredients.SUPER_RESTORE_4, Ingredients.UNICORN_HORN_DUST),
+			new Recipe(SanfewSerum.MIX_2_1, Ingredients.MIXTURE_STEP_1_1, Ingredients.SNAKE_WEED),
+			new Recipe(SanfewSerum.MIX_2_2, Ingredients.MIXTURE_STEP_1_2, Ingredients.SNAKE_WEED),
+			new Recipe(SanfewSerum.MIX_2_3, Ingredients.MIXTURE_STEP_1_3, Ingredients.SNAKE_WEED),
+			new Recipe(SanfewSerum.MIX_2_4, Ingredients.MIXTURE_STEP_1_4, Ingredients.SNAKE_WEED),
+			new Recipe(ItemID.SANFEW_SERUM1, Ingredients.MIXTURE_STEP_2_1, Ingredients.NAIL_BEAST_NAILS),
+			new Recipe(ItemID.SANFEW_SERUM2, Ingredients.MIXTURE_STEP_2_2, Ingredients.NAIL_BEAST_NAILS),
+			new Recipe(ItemID.SANFEW_SERUM3, Ingredients.MIXTURE_STEP_2_3, Ingredients.NAIL_BEAST_NAILS),
+			new Recipe(ItemID.SANFEW_SERUM4, Ingredients.MIXTURE_STEP_2_4, Ingredients.NAIL_BEAST_NAILS),
+			new Recipe(ItemID.SUPER_DEFENCE3, Ingredients.CADANTINE_UNF, Ingredients.WHITE_BERRIES),
+			new Recipe(ItemID.SUPER_HUNTER_POTION3, Ingredients.PILLAR_UNF, Ingredients.CRAB_PASTE),
+			new Recipe(ItemID.ANTIDOTE3, Ingredients.ANTIDOTE_P_UNF, Ingredients.YEW_ROOTS),
+			new Recipe(ItemID.ANTIFIRE_POTION3, Ingredients.LANTADYME_UNF, Ingredients.DRAGON_SCALE_DUST),
+			new Recipe(ItemID.RANGING_POTION3, Ingredients.DWARF_WEED_UNF, Ingredients.WINE_OF_ZAMORAK),
+			new Recipe(ItemID.WEAPON_POISON_5937, Ingredients.WEAPON_POISON_P_UNF, Ingredients.RED_SPIDERS_EGGS),
+			new Recipe(ItemID.MAGIC_POTION3, Ingredients.LANTADYME_UNF, Ingredients.POTATO_CACTUS),
+			new Recipe(ItemID.ZAMORAK_BREW3, Ingredients.TORSTOL_UNF, Ingredients.JANGERBERRIES),
+			new Recipe(ItemID.ANTIDOTE3_5954, Ingredients.ANTIDOTE_PP_UNF, Ingredients.MAGIC_ROOTS),
+			new Recipe(ItemID.BASTION_POTION3, Ingredients.CADANTINE_BLOOD_UNF, Ingredients.WINE_OF_ZAMORAK),
+			new Recipe(ItemID.BATTLEMAGE_POTION3, Ingredients.CADANTINE_BLOOD_UNF, Ingredients.POTATO_CACTUS),
+			new Recipe(ItemID.SARADOMIN_BREW3, Ingredients.TOADFLAX_UNF, Ingredients.CRUSHED_NEST),
+			new Recipe(ItemID.SURGE_POTION3, Ingredients.TORSTOL_UNF, Ingredients.DEMONIC_TALLOW),
+			new Recipe(ItemID.WEAPON_POISON_5940, Ingredients.WEAPON_POISON_PP_UNF, Ingredients.POISON_IVY_BERRIES),
+			new Recipe(ItemID.ANCIENT_BREW3, Ingredients.DWARF_WEED_UNF, Ingredients.NIHIL_DUST),
 			new Recipe(ItemID.FORGOTTEN_BREW4, Ingredients.ANCIENT_BREW_4, Ingredients.ANCIENT_ESSENCE.clone(80)),
-            new Recipe(ItemID.SUPER_COMBAT_POTION4, Ingredients.SUPER_ATTACK_4, Ingredients.SUPER_STRENGTH_4, Ingredients.SUPER_DEFENCE_4, Ingredients.TORSTOL),
-            new Recipe(ItemID.SUPER_COMBAT_POTION4, Ingredients.SUPER_ATTACK_4, Ingredients.SUPER_STRENGTH_4, Ingredients.SUPER_DEFENCE_4, Ingredients.TORSTOL_UNF),
-            new Recipe(ItemID.SUPER_ANTIFIRE_POTION4, Ingredients.ANTIFIRE_4, Ingredients.CRUSHED_SUPERIOR_DRAGON_BONES),
-            new Recipe(ItemID.ANTIVENOM4_12913, Ingredients.ANTIVENOM_4, Ingredients.TORSTOL),
+			new Recipe(ItemID.SUPER_COMBAT_POTION4, Ingredients.SUPER_ATTACK_4, Ingredients.SUPER_STRENGTH_4, Ingredients.SUPER_DEFENCE_4, Ingredients.TORSTOL),
+			new Recipe(ItemID.SUPER_COMBAT_POTION4, Ingredients.SUPER_ATTACK_4, Ingredients.SUPER_STRENGTH_4, Ingredients.SUPER_DEFENCE_4, Ingredients.TORSTOL_UNF),
+			new Recipe(ItemID.SUPER_ANTIFIRE_POTION4, Ingredients.ANTIFIRE_4, Ingredients.CRUSHED_SUPERIOR_DRAGON_BONES),
+			new Recipe(ItemID.ANTIVENOM4_12913, Ingredients.ANTIVENOM_4, Ingredients.TORSTOL),
 			new Recipe(ItemID.STAMINA_POTION1, true, Ingredients.SUPER_ENERGY_1, Ingredients.AMYLASE_CRYSTAL),
 			new Recipe(ItemID.STAMINA_POTION2, true, Ingredients.SUPER_ENERGY_2, Ingredients.AMYLASE_CRYSTAL.clone(2)),
 			new Recipe(ItemID.STAMINA_POTION3, true, Ingredients.SUPER_ENERGY_3, Ingredients.AMYLASE_CRYSTAL.clone(3)),
 			new Recipe(ItemID.STAMINA_POTION4, true, Ingredients.SUPER_ENERGY_4, Ingredients.AMYLASE_CRYSTAL.clone(4)),
+			new Recipe(ItemID.EXTENDED_STAMINA_POTION1, Ingredients.STAMINA_1, Ingredients.MARLIN_SCALES),
+			new Recipe(ItemID.EXTENDED_STAMINA_POTION2, Ingredients.STAMINA_2, Ingredients.MARLIN_SCALES.clone(2)),
+			new Recipe(ItemID.EXTENDED_STAMINA_POTION3, Ingredients.STAMINA_3, Ingredients.MARLIN_SCALES.clone(3)),
+			new Recipe(ItemID.EXTENDED_STAMINA_POTION4, Ingredients.STAMINA_4, Ingredients.MARLIN_SCALES.clone(4)),
+			new Recipe(ItemID.ARMADYL_BREW3, Ingredients.UMBRAL_UNF, Ingredients.RAINBOW_CRAB_PASTE),
 			new Recipe(ItemID.EXTENDED_ANTIFIRE1, true,Ingredients.ANTIFIRE_1, Ingredients.LAVA_SCALE_SHARD),
 			new Recipe(ItemID.EXTENDED_ANTIFIRE2, true, Ingredients.ANTIFIRE_2, Ingredients.LAVA_SCALE_SHARD.clone(2)),
 			new Recipe(ItemID.EXTENDED_ANTIFIRE3, true, Ingredients.ANTIFIRE_3, Ingredients.LAVA_SCALE_SHARD.clone(3)),
@@ -128,49 +140,49 @@ public interface Herblore
 			new Recipe(ItemID.ANTIVENOM2, true, Ingredients.ANTIDOTE_PP_2, Ingredients.ZULRAHS_SCALES.clone(10)),
 			new Recipe(ItemID.ANTIVENOM3, true, Ingredients.ANTIDOTE_PP_3, Ingredients.ZULRAHS_SCALES.clone(15)),
 			new Recipe(ItemID.ANTIVENOM4, true, Ingredients.ANTIDOTE_PP_4, Ingredients.ZULRAHS_SCALES.clone(20)),
-            new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE1, true,  Ingredients.SUPER_ANTIFIRE_1, Ingredients.LAVA_SCALE_SHARD),
-            new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE2, true,  Ingredients.SUPER_ANTIFIRE_2, Ingredients.LAVA_SCALE_SHARD.clone(2)),
-            new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE3, true, Ingredients.SUPER_ANTIFIRE_3, Ingredients.LAVA_SCALE_SHARD.clone(3)),
-            new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE4, true, Ingredients.SUPER_ANTIFIRE_4, Ingredients.LAVA_SCALE_SHARD.clone(4)),
-            // Divine potions
-            new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION1, Ingredients.SUPER_ATTACK_1, Ingredients.CRYSTAL_DUST),
-            new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION2, Ingredients.SUPER_ATTACK_2, Ingredients.CRYSTAL_DUST.clone(2)),
-            new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION3, Ingredients.SUPER_ATTACK_3, Ingredients.CRYSTAL_DUST.clone(3)),
-            new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION4, Ingredients.SUPER_ATTACK_4, Ingredients.CRYSTAL_DUST.clone(4)),
-            new Recipe(ItemID.DIVINE_SUPER_STRENGTH_POTION1, Ingredients.SUPER_STRENGTH_1, Ingredients.CRYSTAL_DUST),
-            new Recipe(ItemID.DIVINE_SUPER_STRENGTH_POTION2, Ingredients.SUPER_STRENGTH_2, Ingredients.CRYSTAL_DUST.clone(2)),
-            new Recipe(ItemID.DIVINE_SUPER_STRENGTH_POTION3, Ingredients.SUPER_STRENGTH_3, Ingredients.CRYSTAL_DUST.clone(3)),
-            new Recipe(ItemID.DIVINE_SUPER_STRENGTH_POTION4, Ingredients.SUPER_STRENGTH_4, Ingredients.CRYSTAL_DUST.clone(4)),
-            new Recipe(ItemID.DIVINE_SUPER_DEFENCE_POTION1, Ingredients.SUPER_DEFENCE_1, Ingredients.CRYSTAL_DUST),
-            new Recipe(ItemID.DIVINE_SUPER_DEFENCE_POTION2, Ingredients.SUPER_DEFENCE_2, Ingredients.CRYSTAL_DUST.clone(2)),
-            new Recipe(ItemID.DIVINE_SUPER_DEFENCE_POTION3, Ingredients.SUPER_DEFENCE_3, Ingredients.CRYSTAL_DUST.clone(3)),
-            new Recipe(ItemID.DIVINE_SUPER_DEFENCE_POTION4, Ingredients.SUPER_DEFENCE_4, Ingredients.CRYSTAL_DUST.clone(4)),
-            new Recipe(ItemID.DIVINE_RANGING_POTION1, Ingredients.RANGING_1, Ingredients.CRYSTAL_DUST),
-            new Recipe(ItemID.DIVINE_RANGING_POTION2, Ingredients.RANGING_2, Ingredients.CRYSTAL_DUST.clone(2)),
-            new Recipe(ItemID.DIVINE_RANGING_POTION3, Ingredients.RANGING_3, Ingredients.CRYSTAL_DUST.clone(3)),
-            new Recipe(ItemID.DIVINE_RANGING_POTION4, Ingredients.RANGING_4, Ingredients.CRYSTAL_DUST.clone(4)),
-            new Recipe(ItemID.DIVINE_MAGIC_POTION1, Ingredients.MAGIC_1, Ingredients.CRYSTAL_DUST),
-            new Recipe(ItemID.DIVINE_MAGIC_POTION2, Ingredients.MAGIC_2, Ingredients.CRYSTAL_DUST.clone(2)),
-            new Recipe(ItemID.DIVINE_MAGIC_POTION3, Ingredients.MAGIC_3, Ingredients.CRYSTAL_DUST.clone(3)),
-            new Recipe(ItemID.DIVINE_MAGIC_POTION4, Ingredients.MAGIC_4, Ingredients.CRYSTAL_DUST.clone(4)),
-            new Recipe(ItemID.DIVINE_BASTION_POTION1, Ingredients.BASTION_1, Ingredients.CRYSTAL_DUST),
-            new Recipe(ItemID.DIVINE_BASTION_POTION2, Ingredients.BASTION_2, Ingredients.CRYSTAL_DUST.clone(2)),
-            new Recipe(ItemID.DIVINE_BASTION_POTION3, Ingredients.BASTION_3, Ingredients.CRYSTAL_DUST.clone(3)),
-            new Recipe(ItemID.DIVINE_BASTION_POTION4, Ingredients.BASTION_4, Ingredients.CRYSTAL_DUST.clone(4)),
-            new Recipe(ItemID.DIVINE_BATTLEMAGE_POTION1, Ingredients.BATTLEMAGE_1, Ingredients.CRYSTAL_DUST),
-            new Recipe(ItemID.DIVINE_BATTLEMAGE_POTION2, Ingredients.BATTLEMAGE_2, Ingredients.CRYSTAL_DUST.clone(2)),
-            new Recipe(ItemID.DIVINE_BATTLEMAGE_POTION3, Ingredients.BATTLEMAGE_3, Ingredients.CRYSTAL_DUST.clone(3)),
-            new Recipe(ItemID.DIVINE_BATTLEMAGE_POTION4, Ingredients.BATTLEMAGE_4, Ingredients.CRYSTAL_DUST.clone(4)),
-            new Recipe(ItemID.DIVINE_SUPER_COMBAT_POTION1, Ingredients.SUPER_COMBAT_1, Ingredients.CRYSTAL_DUST),
-            new Recipe(ItemID.DIVINE_SUPER_COMBAT_POTION2, Ingredients.SUPER_COMBAT_2, Ingredients.CRYSTAL_DUST.clone(2)),
-            new Recipe(ItemID.DIVINE_SUPER_COMBAT_POTION3, Ingredients.SUPER_COMBAT_3, Ingredients.CRYSTAL_DUST.clone(3)),
-            new Recipe(ItemID.DIVINE_SUPER_COMBAT_POTION4, Ingredients.SUPER_COMBAT_4, Ingredients.CRYSTAL_DUST.clone(4)),
-            // These potions are more correctly classified as unfinished, however they take 2 ticks to make
-            new Recipe(ItemID.ANTIDOTE_UNF, Ingredients.COCONUT_MILK, Ingredients.TOADFLAX),
-            new Recipe(ItemID.ANTIDOTE_UNF_5951, Ingredients.COCONUT_MILK, Ingredients.IRIT_LEAF),
-            new Recipe(ItemID.WEAPON_POISON_UNF, Ingredients.COCONUT_MILK, Ingredients.CACTUS_SPINE),
-            new Recipe(ItemID.WEAPON_POISON_UNF_5939, Ingredients.COCONUT_MILK, Ingredients.CAVE_NIGHTSHADE)
-            // @formatter:on
+			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE1, true,  Ingredients.SUPER_ANTIFIRE_1, Ingredients.LAVA_SCALE_SHARD),
+			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE2, true,  Ingredients.SUPER_ANTIFIRE_2, Ingredients.LAVA_SCALE_SHARD.clone(2)),
+			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE3, true, Ingredients.SUPER_ANTIFIRE_3, Ingredients.LAVA_SCALE_SHARD.clone(3)),
+			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE4, true, Ingredients.SUPER_ANTIFIRE_4, Ingredients.LAVA_SCALE_SHARD.clone(4)),
+			// Divine potions
+			new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION1, Ingredients.SUPER_ATTACK_1, Ingredients.CRYSTAL_DUST),
+			new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION2, Ingredients.SUPER_ATTACK_2, Ingredients.CRYSTAL_DUST.clone(2)),
+			new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION3, Ingredients.SUPER_ATTACK_3, Ingredients.CRYSTAL_DUST.clone(3)),
+			new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION4, Ingredients.SUPER_ATTACK_4, Ingredients.CRYSTAL_DUST.clone(4)),
+			new Recipe(ItemID.DIVINE_SUPER_STRENGTH_POTION1, Ingredients.SUPER_STRENGTH_1, Ingredients.CRYSTAL_DUST),
+			new Recipe(ItemID.DIVINE_SUPER_STRENGTH_POTION2, Ingredients.SUPER_STRENGTH_2, Ingredients.CRYSTAL_DUST.clone(2)),
+			new Recipe(ItemID.DIVINE_SUPER_STRENGTH_POTION3, Ingredients.SUPER_STRENGTH_3, Ingredients.CRYSTAL_DUST.clone(3)),
+			new Recipe(ItemID.DIVINE_SUPER_STRENGTH_POTION4, Ingredients.SUPER_STRENGTH_4, Ingredients.CRYSTAL_DUST.clone(4)),
+			new Recipe(ItemID.DIVINE_SUPER_DEFENCE_POTION1, Ingredients.SUPER_DEFENCE_1, Ingredients.CRYSTAL_DUST),
+			new Recipe(ItemID.DIVINE_SUPER_DEFENCE_POTION2, Ingredients.SUPER_DEFENCE_2, Ingredients.CRYSTAL_DUST.clone(2)),
+			new Recipe(ItemID.DIVINE_SUPER_DEFENCE_POTION3, Ingredients.SUPER_DEFENCE_3, Ingredients.CRYSTAL_DUST.clone(3)),
+			new Recipe(ItemID.DIVINE_SUPER_DEFENCE_POTION4, Ingredients.SUPER_DEFENCE_4, Ingredients.CRYSTAL_DUST.clone(4)),
+			new Recipe(ItemID.DIVINE_RANGING_POTION1, Ingredients.RANGING_1, Ingredients.CRYSTAL_DUST),
+			new Recipe(ItemID.DIVINE_RANGING_POTION2, Ingredients.RANGING_2, Ingredients.CRYSTAL_DUST.clone(2)),
+			new Recipe(ItemID.DIVINE_RANGING_POTION3, Ingredients.RANGING_3, Ingredients.CRYSTAL_DUST.clone(3)),
+			new Recipe(ItemID.DIVINE_RANGING_POTION4, Ingredients.RANGING_4, Ingredients.CRYSTAL_DUST.clone(4)),
+			new Recipe(ItemID.DIVINE_MAGIC_POTION1, Ingredients.MAGIC_1, Ingredients.CRYSTAL_DUST),
+			new Recipe(ItemID.DIVINE_MAGIC_POTION2, Ingredients.MAGIC_2, Ingredients.CRYSTAL_DUST.clone(2)),
+			new Recipe(ItemID.DIVINE_MAGIC_POTION3, Ingredients.MAGIC_3, Ingredients.CRYSTAL_DUST.clone(3)),
+			new Recipe(ItemID.DIVINE_MAGIC_POTION4, Ingredients.MAGIC_4, Ingredients.CRYSTAL_DUST.clone(4)),
+			new Recipe(ItemID.DIVINE_BASTION_POTION1, Ingredients.BASTION_1, Ingredients.CRYSTAL_DUST),
+			new Recipe(ItemID.DIVINE_BASTION_POTION2, Ingredients.BASTION_2, Ingredients.CRYSTAL_DUST.clone(2)),
+			new Recipe(ItemID.DIVINE_BASTION_POTION3, Ingredients.BASTION_3, Ingredients.CRYSTAL_DUST.clone(3)),
+			new Recipe(ItemID.DIVINE_BASTION_POTION4, Ingredients.BASTION_4, Ingredients.CRYSTAL_DUST.clone(4)),
+			new Recipe(ItemID.DIVINE_BATTLEMAGE_POTION1, Ingredients.BATTLEMAGE_1, Ingredients.CRYSTAL_DUST),
+			new Recipe(ItemID.DIVINE_BATTLEMAGE_POTION2, Ingredients.BATTLEMAGE_2, Ingredients.CRYSTAL_DUST.clone(2)),
+			new Recipe(ItemID.DIVINE_BATTLEMAGE_POTION3, Ingredients.BATTLEMAGE_3, Ingredients.CRYSTAL_DUST.clone(3)),
+			new Recipe(ItemID.DIVINE_BATTLEMAGE_POTION4, Ingredients.BATTLEMAGE_4, Ingredients.CRYSTAL_DUST.clone(4)),
+			new Recipe(ItemID.DIVINE_SUPER_COMBAT_POTION1, Ingredients.SUPER_COMBAT_1, Ingredients.CRYSTAL_DUST),
+			new Recipe(ItemID.DIVINE_SUPER_COMBAT_POTION2, Ingredients.SUPER_COMBAT_2, Ingredients.CRYSTAL_DUST.clone(2)),
+			new Recipe(ItemID.DIVINE_SUPER_COMBAT_POTION3, Ingredients.SUPER_COMBAT_3, Ingredients.CRYSTAL_DUST.clone(3)),
+			new Recipe(ItemID.DIVINE_SUPER_COMBAT_POTION4, Ingredients.SUPER_COMBAT_4, Ingredients.CRYSTAL_DUST.clone(4)),
+			// These potions are more correctly classified as unfinished, however they take 2 ticks to make
+			new Recipe(ItemID.ANTIDOTE_UNF, Ingredients.COCONUT_MILK, Ingredients.TOADFLAX),
+			new Recipe(ItemID.ANTIDOTE_UNF_5951, Ingredients.COCONUT_MILK, Ingredients.IRIT_LEAF),
+			new Recipe(ItemID.WEAPON_POISON_UNF, Ingredients.COCONUT_MILK, Ingredients.CACTUS_SPINE),
+			new Recipe(ItemID.WEAPON_POISON_UNF_5939, Ingredients.COCONUT_MILK, Ingredients.CAVE_NIGHTSHADE)
+			// @formatter:on
 	};
 	int[] GRIMY_HERBS = {
 			ItemID.GRIMY_GUAM_LEAF, ItemID.GRIMY_MARRENTILL, ItemID.GRIMY_TARROMIN, ItemID.GRIMY_HARRALANDER,
@@ -230,6 +242,7 @@ public interface Herblore
 		Ingredient TOADFLAX_UNF = new Ingredient(ItemID.TOADFLAX_POTION_UNF);
 		Ingredient IRIT_UNF = new Ingredient(ItemID.IRIT_POTION_UNF);
 		Ingredient AVANTOE_UNF = new Ingredient(ItemID.AVANTOE_POTION_UNF);
+		Ingredient HUASCA_UNF = new Ingredient(ItemID.HUASCA_POTION_UNF);
 		Ingredient KWUARM_UNF = new Ingredient(ItemID.KWUARM_POTION_UNF);
 		Ingredient SNAPDRAGON_UNF = new Ingredient(ItemID.SNAPDRAGON_POTION_UNF);
 		Ingredient CADANTINE_UNF = new Ingredient(ItemID.CADANTINE_POTION_UNF);
@@ -237,6 +250,9 @@ public interface Herblore
 		Ingredient DWARF_WEED_UNF = new Ingredient(ItemID.DWARF_WEED_POTION_UNF);
 		Ingredient TORSTOL_UNF = new Ingredient(ItemID.TORSTOL_POTION_UNF);
 		Ingredient CADANTINE_BLOOD_UNF = new Ingredient(ItemID.CADANTINE_BLOOD_POTION_UNF);
+		Ingredient ELKHORN_UNF = new Ingredient(ItemID.ELKHORN_POTION_UNF);
+		Ingredient PILLAR_UNF = new Ingredient(ItemID.PILLAR_POTION_UNF);
+		Ingredient UMBRAL_UNF = new Ingredient(ItemID.UMBRAL_POTION_UNF);
 		// Combination base
 		Ingredient RESTORE_1 = new Ingredient(ItemID.RESTORE_POTION1);
 		Ingredient RESTORE_2 = new Ingredient(ItemID.RESTORE_POTION2);
@@ -299,6 +315,10 @@ public interface Herblore
 		Ingredient BATTLEMAGE_2 = new Ingredient(ItemID.BATTLEMAGE_POTION2);
 		Ingredient BATTLEMAGE_3 = new Ingredient(ItemID.BATTLEMAGE_POTION3);
 		Ingredient BATTLEMAGE_4 = new Ingredient(ItemID.BATTLEMAGE_POTION4);
+		Ingredient STAMINA_1 = new Ingredient(ItemID.STAMINA_POTION1);
+		Ingredient STAMINA_2 = new Ingredient(ItemID.STAMINA_POTION2);
+		Ingredient STAMINA_3 = new Ingredient(ItemID.STAMINA_POTION3);
+		Ingredient STAMINA_4 = new Ingredient(ItemID.STAMINA_POTION4);
 		Ingredient SUPER_COMBAT_1 = new Ingredient(ItemID.SUPER_COMBAT_POTION1);
 		Ingredient SUPER_COMBAT_2 = new Ingredient(ItemID.SUPER_COMBAT_POTION2);
 		Ingredient SUPER_COMBAT_3 = new Ingredient(ItemID.SUPER_COMBAT_POTION3);
@@ -360,7 +380,13 @@ public interface Herblore
 		Ingredient MORT_MYRE_FUNGUS = new Ingredient(ItemID.MORT_MYRE_FUNGUS);
 		Ingredient SHRUNK_OGLEROOT = new Ingredient(ItemID.SHRUNK_OGLEROOT);
 		Ingredient KEBBIT_TEETH_DUST = new Ingredient(ItemID.KEBBIT_TEETH_DUST);
+		Ingredient ALDARIUM = new Ingredient(ItemID.ALDARIUM);
 		Ingredient GORAK_CLAW_POWDER = new Ingredient(ItemID.GORAK_CLAW_POWDER);
+		Ingredient CRAB_PASTE = new Ingredient(ItemID.CRAB_PASTE);
+		Ingredient SQUID_PASTE = new Ingredient(ItemID.SQUID_PASTE);
+		Ingredient COTTON_YARN = new Ingredient(ItemID.COTTON_YARN);
+		Ingredient HADDOCK_EYE = new Ingredient(ItemID.HADDOCK_EYE);
+		Ingredient HAEMOSTATIC_POULTICE = new Ingredient(ItemID.HAEMOSTATIC_POULTICE);
 		Ingredient DRAGON_SCALE_DUST = new Ingredient(ItemID.DRAGON_SCALE_DUST);
 		Ingredient NAIL_BEAST_NAILS = new Ingredient(ItemID.NAIL_BEAST_NAILS);
 		Ingredient YEW_ROOTS = new Ingredient(ItemID.YEW_ROOTS);
@@ -369,6 +395,7 @@ public interface Herblore
 		Ingredient JANGERBERRIES = new Ingredient(ItemID.JANGERBERRIES);
 		Ingredient MAGIC_ROOTS = new Ingredient(ItemID.MAGIC_ROOTS);
 		Ingredient CRUSHED_NEST = new Ingredient(ItemID.CRUSHED_NEST);
+		Ingredient DEMONIC_TALLOW = new Ingredient(ItemID.DEMONIC_TALLOW);
 		Ingredient POISON_IVY_BERRIES = new Ingredient(ItemID.POISON_IVY_BERRIES);
 		Ingredient NIHIL_DUST = new Ingredient(ItemID.NIHIL_DUST);
 		Ingredient LAVA_SCALE_SHARD = new Ingredient(ItemID.LAVA_SCALE_SHARD);
@@ -380,7 +407,8 @@ public interface Herblore
 		Ingredient CACTUS_SPINE = new Ingredient(ItemID.CACTUS_SPINE);
 		Ingredient ANCIENT_BREW_4 = new Ingredient(ItemID.ANCIENT_BREW4);
 		Ingredient ANCIENT_ESSENCE = new Ingredient(ItemID.ANCIENT_ESSENCE);
-
+		Ingredient MARLIN_SCALES = new Ingredient(ItemID.MARLIN_SCALES);
+		Ingredient RAINBOW_CRAB_PASTE = new Ingredient(ItemID.RAINBOW_CRAB_PASTE);
 	}
 
 }
