@@ -71,10 +71,10 @@ Displays an indicator showing how much progress you've made on your current acti
 
 ## Changes
 - `1.26`
-	- Added nastering mixology and sailing potions - Thanks @zedin27
+	- Added mastering mixology and sailing potions - Thanks @zedin27
 	- Added potato combinations - Thanks @aclogar
  	- Kandarin diary reward is now considering when using Seers' spinning wheel - Thanks @aclogar
-  	- Add support for Lunar tablet craftign - Thanks @aclogar
+  	- Add support for Lunar tablet crafting - Thanks @aclogar
 - `1.25`
 	- Added Bryophyta's staff support - Thanks @BreakfastFood
     - Add bottomless bucket support - Thanks @aclogar
