@@ -70,6 +70,8 @@ Displays an indicator showing how much progress you've made on your current acti
       - Dark essence fragment
 
 ## Changes
+- `1.27`
+	- Added support for butterfly mixes - Thanks @aclogar
 - `1.26`
 	- Added mastering mixology and sailing potions - Thanks @zedin27
 	- Added potato combinations - Thanks @aclogar
