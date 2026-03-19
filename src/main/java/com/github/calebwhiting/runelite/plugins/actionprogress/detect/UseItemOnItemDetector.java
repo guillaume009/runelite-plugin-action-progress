@@ -2,7 +2,6 @@ package com.github.calebwhiting.runelite.plugins.actionprogress.detect;
 
 import com.github.calebwhiting.runelite.api.InventoryManager;
 import com.github.calebwhiting.runelite.data.Ingredient;
-import com.github.calebwhiting.runelite.data.Magic;
 import com.github.calebwhiting.runelite.plugins.actionprogress.Product;
 import com.google.inject.Inject;
 import net.runelite.api.*;
@@ -129,7 +128,86 @@ public class UseItemOnItemDetector extends ActionDetector
 			new Product(FARM_PLANT_TREE_SEEDS, SPIRIT_SEEDLING,		        new Ingredient(SPIRIT_SEED), FILLED_PLANT_POT ),
 			new Product(FARM_PLANT_TREE_SEEDS, CELASTRUS_SEEDLING,	        new Ingredient(CELASTRUS_SEED), FILLED_PLANT_POT ),
 			new Product(FARM_PLANT_TREE_SEEDS, REDWOOD_SEEDLING,	        new Ingredient(REDWOOD_TREE_SEED), FILLED_PLANT_POT ),
-			new Product(FARM_PLANT_TREE_SEEDS, ROSEWOOD_SEEDLING,	        new Ingredient(ROSEWOOD_SEED), FILLED_PLANT_POT )
+			new Product(FARM_PLANT_TREE_SEEDS, ROSEWOOD_SEEDLING,	        new Ingredient(ROSEWOOD_SEED), FILLED_PLANT_POT ),
+
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_WILD_KEBBIT), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_LARUPIA), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_BARBTAILED_KEBBIT), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_GRAAHK), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_KYATT), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_SUNLIGHT_ANTELOPE), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_DASHING_KEBBIT), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, RUBY_HARVEST_MIX_2, 		new Ingredient[]{new Ingredient(RAW_MOONLIGHT_ANTELOPE), new Ingredient(RUBY_HARVEST)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_WILD_KEBBIT), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_LARUPIA), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_BARBTAILED_KEBBIT), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_GRAAHK), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_KYATT), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_SUNLIGHT_ANTELOPE), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_DASHING_KEBBIT), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SAPPHIRE_GLACIALIS_MIX_2, 	new Ingredient[]{new Ingredient(RAW_MOONLIGHT_ANTELOPE), new Ingredient(SAPPHIRE_GLACIALIS)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_WILD_KEBBIT), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_LARUPIA), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_BARBTAILED_KEBBIT), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_GRAAHK), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_KYATT), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_SUNLIGHT_ANTELOPE), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_DASHING_KEBBIT), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SNOWY_KNIGHT_MIX_2, 		new Ingredient[]{new Ingredient(RAW_MOONLIGHT_ANTELOPE), new Ingredient(SNOWY_KNIGHT)}, 				PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_WILD_KEBBIT), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_LARUPIA), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_BARBTAILED_KEBBIT), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_GRAAHK), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_KYATT), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_SUNLIGHT_ANTELOPE), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_DASHING_KEBBIT), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, BLACK_WARLOCK_MIX_2, 		new Ingredient[]{new Ingredient(RAW_MOONLIGHT_ANTELOPE), new Ingredient(BLACK_WARLOCK)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_WILD_KEBBIT), new Ingredient(SUNLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_LARUPIA), new Ingredient(SUNLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_BARBTAILED_KEBBIT), new Ingredient(SUNLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_GRAAHK), new Ingredient(SUNLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_KYATT), new Ingredient(SUNLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(SUNLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_SUNLIGHT_ANTELOPE), new Ingredient(SUNLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_DASHING_KEBBIT), new Ingredient(SUNLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_MOONLIGHT_ANTELOPE), new Ingredient(SUNLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_WILD_KEBBIT), new Ingredient(SUNLIGHT_MOTH_28890)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_LARUPIA), new Ingredient(SUNLIGHT_MOTH_28890)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_BARBTAILED_KEBBIT), new Ingredient(SUNLIGHT_MOTH_28890)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_GRAAHK), new Ingredient(SUNLIGHT_MOTH_28890)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_KYATT), new Ingredient(SUNLIGHT_MOTH_28890)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(SUNLIGHT_MOTH_28890)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_SUNLIGHT_ANTELOPE), new Ingredient(SUNLIGHT_MOTH_28890)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_DASHING_KEBBIT), new Ingredient(SUNLIGHT_MOTH_28890)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, SUNLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_MOONLIGHT_ANTELOPE), new Ingredient(SUNLIGHT_MOTH_28890)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_WILD_KEBBIT), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_LARUPIA), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_BARBTAILED_KEBBIT), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_GRAAHK), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_KYATT), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_SUNLIGHT_ANTELOPE), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_DASHING_KEBBIT), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_MOONLIGHT_ANTELOPE), new Ingredient(MOONLIGHT_MOTH)}, 			PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_WILD_KEBBIT), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_LARUPIA), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_BARBTAILED_KEBBIT), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_GRAAHK), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_KYATT), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_PYRE_FOX), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_SUNLIGHT_ANTELOPE), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_DASHING_KEBBIT), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
+			new Product(BUTTERFLY_MIX, MOONLIGHT_MOTH_MIX_2, 		new Ingredient[]{new Ingredient(RAW_MOONLIGHT_ANTELOPE), new Ingredient(MOONLIGHT_MOTH_28893)}, 		PESTLE_AND_MORTAR),
 	};
 
 	@Inject private InventoryManager inventoryManager;
@@ -182,6 +260,13 @@ public class UseItemOnItemDetector extends ActionDetector
 			}
 			boolean itemsIncludeTool = product.getTool() == null || product.isToolUsed(items);
 			if(product.isMadeWith(selectedItem) && itemsIncludeTool){
+				int amount = product.getMakeProductCount(this.inventoryManager);
+				if (amount > 0) {
+					this.actionManager.setAction(product.getAction(), amount, product.getProductId());
+				}
+			}
+			boolean toolIsInInventory = product.getTool() == null || this.inventoryManager.getItemCountById(product.getTool().getItemId()) > 0;
+			if (product.isMadeWith(items) && product.isMadeWith(selectedItem)) {
 				int amount = product.getMakeProductCount(this.inventoryManager);
 				if (amount > 0) {
 					this.actionManager.setAction(product.getAction(), amount, product.getProductId());
