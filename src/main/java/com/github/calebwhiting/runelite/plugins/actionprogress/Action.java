@@ -96,7 +96,11 @@ public enum Action
 	CHURNING_CHEESE_WITH_BUTTER("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
 	CHURNING_CHEESE_WITH_GARLIC("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
 	WETTING_CLAY("Wetting", ActionProgressConfig::craftWettingClay, ActionIcon.SPRITE_CRAFTING,2),
-	SAILING_SALVAGE("Salvaging", ActionProgressConfig::sailSalvage,ActionIcon.SPRITE_SALVAGE, 3);
+	SAILING_SALVAGE("Salvaging", ActionProgressConfig::sailSalvage,ActionIcon.SPRITE_SALVAGE, 3),
+	CONSTRUCTION_HULL("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4),
+	CONSTRUCTION_HULL_LARGE("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 5),
+	CONSTRUCTION_REPAIR_KIT("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4);
+
 	//FILLING("Filling", ActionProgressConfig::filling, ActionIcon.SPRITE_TOTAL, 1);
 
 	private final String description;

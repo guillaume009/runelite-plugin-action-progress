@@ -306,6 +306,30 @@ public class ChatboxDetector extends ActionDetector
 			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(BOWL_OF_WATER)),
 			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(JUG_OF_WATER)),
 			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(VIAL_OF_WATER)),
+			new Product(CONSTRUCTION_HULL, WOODEN_HULL_PARTS, new Ingredient(PLANK,5)),
+			new Product(CONSTRUCTION_HULL, OAK_HULL_PARTS, new Ingredient(OAK_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, TEAK_HULL_PARTS, new Ingredient(TEAK_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, MAHOGANY_HULL_PARTS, new Ingredient(MAHOGANY_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, CAMPHOR_HULL_PARTS, new Ingredient(CAMPHOR_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, IRONWOOD_HULL_PARTS, new Ingredient(IRONWOOD_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, ROSEWOOD_HULL_PARTS, new Ingredient(ROSEWOOD_PLANK,5)),
+
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_WOODEN_HULL_PARTS, new Ingredient(WOODEN_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_OAK_HULL_PARTS, new Ingredient(OAK_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_TEAK_HULL_PARTS, new Ingredient(TEAK_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_MAHOGANY_HULL_PARTS, new Ingredient(MAHOGANY_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_CAMPHOR_HULL_PARTS, new Ingredient(CAMPHOR_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_IRONWOOD_HULL_PARTS, new Ingredient(IRONWOOD_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_ROSEWOOD_HULL_PARTS, new Ingredient(ROSEWOOD_HULL_PARTS,5)),
+
+			new Product(CONSTRUCTION_REPAIR_KIT, REPAIR_KIT, new Ingredient(PLANK,2),new Ingredient(BRONZE_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, OAK_REPAIR_KIT, new Ingredient(OAK_PLANK,2),new Ingredient(IRON_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, TEAK_REPAIR_KIT, new Ingredient(TEAK_PLANK,2),new Ingredient(STEEL_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, MAHOGANY_REPAIR_KIT, new Ingredient(MAHOGANY_PLANK,2),new Ingredient(MITHRIL_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, CAMPHOR_REPAIR_KIT, new Ingredient(CAMPHOR_PLANK,2),new Ingredient(ADAMANTITE_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, IRONWOOD_REPAIR_KIT, new Ingredient(IRONWOOD_PLANK),new Ingredient(RUNE_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, ROSEWOOD_REPAIR_KIT, new Ingredient(ROSEWOOD_PLANK,1),new Ingredient(DRAGON_NAILS,5), new Ingredient(SWAMP_PASTE,5)),
+
             // @formatter:on
 	};
 
