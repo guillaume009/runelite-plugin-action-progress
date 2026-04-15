@@ -792,4 +792,15 @@ public interface ActionProgressConfig extends Config
 		return true;
 	}
 
+	@ConfigItem(
+			name = "Shipwright materials ",
+			keyName = "misc.constSailing",
+			description = "Enable/Disable monitoring crafting items at the Shipwright.",
+			section = SAILING
+	)
+	default boolean constSailing()
+	{
+		return true;
+	}
+
 }

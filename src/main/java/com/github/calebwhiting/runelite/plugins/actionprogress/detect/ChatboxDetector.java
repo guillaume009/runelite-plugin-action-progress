@@ -287,6 +287,10 @@ public class ChatboxDetector extends ActionDetector
 			new Product(FLETCH_ATTACH, DIAMOND_BOLTS, new Ingredient(ADAMANT_BOLTS,10) , new Ingredient(DIAMOND_BOLT_TIPS,10)),
 			new Product(FLETCH_ATTACH, DRAGONSTONE_BOLTS, new Ingredient(RUNITE_BOLTS,10) , new Ingredient(DRAGONSTONE_BOLT_TIPS,10)),
 			new Product(FLETCH_ATTACH, ONYX_BOLTS, new Ingredient(RUNITE_BOLTS,10) , new Ingredient(ONYX_BOLT_TIPS,10)),
+			new Product(FLETCH_ATTACH_3T, KEBBIT_BOLTS, new Ingredient(KEBBIT_SPIKE)),
+			new Product(FLETCH_ATTACH_3T, LONG_KEBBIT_BOLTS, new Ingredient(LONG_KEBBIT_SPIKE)),
+			new Product(FLETCH_ATTACH_3T, SUNLIGHT_ANTLER_BOLTS, new Ingredient(SUNLIGHT_ANTLER)),
+			new Product(FLETCH_ATTACH_3T, MOONLIGHT_ANTLER_BOLTS, new Ingredient(MOONLIGHT_ANTLER)),
 			new Product(FARM_ULTRA_COMPOST, ULTRACOMPOST, new Ingredient(VOLCANIC_ASH,2), new Ingredient(SUPERCOMPOST)),
 			new Product(CHURNING_CREAM, POT_OF_CREAM, new Ingredient(BUCKET_OF_MILK)),
 			new Product(CHURNING_CREAM, POT_OF_CREAM, new Ingredient(BOTTOMLESS_MILK_BUCKET,1,false)),
@@ -302,6 +306,30 @@ public class ChatboxDetector extends ActionDetector
 			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(BOWL_OF_WATER)),
 			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(JUG_OF_WATER)),
 			new Product(WETTING_CLAY, SOFT_CLAY, new Ingredient(CLAY), new Ingredient(VIAL_OF_WATER)),
+			new Product(CONSTRUCTION_HULL, WOODEN_HULL_PARTS, new Ingredient(PLANK,5)),
+			new Product(CONSTRUCTION_HULL, OAK_HULL_PARTS, new Ingredient(OAK_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, TEAK_HULL_PARTS, new Ingredient(TEAK_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, MAHOGANY_HULL_PARTS, new Ingredient(MAHOGANY_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, CAMPHOR_HULL_PARTS, new Ingredient(CAMPHOR_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, IRONWOOD_HULL_PARTS, new Ingredient(IRONWOOD_PLANK,5)),
+			new Product(CONSTRUCTION_HULL, ROSEWOOD_HULL_PARTS, new Ingredient(ROSEWOOD_PLANK,5)),
+
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_WOODEN_HULL_PARTS, new Ingredient(WOODEN_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_OAK_HULL_PARTS, new Ingredient(OAK_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_TEAK_HULL_PARTS, new Ingredient(TEAK_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_MAHOGANY_HULL_PARTS, new Ingredient(MAHOGANY_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_CAMPHOR_HULL_PARTS, new Ingredient(CAMPHOR_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_IRONWOOD_HULL_PARTS, new Ingredient(IRONWOOD_HULL_PARTS,5)),
+			new Product(CONSTRUCTION_HULL_LARGE, LARGE_ROSEWOOD_HULL_PARTS, new Ingredient(ROSEWOOD_HULL_PARTS,5)),
+
+			new Product(CONSTRUCTION_REPAIR_KIT, REPAIR_KIT, new Ingredient(PLANK,2),new Ingredient(BRONZE_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, OAK_REPAIR_KIT, new Ingredient(OAK_PLANK,2),new Ingredient(IRON_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, TEAK_REPAIR_KIT, new Ingredient(TEAK_PLANK,2),new Ingredient(STEEL_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, MAHOGANY_REPAIR_KIT, new Ingredient(MAHOGANY_PLANK,2),new Ingredient(MITHRIL_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, CAMPHOR_REPAIR_KIT, new Ingredient(CAMPHOR_PLANK,2),new Ingredient(ADAMANTITE_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, IRONWOOD_REPAIR_KIT, new Ingredient(IRONWOOD_PLANK),new Ingredient(RUNE_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
+			new Product(CONSTRUCTION_REPAIR_KIT, ROSEWOOD_REPAIR_KIT, new Ingredient(ROSEWOOD_PLANK,1),new Ingredient(DRAGON_NAILS,5), new Ingredient(SWAMP_PASTE,5)),
+
             // @formatter:on
 	};
 
@@ -385,7 +413,7 @@ public class ChatboxDetector extends ActionDetector
 		 * Fletching
 		 */
 		this.registerAction(FLETCH_ATTACH, Fletching.UNENCHANTED_BOLTS_AND_ARROWS);
-		this.registerAction(FLETCH_ATTACH_3T, KEBBIT_BOLTS, MOONLIGHT_ANTELOPE_ANTLER, SUNLIGHT_ANTELOPE_ANTLER);
+		this.registerAction(FLETCH_ATTACH_3T, KEBBIT_BOLTS, MOONLIGHT_ANTLER_BOLTS, SUNLIGHT_ANTLER_BOLTS, LONG_KEBBIT_BOLTS);
 		this.registerAction(FLETCH_ATTACH, HEADLESS_ARROW, FLIGHTED_OGRE_ARROW, AMETHYST_BROAD_BOLTS, AMETHYST_ARROW);
 		this.registerAction(FLETCH_JAVELIN, Fletching.JAVELINS);
 		this.registerAction(FLETCH_CUT_ARROW_SHAFT, ARROW_SHAFT, BRUMA_KINDLING, OGRE_ARROW_SHAFT);
@@ -418,8 +446,8 @@ public class ChatboxDetector extends ActionDetector
 		/*
 		 * Camdozzal fish
 		 */
-		this.registerAction(COOKING_PREPARING_CAMDOZAAL, RAW_GUPPY, RAW_TETRA, RAW_CAVEFISH);
-		this.registerAction(PRAYER_OFFERING_CAMDOZAAL, GUPPY, TETRA, CAVEFISH);
+		this.registerAction(COOKING_PREPARING_CAMDOZAAL, RAW_GUPPY, RAW_TETRA, RAW_CAVEFISH, RAW_CATFISH);
+		this.registerAction(PRAYER_OFFERING_CAMDOZAAL, GUPPY, TETRA, CAVEFISH, CATFISH);
 
 	}
 
@@ -481,6 +509,7 @@ public class ChatboxDetector extends ActionDetector
 			case "How many do you wish to make?": // Various
 			case "How many sets of 15 do you wish to complete?": // Arrows
 			case "How many sets of 15 do you wish to feather?": // Headless arrows
+			case "How many sets would you like to make?":
 			case "How many sets would you like to smith?": // Cannonballs as of 2026/02/19
 				// Grimstone furnace must be handled using GRIMSTONE_CANNONBALL_PRODUCTS as it is faster
 				WorldPoint grimstoneFurnaceLocation = new WorldPoint(VAR_GRIMSTONE_X_COORD, VAR_GRIMSTONE_Y_COORD, VAR_GRIMSTONE_Z_COORD);

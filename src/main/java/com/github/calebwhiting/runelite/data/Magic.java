@@ -27,16 +27,21 @@ public interface Magic
 				0,
 				0
 		),
+		MINITGAME_TELEPORT(
+				"Minigame Teleport",
+				1,
+				0
+		),
 		WIND_STRIKE(
 				"Wind Strike",
-				1,
+				5,
 				1,
 				new RuneRequirement(Rune.AIR, 1),
 				new RuneRequirement(Rune.MIND, 1)
 		),
 		CONFUSE(
 				"Confuse",
-				2,
+				6,
 				3,
 				new RuneRequirement(Rune.BODY, 1),
 				new RuneRequirement(Rune.EARTH, 2),
@@ -44,12 +49,12 @@ public interface Magic
 		),
 		ENCHANT_CROSSBOW_BOLT(
 				"Crossbow Bolt Enchantments",
-				3,
+				7,
 				4
 		),
 		WATER_STRIKE(
 				"Water Strike",
-				4,
+				8,
 				5,
 				new RuneRequirement(Rune.AIR, 1),
 				new RuneRequirement(Rune.MIND, 1),
@@ -57,14 +62,14 @@ public interface Magic
 		),
 		LVL_1_ENCHANT(
 				"Lvl-1 Enchant",
-				6,
+				10,
 				7,
 				new RuneRequirement(Rune.COSMIC, 1),
 				new RuneRequirement(Rune.WATER, 1)
 		),
 		EARTH_STRIKE(
 				"Earth Strike",
-				7,
+				11,
 				9,
 				new RuneRequirement(Rune.AIR, 1),
 				new RuneRequirement(Rune.EARTH, 2),
@@ -72,7 +77,7 @@ public interface Magic
 		),
 		WEAKEN(
 				"Weaken",
-				8,
+				12,
 				11,
 				new RuneRequirement(Rune.BODY, 1),
 				new RuneRequirement(Rune.EARTH, 2),
@@ -80,7 +85,7 @@ public interface Magic
 		),
 		FIRE_STRIKE(
 				"Fire Strike",
-				9,
+				13,
 				13,
 				new RuneRequirement(Rune.AIR, 2),
 				new RuneRequirement(Rune.FIRE, 3),
@@ -88,7 +93,7 @@ public interface Magic
 		),
 		BONES_TO_BANANAS(
 				"Bones to Bananas",
-				10,
+				14,
 				15,
 				new RuneRequirement(Rune.EARTH, 2),
 				new RuneRequirement(Rune.NATURE, 1),
@@ -96,14 +101,14 @@ public interface Magic
 		),
 		WIND_BOLT(
 				"Wind Bolt",
-				11,
+				15,
 				17,
 				new RuneRequirement(Rune.AIR, 2),
 				new RuneRequirement(Rune.CHAOS, 1)
 		),
 		CURSE(
 				"Curse",
-				12,
+				16,
 				19,
 				new RuneRequirement(Rune.BODY, 1),
 				new RuneRequirement(Rune.EARTH, 3),
@@ -111,7 +116,7 @@ public interface Magic
 		),
 		BIND(
 				"Bind",
-				13,
+				17,
 				20,
 				new RuneRequirement(Rune.EARTH, 3),
 				new RuneRequirement(Rune.NATURE, 2),
@@ -119,14 +124,14 @@ public interface Magic
 		),
 		LOW_LEVEL_ALCHEMY(
 				"Low Level Alchemy",
-				14,
+				18,
 				21,
 				new RuneRequirement(Rune.FIRE, 3),
 				new RuneRequirement(Rune.NATURE, 1)
 		),
 		WATER_BOLT(
 				"Water Bolt",
-				15,
+				19,
 				23,
 				new RuneRequirement(Rune.AIR, 2),
 				new RuneRequirement(Rune.CHAOS, 1),
@@ -134,7 +139,7 @@ public interface Magic
 		),
 		VARROCK_TELEPORT(
 				"Varrock Teleport",
-				16,
+				20,
 				25,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.FIRE, 1),
@@ -142,14 +147,14 @@ public interface Magic
 		),
 		LVL_2_ENCHANT(
 				"Lvl-2 Enchant",
-				17,
+				21,
 				27,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.COSMIC, 1)
 		),
 		EARTH_BOLT(
 				"Earth Bolt",
-				18,
+				22,
 				29,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.CHAOS, 1),
@@ -157,7 +162,7 @@ public interface Magic
 		),
 		LUMBRIDGE_TELEPORT(
 				"Lumbridge Teleport",
-				19,
+				23,
 				31,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.EARTH, 1),
@@ -165,14 +170,14 @@ public interface Magic
 		),
 		TELEKINETIC_GRAB(
 				"Telekinetic Grab",
-				20,
+				24,
 				33,
 				new RuneRequirement(Rune.AIR, 1),
 				new RuneRequirement(Rune.LAW, 1)
 		),
 		FIRE_BOLT(
 				"Fire Bolt",
-				21,
+				25,
 				35,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.CHAOS, 1),
@@ -180,7 +185,7 @@ public interface Magic
 		),
 		FALADOR_TELEPORT(
 				"Falador Teleport",
-				22,
+				26,
 				37,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.LAW, 1),
@@ -188,7 +193,7 @@ public interface Magic
 		),
 		CRUMBLE_UNDEAD(
 				"Crumble Undead",
-				23,
+				27,
 				39,
 				new RuneRequirement(Rune.AIR, 2),
 				new RuneRequirement(Rune.CHAOS, 1),
@@ -196,7 +201,7 @@ public interface Magic
 		),
 		TELEPORT_TO_HOUSE(
 				"Teleport to House",
-				24,
+				28,
 				40,
 				new RuneRequirement(Rune.AIR, 1),
 				new RuneRequirement(Rune.EARTH, 1),
@@ -204,28 +209,28 @@ public interface Magic
 		),
 		WIND_BLAST(
 				"Wind Blast",
-				25,
+				29,
 				41,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.DEATH, 1)
 		),
 		SUPERHEAT_ITEM(
 				"Superheat Item",
-				26,
+				30,
 				43,
 				new RuneRequirement(Rune.FIRE, 4),
 				new RuneRequirement(Rune.NATURE, 1)
 		),
 		CAMELOT_TELEPORT(
 				"Camelot Teleport",
-				27,
+				31,
 				45,
 				new RuneRequirement(Rune.AIR, 5),
 				new RuneRequirement(Rune.LAW, 1)
 		),
 		WATER_BLAST(
 				"Water Blast",
-				28,
+				32,
 				47,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.DEATH, 1),
@@ -233,7 +238,7 @@ public interface Magic
 		),
 		KOUREND_CASTLE_TELEPORT(
 				"Kourend Castle Teleport",
-				29,
+				33,
 				48,
 				new RuneRequirement(Rune.FIRE, 5),
 				new RuneRequirement(Rune.LAW, 2),
@@ -242,21 +247,21 @@ public interface Magic
 		),
 		LVL_3_ENCHANT(
 				"Lvl-3 Enchant",
-				30,
+				34,
 				49,
 				new RuneRequirement(Rune.COSMIC, 1),
 				new RuneRequirement(Rune.FIRE, 5)
 		),
 		IBAN_BLAST(
 				"Iban Blast",
-				31,
+				35,
 				50,
 				new RuneRequirement(Rune.DEATH, 1),
 				new RuneRequirement(Rune.FIRE, 5)
 		),
 		SNARE(
 				"Snare",
-				32,
+				36,
 				50,
 				new RuneRequirement(Rune.EARTH, 4),
 				new RuneRequirement(Rune.NATURE, 3),
@@ -264,57 +269,65 @@ public interface Magic
 		),
 		MAGIC_DART(
 				"Magic Dart",
-				33,
+				37,
 				50,
 				new RuneRequirement(Rune.DEATH, 1),
 				new RuneRequirement(Rune.MIND, 4)
 		),
 		ARDOUGNE_TELEPORT(
 				"Ardougne Teleport",
-				34,
+				38,
 				51,
 				new RuneRequirement(Rune.LAW, 2),
 				new RuneRequirement(Rune.WATER, 2)
 		),
 		EARTH_BLAST(
 				"Earth Blast",
-				35,
+				39,
 				53,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.DEATH, 1),
 				new RuneRequirement(Rune.EARTH, 4)
 		),
+		CIVITAS_ILLA_FORTIS_TELEPORT(
+				"Civitas illa Fortis Teleport",
+				40,
+				51,
+				new RuneRequirement(Rune.LAW, 2),
+				new RuneRequirement(Rune.EARTH, 1),
+				new RuneRequirement(Rune.FIRE, 1)
+		),
 		HIGH_LEVEL_ALCHEMY(
 				"High Level Alchemy",
-				34,
+				41,
 				55,
 				new RuneRequirement(Rune.FIRE, 5),
 				new RuneRequirement(Rune.NATURE, 1)
 		),
 		CHARGE_WATER_ORB(
 				"Charge Water Orb",
-				38,
+				42,
 				56,
 				new RuneRequirement(Rune.COSMIC, 3),
 				new RuneRequirement(Rune.WATER, 30)
 		),
 		LVL_4_ENCHANT(
 				"Lvl-4 Enchant",
-				39,
+				43,
 				57,
 				new RuneRequirement(Rune.COSMIC, 1),
 				new RuneRequirement(Rune.EARTH, 10)
 		),
 		WATCHTOWER_TELEPORT(
 				"Watchtower Teleport",
-				40,
+				44,
 				58,
 				new RuneRequirement(Rune.EARTH, 2),
 				new RuneRequirement(Rune.LAW, 2)
 		),
 		FIRE_BLAST(
 				"Fire Blast",
-				41,
+				45,
 				59,
 				new RuneRequirement(Rune.AIR, 4),
 				new RuneRequirement(Rune.DEATH, 1),
@@ -322,14 +335,14 @@ public interface Magic
 		),
 		CHARGE_EARTH_ORB(
 				"Charge Earth Orb",
-				42,
+				46,
 				60,
 				new RuneRequirement(Rune.COSMIC, 3),
 				new RuneRequirement(Rune.EARTH, 30)
 		),
 		BONES_TO_PEACHES(
 				"Bones to Peaches",
-				43,
+				47,
 				60,
 				new RuneRequirement(Rune.EARTH, 2),
 				new RuneRequirement(Rune.NATURE, 2),
@@ -337,7 +350,7 @@ public interface Magic
 		),
 		SARADOMIN_STRIKE(
 				"Saradomin Strike",
-				44,
+				48,
 				60,
 				new RuneRequirement(Rune.AIR, 4),
 				new RuneRequirement(Rune.BLOOD, 2),
@@ -345,7 +358,7 @@ public interface Magic
 		),
 		CLAWS_OF_GUTHIX(
 				"Claws of Guthix",
-				45,
+				49,
 				60,
 				new RuneRequirement(Rune.AIR, 4),
 				new RuneRequirement(Rune.BLOOD, 2),
@@ -353,7 +366,7 @@ public interface Magic
 		),
 		FLAMES_OF_ZAMORAK(
 				"Flames of Zamorak",
-				46,
+				50,
 				60,
 				new RuneRequirement(Rune.AIR, 1),
 				new RuneRequirement(Rune.BLOOD, 2),
@@ -361,28 +374,28 @@ public interface Magic
 		),
 		TROLLHEIM_TELEPORT(
 				"Trollheim Teleport",
-				47,
+				51,
 				61,
 				new RuneRequirement(Rune.FIRE, 2),
 				new RuneRequirement(Rune.LAW, 2)
 		),
 		WIND_WAVE(
 				"Wind Wave",
-				48,
+				52,
 				62,
 				new RuneRequirement(Rune.AIR, 5),
 				new RuneRequirement(Rune.BLOOD, 1)
 		),
 		CHARGE_FIRE_ORB(
 				"Charge Fire Orb",
-				49,
+				53,
 				63,
 				new RuneRequirement(Rune.COSMIC, 3),
 				new RuneRequirement(Rune.FIRE, 30)
 		),
 		APE_ATOLL_TELEPORT(
 				"Ape Atoll Teleport",
-				50,
+				54,
 				64,
 				new RuneRequirement(Rune.FIRE, 2),
 				new RuneRequirement(Rune.LAW, 2),
@@ -390,7 +403,7 @@ public interface Magic
 		),
 		WATER_WAVE(
 				"Water Wave",
-				51,
+				55,
 				65,
 				new RuneRequirement(Rune.AIR, 5),
 				new RuneRequirement(Rune.BLOOD, 1),
@@ -398,14 +411,14 @@ public interface Magic
 		),
 		CHARGE_AIR_ORB(
 				"Charge Air Orb",
-				52,
+				56,
 				66,
 				new RuneRequirement(Rune.AIR, 30),
 				new RuneRequirement(Rune.COSMIC, 3)
 		),
 		VULNERABILITY(
 				"Vulnerability",
-				53,
+				57,
 				66,
 				new RuneRequirement(Rune.EARTH, 5),
 				new RuneRequirement(Rune.SOUL, 1),
@@ -413,7 +426,7 @@ public interface Magic
 		),
 		LVL_5_ENCHANT(
 				"Lvl-5 Enchant",
-				54,
+				58,
 				68,
 				new RuneRequirement(Rune.COSMIC, 1),
 				new RuneRequirement(Rune.EARTH, 15),
@@ -421,7 +434,7 @@ public interface Magic
 		),
 		EARTH_WAVE(
 				"Earth Wave",
-				55,
+				59,
 				70,
 				new RuneRequirement(Rune.AIR, 5),
 				new RuneRequirement(Rune.BLOOD, 1),
@@ -429,7 +442,7 @@ public interface Magic
 		),
 		ENFEEBLE(
 				"Enfeeble",
-				56,
+				60,
 				73,
 				new RuneRequirement(Rune.EARTH, 8),
 				new RuneRequirement(Rune.SOUL, 1),
@@ -437,7 +450,7 @@ public interface Magic
 		),
 		TELEOTHER_LUMBRIDGE(
 				"Teleother Lumbridge",
-				57,
+				61,
 				74,
 				new RuneRequirement(Rune.EARTH, 1),
 				new RuneRequirement(Rune.LAW, 1),
@@ -445,7 +458,7 @@ public interface Magic
 		),
 		FIRE_WAVE(
 				"Fire Wave",
-				58,
+				62,
 				75,
 				new RuneRequirement(Rune.AIR, 5),
 				new RuneRequirement(Rune.BLOOD, 1),
@@ -453,7 +466,7 @@ public interface Magic
 		),
 		ENTANGLE(
 				"Entangle",
-				59,
+				63,
 				79,
 				new RuneRequirement(Rune.EARTH, 5),
 				new RuneRequirement(Rune.NATURE, 4),
@@ -461,7 +474,7 @@ public interface Magic
 		),
 		STUN(
 				"Stun",
-				60,
+				64,
 				80,
 				new RuneRequirement(Rune.EARTH, 12),
 				new RuneRequirement(Rune.SOUL, 1),
@@ -469,7 +482,7 @@ public interface Magic
 		),
 		CHARGE(
 				"Charge",
-				61,
+				65,
 				80,
 				new RuneRequirement(Rune.AIR, 3),
 				new RuneRequirement(Rune.BLOOD, 3),
@@ -477,14 +490,14 @@ public interface Magic
 		),
 		WIND_SURGE(
 				"Wind Surge",
-				62,
+				66,
 				81,
 				new RuneRequirement(Rune.AIR, 7),
 				new RuneRequirement(Rune.WRATH, 1)
 		),
 		TELEOTHER_FALADOR(
 				"Teleother Falador",
-				63,
+				67,
 				82,
 				new RuneRequirement(Rune.LAW, 1),
 				new RuneRequirement(Rune.SOUL, 1),
@@ -492,7 +505,7 @@ public interface Magic
 		),
 		WATER_SURGE(
 				"Water Surge",
-				64,
+				68,
 				85,
 				new RuneRequirement(Rune.AIR, 7),
 				new RuneRequirement(Rune.WATER, 10),
@@ -500,7 +513,7 @@ public interface Magic
 		),
 		TELE_BLOCK(
 				"Tele Block",
-				65,
+				69,
 				85,
 				new RuneRequirement(Rune.CHAOS, 1),
 				new RuneRequirement(Rune.DEATH, 1),
@@ -508,7 +521,7 @@ public interface Magic
 		),
 		TELEPORT_TO_BOUNTY_TARGET(
 				"Teleport to Bounty Target",
-				66,
+				70,
 				85,
 				new RuneRequirement(Rune.CHAOS, 1),
 				new RuneRequirement(Rune.DEATH, 1),
@@ -516,7 +529,7 @@ public interface Magic
 		),
 		LVL_6_ENCHANT(
 				"Lvl-6 Enchant",
-				67,
+				71,
 				87,
 				new RuneRequirement(Rune.COSMIC, 1),
 				new RuneRequirement(Rune.EARTH, 20),
@@ -524,14 +537,14 @@ public interface Magic
 		),
 		TELEOTHER_CAMELOT(
 				"Teleother Camelot",
-				68,
+				72,
 				90,
 				new RuneRequirement(Rune.LAW, 1),
 				new RuneRequirement(Rune.SOUL, 2)
 		),
 		EARTH_SURGE(
 				"Earth Surge",
-				69,
+				73,
 				90,
 				new RuneRequirement(Rune.AIR, 7),
 				new RuneRequirement(Rune.EARTH, 10),
@@ -539,7 +552,7 @@ public interface Magic
 		),
 		LVL_7_ENCHANT(
 				"Lvl-7 Enchant",
-				70,
+				74,
 				93,
 				new RuneRequirement(Rune.BLOOD, 20),
 				new RuneRequirement(Rune.COSMIC, 1),
@@ -547,7 +560,7 @@ public interface Magic
 		),
 		FIRE_SURGE(
 				"Fire Surge",
-				71,
+				75,
 				95,
 				new RuneRequirement(Rune.AIR, 7),
 				new RuneRequirement(Rune.FIRE, 10),
@@ -716,7 +729,7 @@ public interface Magic
 	{
 		PADDEWWA_TELEPORT(
 				"Paddewwa Teleport",
-				1,
+				16,
 				54,
 				new RuneRequirement(Rune.AIR, 1),
 				new RuneRequirement(Rune.FIRE, 1),
@@ -724,28 +737,28 @@ public interface Magic
 		),
 		SENNTISTEN_TELEPORT(
 				"Senntisen Teleport",
-				1,
+				17,
 				60,
 				new RuneRequirement(Rune.SOUL, 1),
 				new RuneRequirement(Rune.LAW, 1)
 		),
 		KHARYRLL_TELEPORT(
 				"Kharyrll Teleport",
-				1,
+				18,
 				66,
 				new RuneRequirement(Rune.BLOOD, 1),
 				new RuneRequirement(Rune.LAW, 2)
 		),
 		LASSAR_TELEPORT(
 				"Lassar Teleport",
-				1,
+				19,
 				72,
 				new RuneRequirement(Rune.WATER, 4),
 				new RuneRequirement(Rune.LAW, 2)
 		),
 		DAREEYAK_TELEPORT(
 				"Dareeyak Teleport",
-				1,
+				20,
 				78,
 				new RuneRequirement(Rune.AIR, 2),
 				new RuneRequirement(Rune.FIRE, 3),
@@ -753,20 +766,20 @@ public interface Magic
 		),
 		CARRALLANGER_TELEPORT(
 				"Carrallanger Teleport",
-				1, 84,
+				21, 84,
 				new RuneRequirement(Rune.LAW, 2),
 				new RuneRequirement(Rune.SOUL, 2)
 		),
 		ANNAKARL_TELEPORT(
 				"Annakarl Teleport",
-				1,
+				22,
 				90,
 				new RuneRequirement(Rune.BLOOD, 2),
 				new RuneRequirement(Rune.LAW, 2)
 		),
 		GHORROCK_TELEPORT(
 				"Ghorrock Teleport",
-				1,
+				23,
 				96,
 				new RuneRequirement(Rune.WATER, 2),
 				new RuneRequirement(Rune.LAW, 2)
@@ -774,7 +787,7 @@ public interface Magic
 
 		private static final int ANCIENT_SPELLBOOK_GROUP_ID = 218;
 
-		private static final int ANCIENT_SPELLBOOK_FIRST_SPELL_INDEX = 140;
+		private static final int ANCIENT_SPELLBOOK_FIRST_SPELL_INDEX = 85;
 
 		private final String name;
 
