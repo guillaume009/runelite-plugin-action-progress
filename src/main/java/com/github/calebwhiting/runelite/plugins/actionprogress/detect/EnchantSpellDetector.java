@@ -5,6 +5,7 @@ import com.github.calebwhiting.runelite.plugins.actionprogress.Action;
 import com.github.calebwhiting.runelite.plugins.actionprogress.ActionProgressConfig;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.InventoryID;
 import net.runelite.api.ItemContainer;
@@ -15,6 +16,7 @@ import net.runelite.client.eventbus.Subscribe;
 
 import java.util.Arrays;
 @Singleton
+@Slf4j
 public class EnchantSpellDetector extends ActionDetector
 {
 

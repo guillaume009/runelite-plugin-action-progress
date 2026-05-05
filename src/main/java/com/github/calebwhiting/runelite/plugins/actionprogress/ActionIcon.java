@@ -24,5 +24,6 @@ public interface ActionIcon
 	IconSource SPRITE_FARMING = new SpriteIconSource(SpriteID.SKILL_FARMING, 0);
 	IconSource SPRITE_BUCKET = new ItemIconSource(ItemID.BUCKET_EMPTY);//1925
 	IconSource SPRITE_SALVAGE = new ItemIconSource(ItemID.SAILING_LARGE_SHIPWRECK_SALVAGE);
+	IconSource SPRITE_CONSTRUCTION = new ItemIconSource(SpriteID.SKILL_CONSTRUCTION);
 
 }

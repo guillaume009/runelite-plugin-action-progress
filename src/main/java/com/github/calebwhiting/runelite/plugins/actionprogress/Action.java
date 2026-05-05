@@ -33,7 +33,7 @@ public enum Action
 	CRAFT_SHIELD("Crafting", ActionProgressConfig::craftShields, ActionIcon.SPRITE_CRAFTING, 5),
 	CRAFT_AMETHYST_HEADS_AND_TIPS("Crafting", ActionProgressConfig::craftHeadsAndTips,ActionIcon.SPRITE_CRAFTING,2),
 	FLETCH_ATTACH("Attaching", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 2),
-	FLETCH_ATTACH_3T("Attaching", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 3),
+	FLETCH_ATTACH_3T("Chiseling", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 3),
 	FLETCH_CUT_ARROW_SHAFT("Cutting", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 3),
 	FLETCH_CUT_JAVELIN_SHAFT("Cutting", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 3),
 	FLETCH_CUT_HIKING_STAFF("Cutting", ActionProgressConfig::fletchHikingStaves, ActionIcon.SPRITE_FLETCHING, 3),
@@ -42,7 +42,7 @@ public enum Action
 	FLETCH_ATTACH_TIPS("Attaching", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 2), 
 	FLETCH_CUT_TIPS_AMETHYST("Cutting", ActionProgressConfig::fletchArrowsAndBolts, ActionIcon.SPRITE_FLETCHING, 2),
 	FLETCH_STRING_BOW("Stringing", ActionProgressConfig::fletchBows, ActionIcon.SPRITE_FLETCHING, 2),
-	FLETCH_SHIELD("Cutting", ActionProgressConfig::fletchShields, ActionIcon.SPRITE_FLETCHING, 7),	
+	FLETCH_SHIELD("Cutting", ActionProgressConfig::fletchShields, ActionIcon.SPRITE_FLETCHING, 7),
 	FLETCH_CUT_CROSSBOW("Cutting", ActionProgressConfig::fletchCrossbows, ActionIcon.SPRITE_FLETCHING, 2, 3),
 	FLETCH_ATTACH_CROSSBOW("Attaching", ActionProgressConfig::fletchCrossbows, ActionIcon.SPRITE_FLETCHING, 2),
 	FLETCH_STRING_CROSSBOW("Stringing", ActionProgressConfig::fletchCrossbows, ActionIcon.SPRITE_FLETCHING, 2),
@@ -96,7 +96,11 @@ public enum Action
 	CHURNING_CHEESE_WITH_BUTTER("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
 	CHURNING_CHEESE_WITH_GARLIC("Churning", ActionProgressConfig::cookingChurning, ActionIcon.SPRITE_COOKING,10),
 	WETTING_CLAY("Wetting", ActionProgressConfig::craftWettingClay, ActionIcon.SPRITE_CRAFTING,2),
-	SAILING_SALVAGE("Salvaging", ActionProgressConfig::sailSalvage,ActionIcon.SPRITE_SALVAGE, 3);
+	SAILING_SALVAGE("Salvaging", ActionProgressConfig::sailSalvage,ActionIcon.SPRITE_SALVAGE, 3),
+	CONSTRUCTION_HULL("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4),
+	CONSTRUCTION_HULL_LARGE("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 5),
+	CONSTRUCTION_REPAIR_KIT("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4);
+
 	//FILLING("Filling", ActionProgressConfig::filling, ActionIcon.SPRITE_TOTAL, 1);
 
 	private final String description;
