@@ -58,7 +58,7 @@ public class LocalPlayerManager
 	public void onInteractingChanged(InteractingChanged evt)
 	{
 		Player me = this.client.getLocalPlayer();
-		if (me != null && evt.getSource() == me) {
+		if (me != null && evt.getSource() == me && evt.getTarget() != null) {
 			this.eventBus.post(new LocalInteractingChanged(me, evt.getTarget()));
 		}
 	}

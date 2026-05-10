@@ -144,6 +144,10 @@ public interface Herblore
 			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE2, true,  Ingredients.SUPER_ANTIFIRE_2, Ingredients.LAVA_SCALE_SHARD.clone(2)),
 			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE3, true, Ingredients.SUPER_ANTIFIRE_3, Ingredients.LAVA_SCALE_SHARD.clone(3)),
 			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE4, true, Ingredients.SUPER_ANTIFIRE_4, Ingredients.LAVA_SCALE_SHARD.clone(4)),
+			new Recipe(ItemID.EXTENDED_ANTIVENOM1,  Ingredients.ANTIVENOM_1, Ingredients.ARAXYTE_VENOM_SACK.clone(1)),
+			new Recipe(ItemID.EXTENDED_ANTIVENOM2,  Ingredients.ANTIVENOM_2, Ingredients.ARAXYTE_VENOM_SACK.clone(2)),
+			new Recipe(ItemID.EXTENDED_ANTIVENOM3,  Ingredients.ANTIVENOM_3, Ingredients.ARAXYTE_VENOM_SACK.clone(3)),
+			new Recipe(ItemID.EXTENDED_ANTIVENOM4,  Ingredients.ANTIVENOM_4, Ingredients.ARAXYTE_VENOM_SACK.clone(4)),
 			// Divine potions
 			new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION1, Ingredients.SUPER_ATTACK_1, Ingredients.CRYSTAL_DUST),
 			new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION2, Ingredients.SUPER_ATTACK_2, Ingredients.CRYSTAL_DUST.clone(2)),
@@ -282,6 +286,9 @@ public interface Herblore
 		Ingredient SUPER_ANTIFIRE_2 = new Ingredient(ItemID.SUPER_ANTIFIRE_POTION2);
 		Ingredient SUPER_ANTIFIRE_3 = new Ingredient(ItemID.SUPER_ANTIFIRE_POTION3);
 		Ingredient SUPER_ANTIFIRE_4 = new Ingredient(ItemID.SUPER_ANTIFIRE_POTION4);
+		Ingredient ANTIVENOM_1 = new Ingredient(ItemID.ANTIVENOM1);
+		Ingredient ANTIVENOM_2 = new Ingredient(ItemID.ANTIVENOM2);
+		Ingredient ANTIVENOM_3 = new Ingredient(ItemID.ANTIVENOM3);
 		Ingredient ANTIVENOM_4 = new Ingredient(ItemID.ANTIVENOM4);
 		Ingredient ANTIDOTE_PP_1 = new Ingredient(ItemID.ANTIDOTE1_5958);
 		Ingredient ANTIDOTE_PP_2 = new Ingredient(ItemID.ANTIDOTE2_5956);
@@ -399,6 +406,7 @@ public interface Herblore
 		Ingredient POISON_IVY_BERRIES = new Ingredient(ItemID.POISON_IVY_BERRIES);
 		Ingredient NIHIL_DUST = new Ingredient(ItemID.NIHIL_DUST);
 		Ingredient LAVA_SCALE_SHARD = new Ingredient(ItemID.LAVA_SCALE_SHARD);
+		Ingredient ARAXYTE_VENOM_SACK = new Ingredient(ItemID.ARAXYTE_VENOM_SACK);
 		Ingredient CRYSTAL_DUST = new Ingredient(ItemID.CRYSTAL_DUST);
 		Ingredient CRUSHED_SUPERIOR_DRAGON_BONES = new Ingredient(ItemID.CRUSHED_SUPERIOR_DRAGON_BONES);
 		Ingredient ZULRAHS_SCALES = new Ingredient(ItemID.ZULRAHS_SCALES);
