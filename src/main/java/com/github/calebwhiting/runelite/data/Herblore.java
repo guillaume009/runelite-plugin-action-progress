@@ -144,10 +144,6 @@ public interface Herblore
 			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE2, true,  Ingredients.SUPER_ANTIFIRE_2, Ingredients.LAVA_SCALE_SHARD.clone(2)),
 			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE3, true, Ingredients.SUPER_ANTIFIRE_3, Ingredients.LAVA_SCALE_SHARD.clone(3)),
 			new Recipe(ItemID.EXTENDED_SUPER_ANTIFIRE4, true, Ingredients.SUPER_ANTIFIRE_4, Ingredients.LAVA_SCALE_SHARD.clone(4)),
-			new Recipe(ItemID.EXTENDED_ANTIVENOM1,  Ingredients.ANTIVENOM_1, Ingredients.ARAXYTE_VENOM_SACK.clone(1)),
-			new Recipe(ItemID.EXTENDED_ANTIVENOM2,  Ingredients.ANTIVENOM_2, Ingredients.ARAXYTE_VENOM_SACK.clone(2)),
-			new Recipe(ItemID.EXTENDED_ANTIVENOM3,  Ingredients.ANTIVENOM_3, Ingredients.ARAXYTE_VENOM_SACK.clone(3)),
-			new Recipe(ItemID.EXTENDED_ANTIVENOM4,  Ingredients.ANTIVENOM_4, Ingredients.ARAXYTE_VENOM_SACK.clone(4)),
 			// Divine potions
 			new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION1, Ingredients.SUPER_ATTACK_1, Ingredients.CRYSTAL_DUST),
 			new Recipe(ItemID.DIVINE_SUPER_ATTACK_POTION2, Ingredients.SUPER_ATTACK_2, Ingredients.CRYSTAL_DUST.clone(2)),
@@ -187,6 +183,12 @@ public interface Herblore
 			new Recipe(ItemID.WEAPON_POISON_UNF, Ingredients.COCONUT_MILK, Ingredients.CACTUS_SPINE),
 			new Recipe(ItemID.WEAPON_POISON_UNF_5939, Ingredients.COCONUT_MILK, Ingredients.CAVE_NIGHTSHADE)
 			// @formatter:on
+	};
+	Recipe[] POTIONS_3T = {
+			new Recipe(ItemID.EXTENDED_ANTIVENOM1,  Ingredients.ANTIVENOM_1, Ingredients.ARAXYTE_VENOM_SACK.clone(1)),
+			new Recipe(ItemID.EXTENDED_ANTIVENOM2,  Ingredients.ANTIVENOM_2, Ingredients.ARAXYTE_VENOM_SACK.clone(2)),
+			new Recipe(ItemID.EXTENDED_ANTIVENOM3,  Ingredients.ANTIVENOM_3, Ingredients.ARAXYTE_VENOM_SACK.clone(3)),
+			new Recipe(ItemID.EXTENDED_ANTIVENOM4,  Ingredients.ANTIVENOM_4, Ingredients.ARAXYTE_VENOM_SACK.clone(4)),
 	};
 	int[] GRIMY_HERBS = {
 			ItemID.GRIMY_GUAM_LEAF, ItemID.GRIMY_MARRENTILL, ItemID.GRIMY_TARROMIN, ItemID.GRIMY_HARRALANDER,

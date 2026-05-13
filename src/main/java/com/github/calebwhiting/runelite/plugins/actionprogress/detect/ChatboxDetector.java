@@ -434,6 +434,9 @@ public class ChatboxDetector extends ActionDetector
 		for (Recipe recipe : Herblore.POTIONS) {
 			this.registerAction(HERB_MIX_POTIONS, recipe.getIsSelectingIngredientAsProduct() ? recipe.getRequirements()[0].getItemId() : recipe.getProductId()); //TODO Find way to display product when getIsSelectingIngredientAsProduct = true
 		}
+		for (Recipe recipe : Herblore.POTIONS_3T) {
+			this.registerAction(HERB_MIX_POTIONS_3T, recipe.getIsSelectingIngredientAsProduct() ? recipe.getRequirements()[0].getItemId() : recipe.getProductId()); //TODO Find way to display product when getIsSelectingIngredientAsProduct = true
+		}
 		for (int leaveItem : Woodcutting.LEAVES){
 			for (int foodItem : Woodcutting.RATION_FOOD) {
 				this.registerAction(MAKING_FORESTERS_RATION, ItemID.FORESTERS_RATION, leaveItem, foodItem);
