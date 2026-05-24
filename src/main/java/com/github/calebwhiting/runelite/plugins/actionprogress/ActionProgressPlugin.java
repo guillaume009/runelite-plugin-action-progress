@@ -14,8 +14,10 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
+import net.runelite.api.GameState;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.ClientTick;
+import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.widgets.Widget;
 import net.runelite.client.Notifier;
 import net.runelite.client.callback.ClientThread;
@@ -64,6 +66,8 @@ public class ActionProgressPlugin extends Plugin
 
 	@Inject private Notifier notifier;
 
+	@Inject private ConfigManager configManager;
+
 	@Inject private EventBus eventBus;
 
 	@Inject private ClientThread clientThread;
@@ -74,11 +78,36 @@ public class ActionProgressPlugin extends Plugin
 
 	@Getter private Image currentProductImage;
 
+	public boolean firstLogin = true;
+
+	@Subscribe
+	public void onGameStateChanged(GameStateChanged event)
+	{
+		if (event.getGameState() == GameState.LOGGED_IN)
+		{
+			if (firstLogin) {
+				// Show release notes if latest release version changed since last seen
+				String latestVersion = ReleaseNotesData.getLatestVersion();
+				String lastSeen = this.config.lastSeenVersion();
+				if (latestVersion != null && !latestVersion.isEmpty() && !latestVersion.equals(lastSeen)) {
+					String notes = ReleaseNotesData.getLatestRelease();
+					this.clientThread.invoke(() -> {
+						this.client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "<col=ff0000>=== Action Progress updated to v" + latestVersion + " ===</col>", null);
+						for (String line : notes.split("\\n")) {
+							this.client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "<col=ff0000>" + line + "</col>", null);
+						}
+					});
+					this.configManager.setConfiguration("actionprogress", "last-seen-version", latestVersion);
+				}
+				firstLogin = false;
+			}
+		}
+	}
 	@Override
 	protected void startUp() throws Exception
 	{
 		log.debug("starting up");
-		super.startUp();
+		super.startUp();		
 		this.overlay.setResizable(true);
 		this.currentProductImage = this.itemManager.getImage(1050); //Santa hat
 		this.overlayManager.add(this.overlay);

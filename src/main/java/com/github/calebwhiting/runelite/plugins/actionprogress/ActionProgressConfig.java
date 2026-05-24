@@ -400,6 +400,17 @@ public interface ActionProgressConfig extends Config
 	}
 
 	@ConfigItem(
+			name = "INTERNAL - Last seen version",
+			keyName = "last-seen-version",
+			description = "(Internal) Last seen plugin version for release notes",
+			position = 999
+	)
+	default String lastSeenVersion()
+	{
+		return "";
+	}
+
+	@ConfigItem(
 			name = "Making amethyst heads and tips",
 			keyName = "crafting.headsAndTips",
 			description = "Enable/Disable monitoring for crafting amethyst heads and tips.",
