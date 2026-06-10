@@ -329,6 +329,13 @@ public class ChatboxDetector extends ActionDetector
 			new Product(CONSTRUCTION_REPAIR_KIT, CAMPHOR_REPAIR_KIT, new Ingredient(CAMPHOR_PLANK,2),new Ingredient(ADAMANTITE_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
 			new Product(CONSTRUCTION_REPAIR_KIT, IRONWOOD_REPAIR_KIT, new Ingredient(IRONWOOD_PLANK),new Ingredient(RUNE_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
 			new Product(CONSTRUCTION_REPAIR_KIT, ROSEWOOD_REPAIR_KIT, new Ingredient(ROSEWOOD_PLANK,1),new Ingredient(DRAGON_NAILS,5), new Ingredient(SWAMP_PASTE,5)),
+			
+			new Product(INCENDIARY_CANNONBALL, BRONZE_INCENDIARY_CANNONBALL, new Ingredient(BRONZE_CANNONBALL, 2), new Ingredient(RUBIUM_SPLINTERS, 10)),
+			new Product(INCENDIARY_CANNONBALL, IRON_INCENDIARY_CANNONBALL, new Ingredient(IRON_CANNONBALL, 2), new Ingredient(RUBIUM_SPLINTERS, 10)),
+			new Product(INCENDIARY_CANNONBALL, STEEL_INCENDIARY_CANNONBALL, new Ingredient(STEEL_CANNONBALL, 2), new Ingredient(RUBIUM_SPLINTERS, 10)),
+			new Product(INCENDIARY_CANNONBALL, MITHRIL_INCENDIARY_CANNONBALL, new Ingredient(MITHRIL_CANNONBALL, 2), new Ingredient(RUBIUM_SPLINTERS, 10)),
+			new Product(INCENDIARY_CANNONBALL, ADAMANT_INCENDIARY_CANNONBALL, new Ingredient(ADAMANT_CANNONBALL, 2), new Ingredient(RUBIUM_SPLINTERS, 10)),
+			new Product(INCENDIARY_CANNONBALL, RUNE_INCENDIARY_CANNONBALL, new Ingredient(RUNE_CANNONBALL, 2), new Ingredient(RUBIUM_SPLINTERS, 10)),
 
             // @formatter:on
 	};
@@ -604,6 +611,12 @@ public class ChatboxDetector extends ActionDetector
 				return Math.min(n, rawFish);
 			}
 		}
+		Product incendiaryReipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, productId, this.inventoryManager);
+		if (incendiaryReipe != null && incendiaryReipe.getAction() == INCENDIARY_CANNONBALL)
+		{
+			return Math.min(Math.min(28, n), incendiaryReipe.getMakeProductCount(this.inventoryManager));
+		}
+
 		return n;
 	}
 
