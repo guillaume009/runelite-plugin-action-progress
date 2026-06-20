@@ -611,10 +611,10 @@ public class ChatboxDetector extends ActionDetector
 				return Math.min(n, rawFish);
 			}
 		}
-		Product incendiaryReipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, productId, this.inventoryManager);
-		if (incendiaryReipe != null && incendiaryReipe.getAction() == INCENDIARY_CANNONBALL)
+		Product incendiaryRecipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, productId, this.inventoryManager);
+		if (incendiaryRecipe != null && incendiaryRecipe.getAction() == INCENDIARY_CANNONBALL)
 		{
-			return Math.min(Math.min(28, n), incendiaryReipe.getMakeProductCount(this.inventoryManager));
+			return Math.min(Math.min(28, n), incendiaryRecipe.getMakeProductCount(this.inventoryManager));
 		}
 
 		return n;
