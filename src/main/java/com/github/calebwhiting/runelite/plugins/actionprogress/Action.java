@@ -99,7 +99,9 @@ public enum Action
 	SAILING_SALVAGE("Salvaging", ActionProgressConfig::sailSalvage,ActionIcon.SPRITE_SALVAGE, 3),
 	CONSTRUCTION_HULL("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4),
 	CONSTRUCTION_HULL_LARGE("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 5),
-	CONSTRUCTION_REPAIR_KIT("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4);
+	CONSTRUCTION_REPAIR_KIT("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4),
+	INCENDIARY_CANNONBALL("Smithing", ActionProgressConfig::smithCannonballs, ActionIcon.SPRITE_INCENDIARY, 3),
+	;
 
 	//FILLING("Filling", ActionProgressConfig::filling, ActionIcon.SPRITE_TOTAL, 1);
 
