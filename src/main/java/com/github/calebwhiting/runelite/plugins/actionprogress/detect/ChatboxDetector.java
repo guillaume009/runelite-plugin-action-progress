@@ -330,6 +330,13 @@ public class ChatboxDetector extends ActionDetector
 			new Product(CONSTRUCTION_REPAIR_KIT, IRONWOOD_REPAIR_KIT, new Ingredient(IRONWOOD_PLANK),new Ingredient(RUNE_NAILS,10), new Ingredient(SWAMP_PASTE,5)),
 			new Product(CONSTRUCTION_REPAIR_KIT, ROSEWOOD_REPAIR_KIT, new Ingredient(ROSEWOOD_PLANK,1),new Ingredient(DRAGON_NAILS,5), new Ingredient(SWAMP_PASTE,5)),
 			
+			new Product(CHAINSHOT_CANNONBALL, BRONZE_CHAINSHOT_CANNONBALL, new Ingredient(BRONZE_CANNONBALL, 2), new Ingredient(CHAIN, 1)),
+			new Product(CHAINSHOT_CANNONBALL, IRON_CHAINSHOT_CANNONBALL, new Ingredient(IRON_CANNONBALL, 2), new Ingredient(CHAIN, 1)),
+			new Product(CHAINSHOT_CANNONBALL, STEEL_CHAINSHOT_CANNONBALL, new Ingredient(STEEL_CANNONBALL, 2), new Ingredient(CHAIN, 1)),
+			new Product(CHAINSHOT_CANNONBALL, MITHRIL_CHAINSHOT_CANNONBALL, new Ingredient(MITHRIL_CANNONBALL, 2), new Ingredient(CHAIN, 1)),
+			new Product(CHAINSHOT_CANNONBALL, ADAMANT_CHAINSHOT_CANNONBALL, new Ingredient(ADAMANT_CANNONBALL, 2), new Ingredient(CHAIN, 1)),
+			new Product(CHAINSHOT_CANNONBALL, RUNE_CHAINSHOT_CANNONBALL, new Ingredient(RUNE_CANNONBALL, 2), new Ingredient(CHAIN, 1)),
+
 			new Product(INCENDIARY_CANNONBALL, BRONZE_INCENDIARY_CANNONBALL, new Ingredient(BRONZE_CANNONBALL, 2), new Ingredient(RUBIUM_SPLINTERS, 10)),
 			new Product(INCENDIARY_CANNONBALL, IRON_INCENDIARY_CANNONBALL, new Ingredient(IRON_CANNONBALL, 2), new Ingredient(RUBIUM_SPLINTERS, 10)),
 			new Product(INCENDIARY_CANNONBALL, STEEL_INCENDIARY_CANNONBALL, new Ingredient(STEEL_CANNONBALL, 2), new Ingredient(RUBIUM_SPLINTERS, 10)),
@@ -611,10 +618,12 @@ public class ChatboxDetector extends ActionDetector
 				return Math.min(n, rawFish);
 			}
 		}
-		Product incendiaryRecipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, productId, this.inventoryManager);
-		if (incendiaryRecipe != null && incendiaryRecipe.getAction() == INCENDIARY_CANNONBALL)
+		Product specialCannonballRecipe = Recipe.forProduct(MULTI_MATERIAL_PRODUCTS, productId, this.inventoryManager);
+		if (specialCannonballRecipe != null
+			&& (specialCannonballRecipe.getAction() == INCENDIARY_CANNONBALL
+			|| specialCannonballRecipe.getAction() == CHAINSHOT_CANNONBALL))
 		{
-			return Math.min(Math.min(28, n), incendiaryRecipe.getMakeProductCount(this.inventoryManager));
+			return Math.min(Math.min(28, n), specialCannonballRecipe.getMakeProductCount(this.inventoryManager));
 		}
 
 		return n;

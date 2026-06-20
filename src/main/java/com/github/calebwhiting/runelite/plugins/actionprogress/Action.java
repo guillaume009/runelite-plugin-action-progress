@@ -100,6 +100,7 @@ public enum Action
 	CONSTRUCTION_HULL("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4),
 	CONSTRUCTION_HULL_LARGE("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 5),
 	CONSTRUCTION_REPAIR_KIT("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4),
+	CHAINSHOT_CANNONBALL("Smithing", ActionProgressConfig::smithCannonballs, ActionIcon.SPRITE_SMITHING, 2),
 	INCENDIARY_CANNONBALL("Smithing", ActionProgressConfig::smithCannonballs, ActionIcon.SPRITE_INCENDIARY, 3),
 	;
 

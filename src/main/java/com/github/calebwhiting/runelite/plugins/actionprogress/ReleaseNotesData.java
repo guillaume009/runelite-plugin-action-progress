@@ -26,6 +26,7 @@ public final class ReleaseNotesData {
     "Fix smithing outfit fraction progress so item count matches the faster timer",
     "Fix smithing progress bar when selecting products by clicking the smithing interface",
     "Add a simple progress bar mode",
+    "Add support for smithing chainshot cannonballs",
     "Add support for smithing incendiary cannonballs - Thanks @coopermor")));
 
     releases.add(new Release("1.27", Arrays.asList(
