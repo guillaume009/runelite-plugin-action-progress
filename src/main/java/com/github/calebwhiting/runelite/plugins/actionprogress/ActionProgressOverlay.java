@@ -26,6 +26,12 @@ public class ActionProgressOverlay extends Overlay
 
 	private static final int PROGRESS_MIN_WIDTH = 50;
 
+	private static final int SIMPLE_PROGRESS_DEFAULT_HEIGHT = 18;
+
+	private static final int SIMPLE_PROGRESS_DEFAULT_WIDTH = 200;
+
+	private static final int SIMPLE_PROGRESS_MIN_HEIGHT = 12;
+
 	private static final int PROGRESS_MIN_WIDTH_HORIZONTAL = INSET + ICON_SIZE + PAD + PROGRESS_MIN_WIDTH + INSET;
 
 	@Inject private ActionProgressPlugin plugin;
@@ -76,6 +82,10 @@ public class ActionProgressOverlay extends Overlay
 	private Dimension renderInfobox(
 			Graphics2D g, String header, String count, String timeString, Image icon, long min, long max, long value, Dimension preferredDimension)
 	{
+		if (this.config.simpleProgressBar()) {
+			return this.renderSimpleMode(g, count, min, max, value, preferredDimension);
+		}
+
 		FontMetrics fm = g.getFontMetrics();
 
 		int preferredWidth = preferredDimension != null ? (int)preferredDimension.getWidth() : 200;
@@ -121,6 +131,37 @@ public class ActionProgressOverlay extends Overlay
 				DrawStandardMode(g,fm, height, width, timeString, count, actionText, icon, min, max, value, border, progressDoneColor, progressLeftColor);
 			}
 		}
+		return new Dimension(width, height);
+	}
+
+	private Dimension renderSimpleMode(Graphics2D g, String count, long min, long max, long value, Dimension preferredDimension)
+	{
+		int preferredWidth = preferredDimension != null ? (int) preferredDimension.getWidth() : SIMPLE_PROGRESS_DEFAULT_WIDTH;
+		int preferredHeight = preferredDimension != null ? (int) preferredDimension.getHeight() : SIMPLE_PROGRESS_DEFAULT_HEIGHT;
+		int width = Math.max(PROGRESS_MIN_WIDTH, preferredWidth);
+		int height = Math.max(SIMPLE_PROGRESS_MIN_HEIGHT, preferredHeight);
+
+		Color border = Rendering.outsideStrokeColor(this.runeLiteConfig.overlayBackgroundColor());
+		Rendering.drawProgressBar(g,
+				new Rectangle(0, 0, width, height),
+				border,
+				this.config.progressLeftColor(),
+				this.config.progressDoneColor(),
+				min,
+				max,
+				value,
+				false
+		);
+		if (this.config.showSimpleProgressBarCounter()) {
+			Rendering.drawText(g,
+					new Rectangle(0, 0, width, height),
+					Color.WHITE,
+					Alignment.CENTER,
+					count,
+					false
+			);
+		}
+
 		return new Dimension(width, height);
 	}
 

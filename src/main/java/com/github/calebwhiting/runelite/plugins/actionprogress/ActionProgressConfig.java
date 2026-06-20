@@ -133,10 +133,32 @@ public interface ActionProgressConfig extends Config
 	}
 
 	@ConfigItem(
+			name = "Simple progress bar",
+			keyName = "simple-progress-bar",
+			description = "Show only the progress bar without the icon, action text, or time remaining.",
+			position = 4
+	)
+	default boolean simpleProgressBar()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+			name = "Simple progress bar counter",
+			keyName = "simple-progress-bar-counter",
+			description = "When simple progress bar is enabled, show the processed and total action count in the bar.",
+			position = 5
+	)
+	default boolean showSimpleProgressBarCounter()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 			name = "Ignore single actions",
 			keyName = "ignore-single-actions",
 			description = "Ignore single actions",
-			position = 4
+			position = 6
 	)
 	default boolean ignoreSingleActions()
 	{
@@ -148,7 +170,7 @@ public interface ActionProgressConfig extends Config
 			name = "Progress left color",
 			keyName = "progress-left-color",
 			description = "Color to be used to display the remaining actions on the progress bar",
-			position = 5
+			position = 7
 	)
 	default Color progressLeftColor()
 	{
@@ -160,7 +182,7 @@ public interface ActionProgressConfig extends Config
 			name = "Progress done color",
 			keyName = "progress-done-color",
 			description = "Color to be used to display the completed actions on the progress bar",
-			position = 6
+			position = 8
 	)
 	default Color progressDoneColor()
 	{
