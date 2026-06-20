@@ -22,6 +22,9 @@ public final class ReleaseNotesData {
     static {
         List<Release> releases = new ArrayList<>();
 
+    releases.add(new Release("1.28", Arrays.asList(
+    "Fix smithing outfit fraction progress so item count matches the faster timer")));
+
     releases.add(new Release("1.27", Arrays.asList(
     "Added support for butterfly mixes - Thanks @aclogar")));
 
