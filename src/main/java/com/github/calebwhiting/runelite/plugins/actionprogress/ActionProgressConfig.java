@@ -11,67 +11,67 @@ public interface ActionProgressConfig extends Config
 	@ConfigSection(
 			name = "Cooking actions",
 			description = "Enable/Disable cooking specific actions.",
-			position = 7,
+			position = 9,
 			closedByDefault = true
 	) String COOKING = "Cooking actions";
 	@ConfigSection(
 			name = "Crafting actions",
 			description = "Enable/Disable crafting specific actions.",
-			position = 8,
+			position = 10,
 			closedByDefault = true
 	) String CRAFTING = "Crafting actions";
 	@ConfigSection(
 			name = "Farming actions",
 			description = "Enable/Disable Farming actions.",
-			position = 9,
+			position = 11,
 			closedByDefault = true
 	) String FARMING = "Farming actions";
 	@ConfigSection(
 			name = "Fletching actions",
 			description = "Enable/Disable fletching specific actions.",
-			position = 10,
+			position = 12,
 			closedByDefault = true
 	) String FLETCHING = "Fletching actions";
 	@ConfigSection(
 			name = "Guardian of the Rift actions",
 			description = "Enable/Disable guardian of the rift specific actions.",
-			position = 11,
+			position = 13,
 			closedByDefault = true
 	) String GUARDIAN_OF_THE_RIFT = "Guardian of the Rift actions";
 	@ConfigSection(
 			name = "Herblore actions",
 			description = "Enable/Disable herblore specific actions.",
-			position = 12,
+			position = 14,
 			closedByDefault = true
 	) String HERBLORE = "Herblore actions";
 	@ConfigSection(
 			name = "Magic actions",
 			description = "Enable/Disable magic specific actions.",
-			position = 13,
+			position = 15,
 			closedByDefault = true
 	) String MAGIC = "Magic actions";
 	@ConfigSection(
 			name = "Sailing actions",
 			description = "Enable/Disable sailing actions.",
-			position = 14,
+			position = 16,
 			closedByDefault = true
 	) String SAILING = "Sailing actions";
 	@ConfigSection(
 			name = "Smithing actions",
 			description = "Enable/Disable smithing specific actions.",
-			position = 15,
+			position = 17,
 			closedByDefault = true
 	) String SMITHING = "Smithing actions";
 	@ConfigSection(
 			name = "Tempoross actions",
 			description = "Enable/Disable tempoross specific actions.",
-			position = 16,
+			position = 18,
 			closedByDefault = true
 	) String TEMPOROSS = "Tempoross actions";
 	@ConfigSection(
 			name = "Woodcutting actions",
 			description = "Enable/Disable woodcutting specific actions.",
-			position = 17,
+			position = 19,
 			closedByDefault = true
 	) String WOODCUTTING = "Woodcutting actions";
 	@ConfigSection(
