@@ -13,6 +13,7 @@ import net.runelite.api.events.ScriptPreFired;
 import net.runelite.api.events.VarClientIntChanged;
 import net.runelite.api.events.VarbitChanged;
 import net.runelite.api.widgets.ComponentID;
+import net.runelite.api.widgets.InterfaceID;
 import net.runelite.api.widgets.Widget;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.eventbus.Subscribe;
@@ -21,8 +22,6 @@ import net.runelite.client.input.KeyManager;
 
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Singleton
 @Slf4j
@@ -34,8 +33,6 @@ public class SmithingDetector extends ActionDetector implements KeyListener
 	@Inject private ClientThread clientThread;
 	
 	@Inject private KeyManager keyManager;
-
-	private static final Pattern X_BARS_PATTERN = Pattern.compile("^(?<x>\\d*) (bars?)$");
 
 	private static final int VAR_AVAILABLE_MATERIALS = 2224;
 
@@ -54,6 +51,8 @@ public class SmithingDetector extends ActionDetector implements KeyListener
 	private int numberOfBarsForSelectedItem;
 
 	private boolean waitingForSmithingSelection = false;
+
+	private boolean pendingSmithingClickStart = false;
 
 	private HashMap<Integer, Integer> indexToItemId = new HashMap<Integer,Integer>();
 
@@ -120,7 +119,24 @@ public class SmithingDetector extends ActionDetector implements KeyListener
 	{
 		if (varClientIntChanged.getIndex() == VAR_SMITHING_INTERFACE)
 		{
+			boolean wasWaitingForSmithingSelection = waitingForSmithingSelection;
 			waitingForSmithingSelection = !waitingForSmithingSelection;
+
+			if (!waitingForSmithingSelection) {
+				if (wasWaitingForSmithingSelection && pendingSmithingClickStart) {
+					pendingSmithingClickStart = false;
+					clientThread.invokeLater(() -> {
+						if (smithingItemid <= 0 || numberOfBarsForSelectedItem <= 0) {
+							return;
+						}
+
+						startSmithingAction(numberOfBarsForSelectedItem, smithingItemid);
+					});
+				}
+			}
+			else {
+				pendingSmithingClickStart = false;
+			}
 		}
 	}
 
@@ -151,34 +167,53 @@ public class SmithingDetector extends ActionDetector implements KeyListener
 	@Subscribe
 	public void onMenuOptionClicked(MenuOptionClicked evt)
 	{
-		int param1 = evt.getParam1();
-		if (param1 == -1) {
+		if (!waitingForSmithingSelection || !isSmithingProductClick(evt)) {
 			return;
 		}
-		Widget widget = this.client.getWidget(param1);
-		if (widget == null) {
+
+		pendingSmithingClickStart = true;
+	}
+
+	private void startSmithingAction(int barsPerItem, int productId)
+	{
+		if (barsPerItem <= 0) {
 			return;
 		}
-		if (widget.getParentId() == ComponentID.SMITHING_INVENTORY_ITEM_CONTAINER) {
-			Widget widget1 = widget.getChild(1);
-			Widget widget2 = widget.getChild(2);
-			String text = widget1.getText();
-			String text2 = widget2.getText();
-			Matcher matcher = X_BARS_PATTERN.matcher(text);
-			Matcher matcher2 = X_BARS_PATTERN.matcher(text2);
-			if (matcher.matches() || matcher2.matches()) {
-				String x = matcher.matches() ? matcher.group("x") : matcher2.group("x");
-				int barsPerItem = Integer.parseInt(x);
-				int availableBars = this.client.getVarpValue(VAR_AVAILABLE_MATERIALS);
-				int productId = matcher.matches() ? widget2.getItemId() : widget1.getItemId() ;
-				if(isWearingSmithOutfit()){
-					this.actionManager.setAction(Action.SMITHING_WITH_SMITH_OUTFIT, (availableBars / barsPerItem), productId);
-				}
-				else {
-					this.actionManager.setAction(Action.SMITHING, (availableBars / barsPerItem), productId);
-				}
+
+		int availableBars = this.client.getVarpValue(VAR_AVAILABLE_MATERIALS);
+		if(isWearingSmithOutfit()){
+			this.actionManager.setAction(Action.SMITHING_WITH_SMITH_OUTFIT, (availableBars / barsPerItem), productId);
+		}
+		else {
+			this.actionManager.setAction(Action.SMITHING, (availableBars / barsPerItem), productId);
+		}
+	}
+
+	private boolean isSmithingProductClick(MenuOptionClicked evt)
+	{
+		Widget current = evt.getWidget();
+		if (current == null && evt.getParam1() != -1) {
+			current = this.client.getWidget(evt.getParam1());
+		}
+
+		while (current != null) {
+			if (current.getParentId() == ComponentID.SMITHING_INVENTORY_ITEM_CONTAINER) {
+				return true;
 			}
+			if ((current.getId() >>> 16) == InterfaceID.SMITHING) {
+				return true;
+			}
+
+			int parentId = current.getParentId();
+			if (parentId == -1 || parentId == current.getId()) {
+				break;
+			}
+
+			Widget parent = current.getParent();
+			current = parent != null ? parent : client.getWidget(parentId);
 		}
+
+		return evt.getParam1() != -1 && (evt.getParam1() >>> 16) == InterfaceID.SMITHING;
 	}
 
 	private boolean isWearingSmithOutfit(){

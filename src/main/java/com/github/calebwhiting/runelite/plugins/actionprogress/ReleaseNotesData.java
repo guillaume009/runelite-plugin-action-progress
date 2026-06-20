@@ -24,6 +24,7 @@ public final class ReleaseNotesData {
 
     releases.add(new Release("1.28", Arrays.asList(
     "Fix smithing outfit fraction progress so item count matches the faster timer",
+    "Fix smithing progress bar when selecting products by clicking the smithing interface",
     "Add a simple progress bar mode")));
 
     releases.add(new Release("1.27", Arrays.asList(
