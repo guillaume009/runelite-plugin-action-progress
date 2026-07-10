@@ -1,14 +1,20 @@
 package com.github.calebwhiting.runelite.plugins.actionprogress.detect;
 
+import com.github.calebwhiting.runelite.api.InventoryManager;
+import com.github.calebwhiting.runelite.data.Recipe;
 import com.github.calebwhiting.runelite.plugins.actionprogress.Product;
+import net.runelite.api.Item;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
 import java.util.Map;
+import java.util.stream.Stream;
 
+import static com.github.calebwhiting.runelite.plugins.actionprogress.Action.FLETCH_ATTACH_TIPS;
 import static net.runelite.api.ItemID.DIAMOND_BOLT_TIPS;
 import static net.runelite.api.ItemID.DIAMOND_DRAGON_BOLTS;
+import static net.runelite.api.ItemID.DRAGON_BOLTS;
 import static net.runelite.api.ItemID.DRAGONSTONE_BOLT_TIPS;
 import static net.runelite.api.ItemID.DRAGONSTONE_DRAGON_BOLTS;
 import static net.runelite.api.ItemID.EMERALD_BOLT_TIPS;
@@ -65,5 +71,27 @@ public class ChatboxDetectorTest
 			}
 		}
 		return null;
+	}
+
+	@Test
+	public void rubyDragonBoltsAreDetectedWithoutDiamondTips() throws ReflectiveOperationException
+	{
+		InventoryManager inventory = new InventoryManager()
+		{
+			@Override
+			public Stream<Item> getItems()
+			{
+				return Stream.of(new Item(DRAGON_BOLTS, 20), new Item(RUBY_BOLT_TIPS, 20));
+			}
+		};
+
+		Field recipesField = ChatboxDetector.class.getDeclaredField("MULTI_MATERIAL_PRODUCTS");
+		recipesField.setAccessible(true);
+		Product[] recipes = (Product[]) recipesField.get(null);
+		Product recipe = Recipe.forProduct(recipes, RUBY_DRAGON_BOLTS, inventory);
+
+		Assert.assertNotNull(recipe);
+		Assert.assertEquals(FLETCH_ATTACH_TIPS, recipe.getAction());
+		Assert.assertEquals(2, recipe.getMakeProductCount(inventory));
 	}
 }
