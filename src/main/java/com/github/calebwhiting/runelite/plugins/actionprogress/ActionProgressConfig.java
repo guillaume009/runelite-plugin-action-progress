@@ -455,6 +455,17 @@ public interface ActionProgressConfig extends Config
 	}
 
 	@ConfigItem(
+			name = "Golem shaping",
+			keyName = "crafting.golemShaping",
+			description = "Enable/Disable monitoring shaping golems (Shape-golem) while golem crafting.",
+			section = CRAFTING
+	)
+	default boolean craftGolemShaping()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 			name = "Arrows & bolts",
 			keyName = "fletching.ammunition",
 			description = "Enable/Disable monitoring fletching arrows & bolts.",
