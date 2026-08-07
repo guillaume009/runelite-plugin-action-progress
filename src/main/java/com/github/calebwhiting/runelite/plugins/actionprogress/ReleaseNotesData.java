@@ -22,6 +22,12 @@ public final class ReleaseNotesData {
     static {
         List<Release> releases = new ArrayList<>();
 
+	releases.add(new Release("1.29", Arrays.asList(
+	"Update goat horn name that was causing incompatible API - Thanks 0xJeu",
+	"Add support for Twinflame staff - Thanks 0xJeu",
+	"Add support for plank sack - Thanks 0xJeu",
+    "Add support for seeking arrows - Thanks @thel")));
+
     releases.add(new Release("1.28", Arrays.asList(
     "Fix smithing outfit fraction progress so item count matches the faster timer",
     "Fix smithing progress bar when selecting products by clicking the smithing interface",
