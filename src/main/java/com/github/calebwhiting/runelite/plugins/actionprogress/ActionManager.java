@@ -80,7 +80,9 @@ public class ActionManager
 			log.debug("action {} is disabled", action);
 			return;
 		}
-		if (actionCount <= 1 && this.config.ignoreSingleActions()) {
+		// Golem shaping is always a single action per side (not a batch of items), so
+		// "Ignore single actions" doesn't apply to it the way it does to every other action.
+		if (actionCount <= 1 && this.config.ignoreSingleActions() && action != Action.GOLEM_SHAPE) {
 			log.debug("ignoring single action");
 			return;
 		}
