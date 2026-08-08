@@ -26,5 +26,6 @@ public interface ActionIcon
 	IconSource SPRITE_SALVAGE = new ItemIconSource(ItemID.SAILING_LARGE_SHIPWRECK_SALVAGE);
 	IconSource SPRITE_CONSTRUCTION = new ItemIconSource(SpriteID.SKILL_CONSTRUCTION);
 	IconSource SPRITE_INCENDIARY = new ItemIconSource(ItemID.RUNE_INCENDIARY_CANNONBALL);
+	IconSource SPRITE_GOLEM_CRAFTING = new ItemIconSource(ItemID.SUNSTONE_CORE);
 
 }

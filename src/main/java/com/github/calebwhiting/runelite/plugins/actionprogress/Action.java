@@ -102,6 +102,7 @@ public enum Action
 	CONSTRUCTION_REPAIR_KIT("Crafting", ActionProgressConfig::constSailing,ActionIcon.SPRITE_CONSTRUCTION, 4),
 	CHAINSHOT_CANNONBALL("Smithing", ActionProgressConfig::smithCannonballs, ActionIcon.SPRITE_SMITHING, 2),
 	INCENDIARY_CANNONBALL("Smithing", ActionProgressConfig::smithCannonballs, ActionIcon.SPRITE_INCENDIARY, 3),
+	GOLEM_SHAPE("Shaping", ActionProgressConfig::craftGolemShaping, ActionIcon.SPRITE_GOLEM_CRAFTING, 15),
 	;
 
 	//FILLING("Filling", ActionProgressConfig::filling, ActionIcon.SPRITE_TOTAL, 1);
