@@ -24,8 +24,9 @@ public final class ReleaseNotesData {
 
 	releases.add(new Release("1.29", Arrays.asList(
 	"Update goat horn name that was causing incompatible API - Thanks 0xJeu",
-	"Add support for Twinflame staff - Thanks 0xJeu",
+	"Fix jewellery enchanting - Thanks 0xJeu",
 	"Add support for plank sack - Thanks 0xJeu",
+	"Add support for golem crafting - Thanks 0xJeu",
     "Add support for seeking arrows - Thanks @thel")));
 
     releases.add(new Release("1.28", Arrays.asList(
