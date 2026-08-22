@@ -34,6 +34,8 @@ public class ActionProgressOverlay extends Overlay
 
 	private static final int PROGRESS_MIN_WIDTH_HORIZONTAL = INSET + ICON_SIZE + PAD + PROGRESS_MIN_WIDTH + INSET;
 
+	private static final Logger log = LoggerFactory.getLogger(ActionProgressOverlay.class);
+
 	@Inject private ActionProgressPlugin plugin;
 
 	@Inject private ActionManager actionManager;
@@ -74,7 +76,7 @@ public class ActionProgressOverlay extends Overlay
 			}
 			return this.renderInfobox(g, header, count, timeString, icon, min, max, value, preferredDimension);
 		} catch (Throwable t) {
-			t.printStackTrace();
+			log.error("Error while rendering ActionProgressOverlay", t);
 			return EMPTY;
 		}
 	}
