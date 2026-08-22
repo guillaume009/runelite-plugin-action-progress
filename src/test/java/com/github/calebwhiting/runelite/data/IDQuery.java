@@ -2,7 +2,6 @@ package com.github.calebwhiting.runelite.data;
 
 import net.runelite.api.*;
 import net.runelite.api.widgets.InterfaceID;
-import org.intellij.lang.annotations.Language;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -171,12 +170,12 @@ public class IDQuery
 		return this.databaseClass;
 	}
 
-	public IDQuery query(@Language("RegExp") String regex)
+	public IDQuery query(String regex)
 	{
 		return this.query(Pattern.compile(regex), true);
 	}
 
-	public IDQuery query(@Language("RegExp") String regex, boolean stripNumberSuffix)
+	public IDQuery query(String regex, boolean stripNumberSuffix)
 	{
 		return this.query(Pattern.compile(regex), stripNumberSuffix);
 	}
