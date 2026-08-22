@@ -24,7 +24,7 @@ dependencies {
 }
 
 group = 'com.github.calebwhiting.runelite'
-version = '1.29'
+version = '1.30'
 sourceCompatibility = '1.11'
 
 tasks.withType(JavaCompile) {
