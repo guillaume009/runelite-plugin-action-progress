@@ -7,6 +7,8 @@ import com.google.inject.Singleton;
 import net.runelite.api.Client;
 import net.runelite.client.config.RuneLiteConfig;
 import net.runelite.client.ui.overlay.Overlay;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.awt.*;
 
@@ -33,6 +35,8 @@ public class ActionProgressOverlay extends Overlay
 	private static final int SIMPLE_PROGRESS_MIN_HEIGHT = 12;
 
 	private static final int PROGRESS_MIN_WIDTH_HORIZONTAL = INSET + ICON_SIZE + PAD + PROGRESS_MIN_WIDTH + INSET;
+
+	private static final Logger log = LoggerFactory.getLogger(ActionProgressOverlay.class);
 
 	@Inject private ActionProgressPlugin plugin;
 
@@ -74,13 +78,13 @@ public class ActionProgressOverlay extends Overlay
 			}
 			return this.renderInfobox(g, header, count, timeString, icon, min, max, value, preferredDimension);
 		} catch (Throwable t) {
-			t.printStackTrace();
+			log.error("Error while rendering ActionProgressOverlay", t);
 			return EMPTY;
 		}
 	}
 
 	private Dimension renderInfobox(
-			Graphics2D g, String header, String count, String timeString, Image icon, long min, long max, long value, Dimension preferredDimension)
+				Graphics2D g, String header, String count, String timeString, Image icon, long min, long max, long value, Dimension preferredDimension)
 	{
 		if (this.config.simpleProgressBar()) {
 			return this.renderSimpleMode(g, count, min, max, value, preferredDimension);
@@ -151,7 +155,7 @@ public class ActionProgressOverlay extends Overlay
 				max,
 				value,
 				false
-		);
+			);
 		if (this.config.showSimpleProgressBarCounter()) {
 			Rendering.drawText(g,
 					new Rectangle(0, 0, width, height),
@@ -159,13 +163,13 @@ public class ActionProgressOverlay extends Overlay
 					Alignment.CENTER,
 					count,
 					false
-			);
+				);
 		}
 
 		return new Dimension(width, height);
 	}
 
-	private void DrawStandardMode (Graphics2D g, FontMetrics fm, int height, int width, String timeString, String count, String actionText, Image icon, long min, long max, long value, Color border, Color progressDoneColor, Color progressLeftColor) {
+	private void DrawStandardMode (Graphics2D g, FontMetrics fm, int height, int width, String timeString, String count, String actionText, Image icon, long min, long max, long value, Color border, [...]
 		int heightWithIcon = INSET + ICON_SIZE + fm.getHeight();
 		//Icon & time
 		if (height <= heightWithIcon){
@@ -209,9 +213,9 @@ public class ActionProgressOverlay extends Overlay
 		//Progress bar
 		Rendering.drawProgressBar(g, new Rectangle(right.x, INSET + fm.getHeight() + INSET, right.width, height - (INSET + fm.getHeight() + INSET + INSET)),
 				border, progressLeftColor, progressDoneColor, min, max, value, false
-		);
+			);
 	}
-	private void DrawCompactMode (Graphics2D g, FontMetrics fm, int height, int width, String timeString, String count, String actionText, Image icon, long min, long max, long value, Color border, Color progressDoneColor, Color progressLeftColor){
+	private void DrawCompactMode (Graphics2D g, FontMetrics fm, int height, int width, String timeString, String count, String actionText, Image icon, long min, long max, long value, Color border, C[...]
 		//Progress bar
 		Rendering.drawProgressBar(g,
 				new Rectangle(0, 0, width, height),
@@ -220,7 +224,7 @@ public class ActionProgressOverlay extends Overlay
 				progressDoneColor,
 				min, max, value,
 				false
-		);
+			);
 		//Time
 		int stringTimeWidth = g.getFontMetrics().stringWidth(timeString);
 		Rectangle rectTime = new Rectangle(width - PAD - stringTimeWidth, (height / 2) - fm.getHeight() / 2, stringTimeWidth, fm.getHeight());
@@ -230,7 +234,7 @@ public class ActionProgressOverlay extends Overlay
 				Alignment.RIGHT,
 				timeString,
 				false
-		);
+			);
 		//Icon
 		Rectangle rectIcon = new Rectangle(0, 0, height, height);
 		g.drawImage(icon,
@@ -239,7 +243,7 @@ public class ActionProgressOverlay extends Overlay
 				height,
 				height,
 				null
-		);
+			);
 		//Action
 		int stringActionWidth = g.getFontMetrics().stringWidth(actionText);
 		int actionTextRemainingSpace = width - rectIcon.width - rectTime.width - INSET - INSET;
@@ -251,7 +255,7 @@ public class ActionProgressOverlay extends Overlay
 					Alignment.CENTER,
 					actionText,
 					false
-			);
+				);
 		}
 		else{
 			int stringCountWidth = g.getFontMetrics().stringWidth(count);
@@ -262,11 +266,11 @@ public class ActionProgressOverlay extends Overlay
 					Alignment.CENTER,
 					count,
 					false
-			);
+				);
 		}
 	}
 
-	private void DrawVerticalMode (Graphics2D g, FontMetrics fm, int height, int width, String timeString, String count, String actionText, Image icon, long min, long max, long value, Color border, Color progressDoneColor, Color progressLeftColor){
+	private void DrawVerticalMode (Graphics2D g, FontMetrics fm, int height, int width, String timeString, String count, String actionText, Image icon, long min, long max, long value, Color border, [...]
 		int widthWithIcon = INSET + ICON_SIZE + INSET + INSET + PAD + INSET;
 
 		Rectangle left = new Rectangle(INSET, INSET, fm.getHeight(), height - (INSET * 2));
@@ -303,7 +307,7 @@ public class ActionProgressOverlay extends Overlay
 
 		Rendering.drawProgressBar(g, new Rectangle(right.x, PAD + INSET + fm.getHeight() + INSET + PAD, right.width, Math.max(INSET,right.height - PAD - INSET - fm.getHeight() - PAD)),
 				border, progressLeftColor, progressDoneColor, min, max, value, true
-		);
+			);
 	}
 
 }
