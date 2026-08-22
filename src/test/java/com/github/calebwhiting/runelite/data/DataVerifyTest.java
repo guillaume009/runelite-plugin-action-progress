@@ -105,7 +105,8 @@ public class DataVerifyTest
 				log.info("Verified {}.{}", c.getCanonicalName(), constantName);
 				return;
 			}
-			DataVerificationException.newInstance(c, constantName, query).printStackTrace();
+			DataVerificationException ex = DataVerificationException.newInstance(c, constantName, query);
+			log.error("Data verification failed for {}.{}: {}", c.getCanonicalName(), constantName, query, ex);
 			this.failed = true;
 		} catch (ReflectiveOperationException e) {
 			log.error("An error occurred", e);
@@ -123,7 +124,7 @@ public class DataVerifyTest
 	{
 		if (this.failed) {
 			// we don't want to actually fail, just warn
-			System.err.println("One or more constant is out-of-date");
+			log.warn("One or more constant is out-of-date");
 		}
 	}
 
