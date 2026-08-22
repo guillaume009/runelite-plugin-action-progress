@@ -1299,7 +1299,8 @@ public interface Magic
 				STEAM,
 				ItemID.STAFF_OF_WATER,
 				ItemID.WATER_BATTLESTAFF,
-				ItemID.MYSTIC_WATER_STAFF
+				ItemID.MYSTIC_WATER_STAFF,
+				ItemID.TWINFLAME_STAFF
 		);
 		IDs EARTH = new IDs(
 				DUST,
@@ -1310,12 +1311,13 @@ public interface Magic
 				ItemID.MYSTIC_EARTH_STAFF
 		);
 		IDs FIRE = new IDs(
-				SMOKE, 
-				STEAM, 
-				LAVA, 
-				ItemID.STAFF_OF_FIRE, 
+				SMOKE,
+				STEAM,
+				LAVA,
+				ItemID.STAFF_OF_FIRE,
 				ItemID.FIRE_BATTLESTAFF,
-				ItemID.MYSTIC_FIRE_STAFF
+				ItemID.MYSTIC_FIRE_STAFF,
+				ItemID.TWINFLAME_STAFF
 		);
 
 	}
