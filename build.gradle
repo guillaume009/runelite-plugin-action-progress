@@ -11,6 +11,7 @@ repositories {
 }
 
 def runeLiteVersion = 'latest.release'
+def pluginMainClass = 'com.github.calebwhiting.runelite.ActionProgressPluginTest'
 
 dependencies {
 	compileOnly 'org.projectlombok:lombok:1.18.20'
@@ -29,4 +30,12 @@ sourceCompatibility = '1.11'
 
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
+}
+
+tasks.register('run', JavaExec) {
+	classpath = sourceSets.test.runtimeClasspath
+	mainClass = pluginMainClass
+
+	jvmArgs "-ea"
+	args "--developer-mode", "--debug"
 }
