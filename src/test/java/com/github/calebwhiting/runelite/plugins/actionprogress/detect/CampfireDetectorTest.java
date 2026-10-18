@@ -6,11 +6,11 @@ import com.github.calebwhiting.runelite.plugins.actionprogress.Action;
 import com.github.calebwhiting.runelite.plugins.actionprogress.ActionManager;
 import net.runelite.api.Item;
 import net.runelite.api.MenuEntry;
-import net.runelite.api.ObjectID;
 import net.runelite.api.Player;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.gameval.AnimationID;
 import net.runelite.api.gameval.ItemID;
+import net.runelite.api.gameval.ObjectID;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;
@@ -28,7 +28,7 @@ public class CampfireDetectorTest
 		FakeActionManager actionManager = new FakeActionManager();
 		CampfireDetector detector = detector(actionManager, new Item(ItemID.OAK_LOGS, 14));
 
-		detector.onMenuOptionClicked(menuClick("Tend-to", ObjectID.FORESTERS_CAMPFIRE));
+		detector.onMenuOptionClicked(menuClick("Tend-to", ObjectID.FORESTRY_FIRE));
 		detector.onLocalAnimationChanged(animationChanged(AnimationID.FORESTRY_CAMPFIRE_BURNING_OAK_LOGS));
 
 		assertEquals(Action.FIREMAKING_CAMPFIRE, actionManager.startedAction);
@@ -43,7 +43,7 @@ public class CampfireDetectorTest
 		CampfireDetector detector = detector(actionManager,
 				new Item(ItemID.OAK_LOGS, 7), new Item(ItemID.WILLOW_LOGS, 7));
 
-		detector.onMenuOptionClicked(menuClick("Tend-to", ObjectID.FORESTERS_CAMPFIRE));
+		detector.onMenuOptionClicked(menuClick("Tend-to", ObjectID.FORESTRY_FIRE));
 		detector.onLocalAnimationChanged(animationChanged(AnimationID.FORESTRY_CAMPFIRE_BURNING_OAK_LOGS));
 
 		assertNull(actionManager.startedAction);
@@ -66,7 +66,7 @@ public class CampfireDetectorTest
 		FakeActionManager actionManager = new FakeActionManager();
 		CampfireDetector detector = detector(actionManager, new Item(ItemID.OAK_LOGS, 14));
 
-		detector.onMenuOptionClicked(menuClick("Tend-to", ObjectID.CAMPFIRE));
+		detector.onMenuOptionClicked(menuClick("Tend-to", ObjectID.EAGLEPEAK_CAMPFIRE_TIDY));
 		detector.onLocalAnimationChanged(animationChanged(AnimationID.FORESTRY_CAMPFIRE_BURNING_OAK_LOGS));
 
 		assertNull(actionManager.startedAction);
@@ -79,7 +79,7 @@ public class CampfireDetectorTest
 		actionManager.currentAction = Action.FIREMAKING_CAMPFIRE;
 		CampfireDetector detector = detector(actionManager, new Item(ItemID.OAK_LOGS, 14));
 
-		detector.onMenuOptionClicked(menuClick("Tend-to", ObjectID.FORESTERS_CAMPFIRE));
+		detector.onMenuOptionClicked(menuClick("Tend-to", ObjectID.FORESTRY_FIRE));
 		detector.onLocalAnimationChanged(animationChanged(AnimationID.FORESTRY_CAMPFIRE_BURNING_OAK_LOGS));
 
 		assertNull(actionManager.startedAction);

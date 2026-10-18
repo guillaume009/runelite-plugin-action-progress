@@ -1,7 +1,12 @@
 package com.github.calebwhiting.runelite.data;
 
-import net.runelite.api.*;
-import net.runelite.api.widgets.InterfaceID;
+import net.runelite.api.ScriptID;
+import net.runelite.api.gameval.AnimationID;
+import net.runelite.api.gameval.InterfaceID;
+import net.runelite.api.gameval.ItemID;
+import net.runelite.api.gameval.NpcID;
+import net.runelite.api.gameval.ObjectID;
+import net.runelite.api.gameval.VarbitID;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -77,7 +82,7 @@ public class IDQuery
 		@Override
 		protected IDQuery create()
 		{
-			return new IDQuery(Varbits.class);
+			return new IDQuery(VarbitID.class);
 		}
 	};
 

@@ -7,8 +7,8 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
-import net.runelite.api.InventoryID;
 import net.runelite.api.ItemContainer;
+import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.MenuAction;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.widgets.Widget;
@@ -31,7 +31,7 @@ public class EnchantSpellDetector extends ActionDetector
 			return;
 		}
 		if (evt.getMenuAction() == MenuAction.WIDGET_TARGET_ON_WIDGET) {
-			ItemContainer inventory = this.client.getItemContainer(InventoryID.INVENTORY);
+			ItemContainer inventory = this.client.getItemContainer(InventoryID.INV);
 			if (inventory == null) {
 				return;
 			}

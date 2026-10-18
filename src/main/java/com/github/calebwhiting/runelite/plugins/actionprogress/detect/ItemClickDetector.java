@@ -6,9 +6,11 @@ import com.github.calebwhiting.runelite.plugins.actionprogress.Action;
 import com.github.calebwhiting.runelite.plugins.actionprogress.ActionManager;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import net.runelite.api.*;
+import net.runelite.api.Client;
+import net.runelite.api.ItemContainer;
+import net.runelite.api.MenuAction;
 import net.runelite.api.events.MenuOptionClicked;
-import net.runelite.api.widgets.InterfaceID;
+import net.runelite.api.gameval.InventoryID;
 import net.runelite.client.eventbus.Subscribe;
 
 @Singleton
@@ -35,7 +37,7 @@ public class ItemClickDetector extends ActionDetector
 			return;
 		}
 		int itemID = evt.getItemId();
-		ItemContainer inventory = this.client.getItemContainer(InventoryID.INVENTORY);
+		ItemContainer inventory = this.client.getItemContainer(InventoryID.INV);
 		if (inventory == null || !inventory.contains(itemID)) {
 			return;
 		}

@@ -13,9 +13,9 @@ import com.google.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
-import net.runelite.api.InventoryID;
 import net.runelite.api.ItemContainer;
-import net.runelite.api.ItemID;
+import net.runelite.api.gameval.ItemID;
+import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.Player;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.GameTick;
@@ -96,7 +96,7 @@ public class GuardianOfTheRift extends ActionDetector
 
 		if(evt.getId() == WORKBENCH_ID && evt.getMenuOption().toLowerCase().equals("work-at")){			
 			triggeringEssenceCrafting = true;
-			ItemContainer inventory = client.getItemContainer(InventoryID.INVENTORY);
+			ItemContainer inventory = client.getItemContainer(InventoryID.INV);
 			numberOfGuardianEssencesToMake = inventory == null ? 0 : Math.min(inventory.count(GUARDIAN_FRAGMENTS_ITEM_ID), this.inventoryManager.getFreeSpaces());
 		}
 	}
@@ -127,7 +127,7 @@ public class GuardianOfTheRift extends ActionDetector
 
 			if (numberOfGuardianEssencesToMake == 0) return;
 			
-			this.actionManager.setAction(Action.GUARDIAN_OF_THE_RIFT_CRAFTING, numberOfGuardianEssencesToMake, ItemID.GUARDIAN_ESSENCE);	
+			this.actionManager.setAction(Action.GUARDIAN_OF_THE_RIFT_CRAFTING, numberOfGuardianEssencesToMake, ItemID.GOTR_GUARDIAN_ESSENCE);
 		}
 		else if (triggeringRewardSearch && local.getAnimation() == REWARD_SEARCHING_ANIMATION_ID){
 			triggeringRewardSearch = false;

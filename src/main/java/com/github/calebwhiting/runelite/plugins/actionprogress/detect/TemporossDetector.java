@@ -6,9 +6,15 @@ import com.github.calebwhiting.runelite.plugins.actionprogress.Action;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
-import net.runelite.api.*;
+import net.runelite.api.Actor;
+import net.runelite.api.Client;
+import net.runelite.api.NPC;
+import net.runelite.api.Player;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.MenuOptionClicked;
+import net.runelite.api.gameval.ItemID;
+import net.runelite.api.gameval.NpcID;
+import net.runelite.api.gameval.ObjectID;
 import net.runelite.client.eventbus.Subscribe;
 
 import java.util.Arrays;
@@ -23,12 +29,12 @@ public class TemporossDetector extends ActionDetector
 	private boolean lastClickOnShrine = false;
 
 	private static final int[] TEMPOROSS_AMMUNITION_CRATE = {
-			NpcID.AMMUNITION_CRATE, NpcID.AMMUNITION_CRATE_10577, NpcID.AMMUNITION_CRATE_10578,
-			NpcID.AMMUNITION_CRATE_10579
+			NpcID.TEMPOROSS_NPC_CRATE_AMMUNITION_1, NpcID.TEMPOROSS_NPC_CRATE_AMMUNITION_2, NpcID.TEMPOROSS_NPC_CRATE_AMMUNITION_3,
+			NpcID.TEMPOROSS_NPC_CRATE_AMMUNITION_4
 	};
 
 	private static final int[] TEMPOROSS_AMMUNITION = {
-			ItemID.RAW_HARPOONFISH, ItemID.HARPOONFISH, ItemID.CRYSTALLISED_HARPOONFISH
+			ItemID.TEMPOROSS_RAW_HARPOONFISH, ItemID.TEMPOROSS_HARPOONFISH, ItemID.TEMPOROSS_CRYSTALLISED_HARPOONFISH
 	};
 
 	static {
@@ -59,10 +65,10 @@ public class TemporossDetector extends ActionDetector
 			log.debug("filling crate");
 			int amount = this.inventoryManager.getItemCountById(TEMPOROSS_AMMUNITION);
 			this.actionManager.setAction(Action.TEMPOROSS_FILL_CRATE, amount, -1);
-		} else if(this.inventoryManager.getItemCountById(ItemID.RAW_HARPOONFISH) > 0 && lastClickOnShrine){
+		} else if(this.inventoryManager.getItemCountById(ItemID.TEMPOROSS_RAW_HARPOONFISH) > 0 && lastClickOnShrine){
 			log.debug("cooking fish");
-			int amount = this.inventoryManager.getItemCountById(ItemID.RAW_HARPOONFISH);
-			this.actionManager.setAction(Action.TEMPOROSS_COOKING, amount, ItemID.HARPOONFISH);
+			int amount = this.inventoryManager.getItemCountById(ItemID.TEMPOROSS_RAW_HARPOONFISH);
+			this.actionManager.setAction(Action.TEMPOROSS_COOKING, amount, ItemID.TEMPOROSS_HARPOONFISH);
 		}
 	}
 
@@ -70,7 +76,7 @@ public class TemporossDetector extends ActionDetector
 	public void onMenuOptionClicked(MenuOptionClicked event)
 	{
 		int objectId = event.getId();
-        lastClickOnShrine = objectId == ObjectID.SHRINE_41236;
+		lastClickOnShrine = objectId == ObjectID.TEMPOROSS_SHRINE_FIRE;
 	}
 
 }

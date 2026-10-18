@@ -9,7 +9,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
-import net.runelite.api.ItemID;
+import net.runelite.api.gameval.ItemID;
 import net.runelite.api.ScriptEvent;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ScriptPostFired;
@@ -453,7 +453,7 @@ public class ChatboxDetector extends ActionDetector
 		}
 		for (int leaveItem : Woodcutting.LEAVES){
 			for (int foodItem : Woodcutting.RATION_FOOD) {
-				this.registerAction(MAKING_FORESTERS_RATION, ItemID.FORESTERS_RATION, leaveItem, foodItem);
+				this.registerAction(MAKING_FORESTERS_RATION, ItemID.FORESTRY_RATION, leaveItem, foodItem);
 			}
 		}
 		/*
