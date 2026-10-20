@@ -3,7 +3,6 @@ package com.github.calebwhiting.runelite.plugins.actionprogress;
 import com.github.calebwhiting.runelite.api.InterruptManager;
 import com.github.calebwhiting.runelite.api.TickManager;
 import com.github.calebwhiting.runelite.api.event.Interrupt;
-import com.github.calebwhiting.runelite.data.Fletching;
 import com.github.calebwhiting.runelite.plugins.actionprogress.event.ActionStartedEvent;
 import com.github.calebwhiting.runelite.plugins.actionprogress.event.ActionStoppedEvent;
 import com.google.inject.Inject;
@@ -12,10 +11,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
-import net.runelite.api.InventoryID;
+import net.runelite.api.gameval.InventoryID;
 import net.runelite.api.ItemContainer;
-import net.runelite.api.ItemID;
 import net.runelite.api.events.GameTick;
+import net.runelite.api.gameval.ItemID;
 import net.runelite.client.eventbus.EventBus;
 import net.runelite.client.eventbus.Subscribe;
 
@@ -213,7 +212,7 @@ public class ActionManager
 	}
 
 	private boolean hasFletchingKnifeInInventory() {
-		ItemContainer inventory = this.client.getItemContainer(InventoryID.INVENTORY);
+		ItemContainer inventory = this.client.getItemContainer(InventoryID.INV);
 		if (inventory == null) {
 			return false;
 		}
@@ -222,7 +221,7 @@ public class ActionManager
 	}
 
 	private boolean isWearingFletchingKnife() {
-		ItemContainer gear = this.client.getItemContainer(InventoryID.EQUIPMENT);
+		ItemContainer gear = this.client.getItemContainer(InventoryID.WORN);
 		if (gear == null) {
 			return false;
 		}

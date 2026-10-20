@@ -5,9 +5,9 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import net.runelite.api.Client;
-import net.runelite.api.InventoryID;
 import net.runelite.api.ItemContainer;
-import net.runelite.api.ItemID;
+import net.runelite.api.gameval.InventoryID;
+import net.runelite.api.gameval.ItemID;
 
 public interface Smithing
 {
@@ -37,7 +37,7 @@ public interface Smithing
 
 		public int countAvailableOres(Client client)
 		{
-			ItemContainer inventory = client.getItemContainer(InventoryID.INVENTORY);
+			ItemContainer inventory = client.getItemContainer(InventoryID.INV);
 			if (inventory == null) {
 				return 0;
 			}

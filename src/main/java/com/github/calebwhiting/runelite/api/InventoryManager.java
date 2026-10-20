@@ -3,8 +3,13 @@ package com.github.calebwhiting.runelite.api;
 import com.github.calebwhiting.runelite.api.event.ItemSelectionChanged;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import net.runelite.api.*;
+import net.runelite.api.Client;
+import net.runelite.api.Item;
+import net.runelite.api.ItemContainer;
+import net.runelite.api.MenuAction;
 import net.runelite.api.events.MenuOptionClicked;
+import net.runelite.api.gameval.InventoryID;
+import net.runelite.api.gameval.ItemID;
 import net.runelite.api.gameval.VarbitID;
 import net.runelite.client.eventbus.EventBus;
 import net.runelite.client.eventbus.Subscribe;
@@ -26,17 +31,17 @@ public class InventoryManager
 	// ever entering the inventory, so item-count lookups need to add its contents in as well.
 	private static final int[] PLANK_SACK_ITEM_IDS = {
 			ItemID.PLANK_SACK,
-			ItemID.PLANK_SACK_25629
+			ItemID.PLANK_SACK_DUMMY
 	};
 
 	private static final Map<Integer, Integer> PLANK_SACK_VARBITS_BY_PLANK_ID = Map.of(
-			ItemID.PLANK, VarbitID.PLANK_SACK_PLAIN,
-			ItemID.OAK_PLANK, VarbitID.PLANK_SACK_OAK,
-			ItemID.TEAK_PLANK, VarbitID.PLANK_SACK_TEAK,
-			ItemID.MAHOGANY_PLANK, VarbitID.PLANK_SACK_MAHOGANY,
-			ItemID.CAMPHOR_PLANK, VarbitID.PLANK_SACK_CAMPHOR,
-			ItemID.IRONWOOD_PLANK, VarbitID.PLANK_SACK_IRONWOOD,
-			ItemID.ROSEWOOD_PLANK, VarbitID.PLANK_SACK_ROSEWOOD
+			ItemID.WOODPLANK, VarbitID.PLANK_SACK_PLAIN,
+			ItemID.PLANK_OAK, VarbitID.PLANK_SACK_OAK,
+			ItemID.PLANK_TEAK, VarbitID.PLANK_SACK_TEAK,
+			ItemID.PLANK_MAHOGANY, VarbitID.PLANK_SACK_MAHOGANY,
+			ItemID.PLANK_CAMPHOR, VarbitID.PLANK_SACK_CAMPHOR,
+			ItemID.PLANK_IRONWOOD, VarbitID.PLANK_SACK_IRONWOOD,
+			ItemID.PLANK_ROSEWOOD, VarbitID.PLANK_SACK_ROSEWOOD
 	);
 
 	@Subscribe
@@ -45,7 +50,7 @@ public class InventoryManager
 		if (evt.getMenuAction() != MenuAction.WIDGET_TARGET) {
 			return;
 		}
-		ItemContainer inventory = this.client.getItemContainer(InventoryID.INVENTORY);
+		ItemContainer inventory = this.client.getItemContainer(InventoryID.INV);
 		if (inventory == null) {
 			return;
 		}
@@ -55,7 +60,7 @@ public class InventoryManager
 
 	public Stream<Item> getItems()
 	{
-		ItemContainer inventory = this.client.getItemContainer(InventoryID.INVENTORY);
+		ItemContainer inventory = this.client.getItemContainer(InventoryID.INV);
 		if (inventory == null) {
 			return Stream.empty();
 		}
@@ -64,7 +69,7 @@ public class InventoryManager
 
 	public int getFreeSpaces()
 	{
-		ItemContainer container = this.client.getItemContainer(InventoryID.INVENTORY);
+		ItemContainer container = this.client.getItemContainer(InventoryID.INV);
 		if (container == null) {
 			return 0;
 		}

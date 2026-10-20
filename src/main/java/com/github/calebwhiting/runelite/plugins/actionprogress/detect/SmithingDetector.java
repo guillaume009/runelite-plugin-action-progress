@@ -5,15 +5,14 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
-import net.runelite.api.InventoryID;
 import net.runelite.api.ItemContainer;
-import net.runelite.api.ItemID;
+import net.runelite.api.gameval.InventoryID;
+import net.runelite.api.gameval.ItemID;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.events.ScriptPreFired;
 import net.runelite.api.events.VarClientIntChanged;
 import net.runelite.api.events.VarbitChanged;
-import net.runelite.api.widgets.ComponentID;
-import net.runelite.api.widgets.InterfaceID;
+import net.runelite.api.gameval.InterfaceID;
 import net.runelite.api.widgets.Widget;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.eventbus.Subscribe;
@@ -197,7 +196,7 @@ public class SmithingDetector extends ActionDetector implements KeyListener
 		}
 
 		while (current != null) {
-			if (current.getParentId() == ComponentID.SMITHING_INVENTORY_ITEM_CONTAINER) {
+			if (current.getParentId() == InterfaceID.Smithing.UNIVERSE) {
 				return true;
 			}
 			if ((current.getId() >>> 16) == InterfaceID.SMITHING) {
@@ -217,14 +216,14 @@ public class SmithingDetector extends ActionDetector implements KeyListener
 	}
 
 	private boolean isWearingSmithOutfit(){
-		ItemContainer gear = this.client.getItemContainer(InventoryID.EQUIPMENT);
+		ItemContainer gear = this.client.getItemContainer(InventoryID.WORN);
 		if (gear == null) {
 			return false;
 		}
-        return gear.contains(ItemID.SMITHS_TUNIC) &&
-                gear.contains(ItemID.SMITHS_TROUSERS) &&
-                gear.contains(ItemID.SMITHS_BOOTS) &&
-                (gear.contains(ItemID.SMITHS_GLOVES) || gear.contains(ItemID.SMITHS_GLOVES_I));
+        return gear.contains(ItemID.SMITHING_UNIFORM_TORSO) &&
+                gear.contains(ItemID.SMITHING_UNIFORM_LEGS) &&
+                gear.contains(ItemID.SMITHING_UNIFORM_BOOTS) &&
+                (gear.contains(ItemID.SMITHING_UNIFORM_GLOVES) || gear.contains(ItemID.SMITHING_UNIFORM_GLOVES_ICE));
     }
 
 }

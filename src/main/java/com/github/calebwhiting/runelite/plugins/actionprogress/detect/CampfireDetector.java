@@ -7,9 +7,9 @@ import com.github.calebwhiting.runelite.plugins.actionprogress.Action;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import net.runelite.api.Item;
-import net.runelite.api.ObjectID;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.gameval.AnimationID;
+import net.runelite.api.gameval.ObjectID;
 import net.runelite.client.eventbus.Subscribe;
 
 import java.util.Arrays;
@@ -131,11 +131,11 @@ public class CampfireDetector extends ActionDetector
 
 	private static boolean isForestersCampfire(int objectId)
 	{
-		return objectId == ObjectID.FORESTERS_CAMPFIRE ||
-				objectId == ObjectID.FORESTERS_CAMPFIRE_49928 ||
-				objectId == ObjectID.FORESTERS_CAMPFIRE_49929 ||
-				objectId == ObjectID.FORESTERS_CAMPFIRE_49930 ||
-				objectId == ObjectID.FORESTERS_CAMPFIRE_49931 ||
-				objectId == ObjectID.FORESTERS_CAMPFIRE_49932;
+		return objectId == ObjectID.FORESTRY_FIRE ||
+			   objectId == ObjectID.FORESTRY_FIRE_RED ||
+			   objectId == ObjectID.FORESTRY_FIRE_GREEN ||
+			   objectId == ObjectID.FORESTRY_FIRE_BLUE ||
+			   objectId == ObjectID.FORESTRY_FIRE_WHITE ||
+			   objectId == ObjectID.FORESTRY_FIRE_PURPLE;
 	}
 }
